@@ -1,0 +1,12 @@
+body>div{
+    display: flex;
+    flex-direction: row;
+}
+main{
+    width: 70%;
+    padding-inline-end: 16px; 
+}
+aside{
+    width: 30%;
+    margin: 20px;
+}

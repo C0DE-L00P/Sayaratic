@@ -1,0 +1,40 @@
+/* start navbar
+ *
+ * @format
+ */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-family: "Noto Kufi Arabic", sans-serif;
+}
+.nav-bar {
+  box-shadow: 0 3px 5px #80808029;
+}
+.nav-bar .navbar {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.nav-bar .navbar-expand-lg .navbar-nav .nav-link {
+  margin-left: 30px;
+  font-weight: 500;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #cccccc;
+}
+.nav-bar .navbar-expand-lg .navbar-nav .nav-link:hover {
+  color: #113250 !important;
+}
+.nav-bar .active {
+  color: #113250 !important;
+  border-bottom: 2px solid #ff5700;
+}
+.nav-bar .btn-outline-success {
+  color: #ff5700;
+  border-color: #ff5700;
+}
+.nav-bar .btn-outline-success:hover {
+  color: #fff;
+  background: #ff5700;
+}
+/* end navbar */

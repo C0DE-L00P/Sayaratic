@@ -1,0 +1,120 @@
+mixin slider-h(items,direction)
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <style>
+    .
+        .swiper {
+            width: 100%;
+            height: fit-content;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            user-select: none;
+            position: relative;
+        }
+        
+        .swiper-button-next{
+            appearance: none;
+            background: linear-gradient(to left, transparent,transparent, white);
+            height: 100%;
+            z-index: 2;
+            margin-left: -10px;
+            width: 200px;
+            color: transparent;
+            top: 20%;
+        }
+        .swiper-button-prev{
+            background: linear-gradient(to right,transparent,transparent, white);
+            height: 100%;
+            width: 200px;
+            margin-right: -10px;
+            z-index: 2;
+            color: transparent;
+            top: 20%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+            border-radius: 8px;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            max-width: 90%;
+            max-height: 70%;
+            object-fit: contain;
+        }
+
+        #arrow {
+            background: red;
+            display: inline-block;
+            height: 55px;
+            margin-left: 20px;
+            margin-top: 55px;
+            position: relative;
+            width: 100px;
+        }
+        #arrow:before {
+            border-bottom: 35px solid red;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            content: "";
+            height: 0;
+            left: 0;
+            position: absolute;
+            top: -35px;
+            width: 0;
+        }
+    </style>
+
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <span class="fade-left" style="background-color: red;height: 100px;"></span>
+        <span class="fade-right"></span>
+        <div class="swiper-wrapper">
+            each item, index in items
+                <div class="swiper-slide"><img src="#{item}" alt=""></div>
+        </div>
+        <div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <div id="arrow"></div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    .
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 7,
+            spaceBetween: 10,
+            slidesPerGroup: 1,
+            grapCursor: true,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
