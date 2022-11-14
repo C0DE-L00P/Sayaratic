@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head><!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
+<!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيارات جديدة</title>
+  </head>
+  <body> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<style>.swiper {
+        width: 100%;
+        height: fit-content;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        user-select: none;
+        position: relative;
+    }
+    
+    .swiper-button-next{
+        appearance: none;
+        background: linear-gradient(to left, transparent,transparent, white);
+        height: 100%;
+        z-index: 2;
+        margin-left: -10px;
+        width: 200px;
+        color: transparent;
+        top: 20%;
+    }
+    .swiper-button-prev{
+        background: linear-gradient(to right,transparent,transparent, white);
+        height: 100%;
+        width: 200px;
+        margin-right: -10px;
+        z-index: 2;
+        color: transparent;
+        top: 20%;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+        border-radius: 8px;
+    
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        height: 100px;
+    }
+    
+    .swiper-slide img {
+        display: block;
+        max-width: 90%;
+        max-height: 70%;
+        object-fit: contain;
+    }
+    
+    #arrow {
+        background: red;
+        display: inline-block;
+        height: 55px;
+        margin-left: 20px;
+        margin-top: 55px;
+        position: relative;
+        width: 100px;
+    }
+    #arrow:before {
+        border-bottom: 35px solid red;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        content: "";
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: -35px;
+        width: 0;
+    }</style>
+<!-- Swiper -->
+<div class="swiper mySwiper">
+<span class="fade-left" style="background-color: red;height: 100px;"></span>
+<span class="fade-right"></span>
+<div class="swiper-wrapper"><div class="swiper-slide"><img src="./../assets/brands-1.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-2.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-3.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-4.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-5.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-6.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-7.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-8.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-9.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-10.png" alt=""></div><div class="swiper-slide"><img src="./../assets/brands-11.png" alt=""></div></div>
+<div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+</div>
+<div id="arrow"></div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 7,
+        spaceBetween: 10,
+        slidesPerGroup: 1,
+        grapCursor: true,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });</script>
+  </body>
+</html>
