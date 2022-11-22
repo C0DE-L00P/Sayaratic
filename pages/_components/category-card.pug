@@ -1,0 +1,9 @@
+mixin category-card(title,subtitle,icon,img)
+    <div class="col-12 col-md-4" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(#{img});background-size: cover; background-position: center center; height: 100%;display: flex; justify-content: center; align-items: center; cursor: pointer; position: relative; color: white; flex-direction: column; font-size: 32px; gap: 16px; min-height: 300px;">
+        <i class="#{icon}"></i>
+        <h3>#{title}</h3>
+        <div style="position: absolute; bottom: 0; right: 0; display: flex; flex-direction: row-reverse;">
+            <span style="padding-inline: 2rem; padding-top: 6px;color: white; font-size: 18px;border-radius: 16px 0 0 0;" class="bg-primary">#{subtitle}</span>
+            <i class="fas fa-angle-right p-2"></i>
+        </div>
+    </div>

@@ -1,14 +1,173 @@
 include _components/slider-v
+include _components/slider-h
+include _components/slider-offers
+include _components/category-card
+include _components/car-card
+include _components/nav-bar
+include _components/faq-section
+
+
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
     include _components/shared-head
-    <link href="./css/home.css" rel="stylesheet">
+    //- <link href="../css/home.css" rel="stylesheet">
     <title>الصفحة الرئيسية</title>
 </head>
-  <body>
-    include _components/nav-bar
-    +slider-v([1,2,3,4,5,6,7,8,9])
+  <body style="overflow-x: hidden;">
+    +nav-bar("home")
+
+    <div class="position-relative" style="height: calc(100% - 78px)">
+      +slider-v(true,[
+        "../assets/slider-1.jpg",
+        "../assets/slider-2.jpg",
+        "../assets/slider-3.jpg",
+        "../assets/slider-4.jpg",
+      ])
+      <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 10;flex-direction: column;">
+        <h3 class="text-white d-block">جاهز لبدء رحلتك <span class="text-primary h1">!</span></h3>
+        <form class="row">
+            <div class="col-auto">
+                <label for="inputSearch" class="visually-hidden">Search</label>
+                <input type="text" class="form-control p-2 px-4 placeholder-secondary placeholder-sm" id="inputSearch" placeholder="ابحث عن الموديل او نوع المركبة الذي تريده">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3 p-2 px-4"><span class="d-none d-md-inline-block mx-2">البحث الآن </span><i class="fas fa-magnifying-glass"></i></button>
+            </div>
+        </form>
+        
+        <div class="text-white" style="display: flex; flex-direction: column; gap: 8px;  position: absolute; left: 16px; bottom: 10px; align-items: center; justify-content: center; z-index: 11;">
+            <i class="fa-brands cursor-pointer fa-whatsapp"></i>
+            <i class="fa-brands cursor-pointer fa-twitter"></i>
+            <i class="fa-brands cursor-pointer fa-facebook-f"></i>
+            <i class="fa-brands cursor-pointer fa-youtube"></i>
+            <i class="fa-brands cursor-pointer fa-instagram"></i>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: max(300px, max-content); margin:0px;" class="row grid">
+      +category-card("شراء سيارة", "اكتشف ما تريده","fas fa-key","../assets/slider-3.jpg")
+      +category-card("شراء سيارة", "لا ما تريده","fas fa-key","../assets/slider-2.jpg")
+      +category-card("شراء سيارة", "اكتشف ما تريده","fas fa-key","../assets/slider-4.jpg")
+    </div>
+
+    <div class="text-center py-4">
+      h3 شارك واحصل على صفقتك
+      h1(class="text-primary") أحدث السيارات المشاركة بالمزادات
+      <p class="fs-5"> العديد من السيارات المشاركة المضمونة والمفحوصة من قبل فريق عمل <span class="text-primary"> سيارتك </span>
+        |  وجميع موديلات السنه الحديثة والقديمة</p>
+
+        +slider-offers("شاهد الكل",[
+                    "../assets/car-2.png",
+                    "../assets/car-3.png",
+                    "../assets/car-5.png",
+                    "../assets/car-1.png",
+                    "../assets/car-1.png",
+                    "../assets/car-1.png",
+                    "../assets/car-1.png",
+                    "../assets/car-1.png",
+                    "../assets/car-1.png",
+                    "../assets/car-1.png",
+                    ])
+    </div>
+
+    +slider-h("تصفح السيارات حسب الماركة","جميع الماركات",false,[
+            {img: "./../assets/brands-1.png", title: 'sedan'},
+            {img: "./../assets/brands-2.png", title: 'sedan'},
+            {img: "./../assets/brands-3.png", title: 'sedan'},
+            {img: "./../assets/brands-4.png", title: 'sedan'},
+            {img: "./../assets/brands-5.png", title: 'sedan'},
+            {img: "./../assets/brands-6.png", title: 'sedan'},
+            {img: "./../assets/brands-7.png", title: 'sedan'},
+            {img: "./../assets/brands-8.png", title: 'sedan'},
+            {img: "./../assets/brands-9.png", title: 'sedan'},
+            {img: "./../assets/brands-10.png", title: 'sedan'},
+            {img: "./../assets/brands-11.png", title: 'sedan'},
+            ])
+
+    <div class="text-center w-100 my-4 container">
+      h1(style="border-bottom: 2px solid #e7e7e7; display: inline-block;", class="text-primary pb-4 m-4") اعثر على سيارتك المستعملة
+      <div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0">
+        <label style="display: flex; gap: 8px;" class="ps-4 col-12 col-lg-6">
+          span البحث بالاسم
+          <input type="text" placeholder="ابحث هنا" style="flex-grow: 1; height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
+        </label>
+        <label style="display: flex; gap: 8px;"class="col-5 col-lg-3">
+          span الموديل
+          <input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
+        </label>
+        <label style="display: flex; gap: 8px;" for="order-select-cards" class="px-0 px-lg-2 col-6 col-lg-3">
+          span السعر
+          <div class="dropdown fs-7 text-secondary border-secondary">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
+            <ul class="dropdown-menu">
+              <li>من أقل إلى أعلى</li>
+              <li>من أعلى إلى أقل</li>
+            </ul>
+          </div>
+        </label>
+      </div>
+
+      <div  style="display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center;">
+        +car-card
+        +car-card
+        +car-card
+        +car-card
+        +car-card
+        +car-card
+        +car-card
+        +car-card
+      </div>
+      <p class="text-start m-4 text-primary fw-bolder text-clickable">شاهد الكل <i class="fas fa-angle-left"></i></p>
+    </div>
+
+    <div class="bg-secondary position-relative d-flex flex-wrap">
+      <div style="flex: 1; display: grid; place-content: center right; min-width: 385px;" class="p-4">
+        <h2 class="display-6 fw-bold"> كل اللي تحتاجه <span class="text-primary"> .... <span style="border-bottom: 1px solid #cccccc">تلاقيه</span></span></h2>
+        <p class="display-8"> جميع خدمات العناية بالسيارات وجميع قطع الغيار <br>وكل ما تحتاجه سيارتك </p>
+        <span class="text-center d-inline-block w-100">
+          <button class="btn btn-primary mx-2 rounded-xl shadow-custom"><i class="fas fa-arrow-right"></i> خدمات الصيانة </button>
+          <button class="btn btn-outline-primary mx-2 rounded-xl shadow-custom-inset"><i class="fas fa-arrow-right"></i> قطع الغيار </i></button>
+        </span>
+      </div>
+      <div style="display: grid; place-items: center;flex: 1; position: relative; min-width: 385px;" class="m-4">
+        <img src="../assets/slider-2.jpg" alt="plc_img" width="200px" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
+        <img src="../assets/slider-1.jpg" alt="plc_img" width="315px" style="margin: 15%;z-index: 2;">
+        <img src="../assets/slider-4.jpg" alt="plc_img" width="200px" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
+        <span style=" z-index: 1; position: absolute;  display: flex; flex-direction: column; height: 200px; gap: 8px; width: 100px;transform: skew(15deg, 15deg) rotate(15deg); bottom: 40px; left: 20%;">
+          <i class="bg-primary" style="flex: 8"></i>
+          <i class="bg-primary" style="flex: 4"></i>
+          <i class="bg-primary" style="flex: 4"></i>
+          <i class="bg-primary" style="flex: 2"></i>
+          <i class="bg-primary" style="flex: 1"></i>
+        </span>
+        
+      </div>
+    </div>
+
+    <div class="text-center w-100 container">
+      h1(class="text-primary border-underline d-inline-block pb-4 m-4") أسئلة متكررة
+      <div class="row w-100">
+        <div class="col-12 col-md-5 text-center">
+          +faq-section([{question: "ما هي خطوات شراء سيارة من موقع سيارتك؟",answer: "placeholder"},{question: "ما هي مدة ضمان السيارات المستعملة؟",answer: "Placeholder"},{question: "كيف احجز سيارة من موقع سيارتك؟",answer: "كل ما عليك هو اختيار السيارة المناسبة لك وإكمال التسجيل لإضافتها وسيتم التواصل معكم لمعرفة كيفية الإستلام سواء كان من المعرض أو التوصيل للمنزل."},{question: "ما الأوراق المضمونة للحصول على التأمين التابع لموقع سيارتك؟",answer: "Placeholder"}])
+        </div>
+        <div class="col-0 col-md-7 d-none d-md-inline-block position-relative">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/BlankMap-World_gray.svg" alt="world-map" class="w-100 opacity-25"/>
+          <img src="https://freepngimg.com/thumb/aston_martin/2-2-aston-martin-free-download-png.png" alt="car" style="position: absolute; top: 60px; right: 20%; max-width: 360px;"/>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="text-center">
+      h1(class="text-primary border-underline d-inline-block pb-4 my-4") آراء العملاء
+    </div>
+
+    include _components/mobile-ad-banner
+    include _components/footer
+
   </body>
 </html>

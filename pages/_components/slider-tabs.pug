@@ -1,0 +1,60 @@
+mixin slider-tabs(items)
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <style>
+    .
+        .swiper-tabs {
+            width: 100%;
+            height: fit-content;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            user-select: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .swiper-tabs .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: transparent;
+            border-radius: 8px;
+            align-items: center;
+            margin-inline: 12px;
+            width: max-content;
+        }
+        input[type="radio"]:checked+label{ color: var(--bs-primary-color);}
+        .swiper-slide input[type="radio"]:checked+label{ border-bottom: 2px solid var(--bs-primary-color);}
+    </style>
+
+
+    <!-- Swiper -->
+    <div class="py-4 slider-tabs-wrapper position-relative">
+        <div class="swiper-tabs mySwiperTabs" style="position: relative;">
+            <div class="swiper-wrapper grabbable">
+                each item, index in items
+                    <div class="swiper-slide" style="width:max-content;">
+                        <input type="radio" name="parts-cat" class="d-none" id="#{item}"/>
+                        <label class="py-2" style="width: max-content;"  for="#{item}">#{item}</label>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    .
+        var swiper = new Swiper(".mySwiperTabs", {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            slidesPerGroup: 1,
+            grapCursor: true,
+            loopPreventsSlide: true,
+            loop: false,
+            loopFillGroupWithBlank: true,
+            navigation: {
+                prevEl: ".btn-prev",
+                nextEl: ".btn-next",
+            },
+        });
+    </script>

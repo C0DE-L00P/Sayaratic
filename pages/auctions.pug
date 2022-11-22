@@ -1,0 +1,39 @@
+include _components/slider-h
+include _components/slider-v
+include _components/car-card
+include _components/slider-offers-3
+include _components/nav-bar
+include _components/auction-card
+
+
+doctype html
+html(lang="ar" dir="rtl")
+    head
+        include _components/shared-head
+        title المزادات
+    body 
+        +nav-bar("auctions")        
+        <div class="position-relative" style="height: calc(100% - 78px)">
+            +slider-v(false,["../assets/slider-3.jpg","../assets/slider-4.jpg","../assets/slider-1.jpg"])
+
+            <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 10;flex-direction: column;">
+                <div class="text-white" style="display: flex; flex-direction: column; gap: 8px;  position: absolute; left: 16px; bottom: 10px; align-items: center; justify-content: center; z-index: 11;">
+                    <i class="fa-brands cursor-pointer fa-whatsapp"></i>
+                    <i class="fa-brands cursor-pointer fa-twitter"></i>
+                    <i class="fa-brands cursor-pointer fa-facebook-f"></i>
+                    <i class="fa-brands cursor-pointer fa-youtube"></i>
+                    <i class="fa-brands cursor-pointer fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center py-4 d-flex flex-column container">
+            h3(class="d-block mt-4") شارك وأحصل على صفقتك
+            h1(class="text-primary d-block my-2") أحدث السيارات المشاركة بالمزادات
+            <p class="fs-6 mb-6"> العديد من السيارات المشاركة المضمونة والمفحوصة من قبل فريق عمل <span class="text-primary"> سيارتك </span>
+                |  وجميع موديلات السنه الحديثة والقديمة</p>
+
+            each auction,index in [{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-1.png"},date: "20 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-2.png"},date: "20 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-4.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-5.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-3.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"}]
+                +auction-card(auction.car, auction.date,auction.timeLeft)
+        </div>
+        include _components/footer

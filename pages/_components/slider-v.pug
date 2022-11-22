@@ -1,4 +1,4 @@
-mixin slider-v(items)
+mixin slider-v(asABackground = false,imgs)
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <style>
     .
@@ -6,10 +6,10 @@ mixin slider-v(items)
         body {
             position: relative;
             height: 100%;
-            --swiper-theme-color: red !important;
+            --swiper-theme-color: var(--bs-primary-color) !important;
         }
 
-        body {
+        .parent {
             background: #eee;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
@@ -21,6 +21,7 @@ mixin slider-v(items)
         .swiper {
             width: 100%;
             height: 100%;
+            position: relative;
         }
 
         .swiper-slide {
@@ -49,18 +50,24 @@ mixin slider-v(items)
             height: 100%;
             object-fit: cover;
         }
-        .swiper-pagination-bullet-active{
-            
+        .swiper-pagination-bullet{
+            background-color: white !important;
         }
+        
+        .swiper-pagination-bullet-active{
+            background-color: var(--bs-primary-color) !important;
+        }
+
     </style>
 
     <div class="swiper mySwiper">
+
         <div class="swiper-wrapper">
-            each item, index in items 
-                <div class="swiper-slide">Slide #{index}</div>
+            each img, index in imgs 
+                <div class="swiper-slide" style="background: linear-gradient(#{asABackground? 'rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),':'rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),'} url(#{img}); background-size: cover; background-position: center center;"></div>
         </div>
         <div class="swiper-pagination"></div>
-        </div>
+    </div>
 
         <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 

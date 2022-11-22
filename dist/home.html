@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head><!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
-<link rel="stylesheet" href="../css/index.css"/><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
+<head>
+<link rel="stylesheet" href="../css/fa.css"/>
+<link rel="stylesheet" href="../css/bs.css"/>
+<link rel="stylesheet" href="../css/index.css"/><script src="../js/bs.js" defer></script>
+<script src="../js/fa.js" defer></script>
 <!-- google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
+<link href="../assets/logo.png" rel="icon" type="image/x-icon"/>
+<style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="./css/home.css" rel="stylesheet">
-<title>الصفحة الرئيسية</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>الصفحة الرئيسية</title>
 </head>
-<body>
+<body style="overflow-x: hidden;">
 <style>.nav-bar {
     box-shadow: 0 3px 5px #80808029;
 }
@@ -47,7 +50,7 @@
 <div class="nav-bar">
 <nav class="navbar navbar-expand-lg ">
 <div class="container-fluid">
-<a class="navbar-brand" href="#">
+<a class="navbar-brand" href="./home.html">
 <img src="../assets/logo.png" width="55px" style="margin-left: 30px;" alt="logo">
 </a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,22 +59,22 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
-<a class="nav-link active" aria-current="page" href="#">الرئيسية</a>
+<a class="nav-link active" aria-current="page" href="./home.html">الرئيسية</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">سيارات جديدة</a>
+<a class="nav-link false" href="./new.html">سيارات جديدة</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">سيارات مستعملة</a>
+<a class="nav-link false" href="./auctions.html">مزادات</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">خدمة العناية</a>
+<a class="nav-link false" href="./parts.html">قطع الغيار</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">قطع الغيار</a>
+<a class="nav-link false" href="#">خدمة العناية</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">تواصل معنا</a>
+<a class="nav-link false" href="#">تواصل معنا</a>
 </li>
 </ul>
 <form class="d-flex">
@@ -80,16 +83,16 @@
 </div>
 </div>
 </nav>
-</div>
+</div><div class="position-relative" style="height: calc(100% - 78px)">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 <style>html,
 body {
     position: relative;
     height: 100%;
-    --swiper-theme-color: red !important;
+    --swiper-theme-color: var(--bs-primary-color) !important;
 }
 
-body {
+.parent {
     background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -101,6 +104,7 @@ body {
 .swiper {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .swiper-slide {
@@ -129,11 +133,16 @@ body {
     height: 100%;
     object-fit: cover;
 }
+.swiper-pagination-bullet{
+    background-color: white !important;
+}
+
 .swiper-pagination-bullet-active{
-    
-}</style>
+    background-color: var(--bs-primary-color) !important;
+}
+</style>
 <div class="swiper mySwiper">
-<div class="swiper-wrapper"><div class="swiper-slide">Slide 0</div><div class="swiper-slide">Slide 1</div><div class="swiper-slide">Slide 2</div><div class="swiper-slide">Slide 3</div><div class="swiper-slide">Slide 4</div><div class="swiper-slide">Slide 5</div><div class="swiper-slide">Slide 6</div><div class="swiper-slide">Slide 7</div><div class="swiper-slide">Slide 8</div></div>
+<div class="swiper-wrapper"><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/slider-1.jpg); background-size: cover; background-position: center center;"></div><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/slider-2.jpg); background-size: cover; background-position: center center;"></div><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/slider-3.jpg); background-size: cover; background-position: center center;"></div><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/slider-4.jpg); background-size: cover; background-position: center center;"></div></div>
 <div class="swiper-pagination"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -148,5 +157,1090 @@ body {
         el: ".swiper-pagination",
         clickable: true,
     },
-});</script></body>
+});</script><div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 10;flex-direction: column;">
+<h3 class="text-white d-block">جاهز لبدء رحلتك <span class="text-primary h1">!</span></h3>
+<form class="row">
+<div class="col-auto">
+<label for="inputSearch" class="visually-hidden">Search</label>
+<input type="text" class="form-control p-2 px-4 placeholder-secondary placeholder-sm" id="inputSearch" placeholder="ابحث عن الموديل او نوع المركبة الذي تريده">
+</div>
+<div class="col-auto">
+<button type="submit" class="btn btn-primary mb-3 p-2 px-4"><span class="d-none d-md-inline-block mx-2">البحث الآن </span><i class="fas fa-magnifying-glass"></i></button>
+</div>
+</form>
+<div class="text-white" style="display: flex; flex-direction: column; gap: 8px;  position: absolute; left: 16px; bottom: 10px; align-items: center; justify-content: center; z-index: 11;">
+<i class="fa-brands cursor-pointer fa-whatsapp"></i>
+<i class="fa-brands cursor-pointer fa-twitter"></i>
+<i class="fa-brands cursor-pointer fa-facebook-f"></i>
+<i class="fa-brands cursor-pointer fa-youtube"></i>
+<i class="fa-brands cursor-pointer fa-instagram"></i>
+</div>
+</div>
+</div>
+<div style="height: max(300px, max-content); margin:0px;" class="row grid"><div class="col-12 col-md-4" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/slider-3.jpg);background-size: cover; background-position: center center; height: 100%;display: flex; justify-content: center; align-items: center; cursor: pointer; position: relative; color: white; flex-direction: column; font-size: 32px; gap: 16px; min-height: 300px;">
+<i class="fas fa-key"></i>
+<h3>شراء سيارة</h3>
+<div style="position: absolute; bottom: 0; right: 0; display: flex; flex-direction: row-reverse;">
+<span style="padding-inline: 2rem; padding-top: 6px;color: white; font-size: 18px;border-radius: 16px 0 0 0;" class="bg-primary">اكتشف ما تريده</span>
+<i class="fas fa-angle-right p-2"></i>
+</div>
+</div><div class="col-12 col-md-4" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/slider-2.jpg);background-size: cover; background-position: center center; height: 100%;display: flex; justify-content: center; align-items: center; cursor: pointer; position: relative; color: white; flex-direction: column; font-size: 32px; gap: 16px; min-height: 300px;">
+<i class="fas fa-key"></i>
+<h3>شراء سيارة</h3>
+<div style="position: absolute; bottom: 0; right: 0; display: flex; flex-direction: row-reverse;">
+<span style="padding-inline: 2rem; padding-top: 6px;color: white; font-size: 18px;border-radius: 16px 0 0 0;" class="bg-primary">لا ما تريده</span>
+<i class="fas fa-angle-right p-2"></i>
+</div>
+</div><div class="col-12 col-md-4" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/slider-4.jpg);background-size: cover; background-position: center center; height: 100%;display: flex; justify-content: center; align-items: center; cursor: pointer; position: relative; color: white; flex-direction: column; font-size: 32px; gap: 16px; min-height: 300px;">
+<i class="fas fa-key"></i>
+<h3>شراء سيارة</h3>
+<div style="position: absolute; bottom: 0; right: 0; display: flex; flex-direction: row-reverse;">
+<span style="padding-inline: 2rem; padding-top: 6px;color: white; font-size: 18px;border-radius: 16px 0 0 0;" class="bg-primary">اكتشف ما تريده</span>
+<i class="fas fa-angle-right p-2"></i>
+</div>
+</div></div>
+<div class="text-center py-4">
+<h3>شارك واحصل على صفقتك</h3>
+<h1 class="text-primary">أحدث السيارات المشاركة بالمزادات</h1><p class="fs-5"> العديد من السيارات المشاركة المضمونة والمفحوصة من قبل فريق عمل <span class="text-primary"> سيارتك </span> وجميع موديلات السنه الحديثة والقديمة</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<style>.swiper-offers {
+    width: 100%;
+    height: 440px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+}
+
+.swiper-offers .swiper-button-next,
+.swiper-offers .swiper-button-prev{
+    color: transparent;
+}
+
+.swiper-offers .swiper-slide {
+    text-align: center;
+    height: 50% !important;
+    background-color: #fafafa !important;
+    font-size: 18px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+    border-radius: 8px;
+    transform: skew(15deg, 15deg) rotate(-15deg) translateY(80px);
+    opacity: 0.7;
+    overflow: hidden;
+    transition: height 0.4s width 0.4s background-color 3s !important;
+    height: 35% !important;
+    width: 22% !important;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-offers .swiper-slide div ,.swiper-offers .swiper-slide img{
+    transition-duration: 1s;
+    display: block;
+    max-height: 60%;
+    object-fit: contain;
+    transform: skew(-15deg, -15deg) rotate(13deg) translateX(-120px);
+}
+
+.swiper-offers .swiper-slide-next,.swiper-offers .swiper-wrapper:active .swiper-slide, .swiper-offers .swiper-wrapper:active .swiper-slide-active{
+    height: 50% !important;
+    width: max(28%, 235px) !important;
+    opacity: 1;
+    transform: skew(15deg, 15deg) rotate(-15deg) translateY(40px);
+    transition: height 0.4s !important;
+}
+
+.swiper-offers .swiper-slide-prev{
+    height: 50% !important;
+    animation: fadeOut 0.3s;
+    transition: height 0.4s !important;
+    opacity: 0;
+    transform: skew(15deg, 15deg) rotate(-15deg) translateY(80px);
+}
+.swiper-offers .swiper-slide-active{
+    width: max(50%, 400px) !important;
+    background-color: white !important;
+    transform: skew(15deg, 15deg) rotate(-15deg) translateY(0px) translateX(40px);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 100% !important;
+    transition: height 0.4s !important;
+    opacity: 1;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeOut {
+    0% { opacity: 1;}
+    99% { opacity: 0; }
+    100% { opacity: 0;}
+}
+.swiper-offers .swiper-slide-duplicate-next,.swiper-slide-duplicate-next{
+    opacity: 0 !important;
+}
+
+.swiper-offers #arrow {
+    background: red;
+    display: inline-block;
+    height: 55px;
+    margin-left: 20px;
+    margin-top: 55px;
+    position: relative;
+    width: 100px;
+}
+.swiper-offers #arrow:before {
+    border-bottom: 35px solid red;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: -35px;
+    width: 0;
+}
+.swiper-offers #btn-right{
+    
+}
+
+div:has(>#pointer){
+    display: flex;
+    flex-direction: row;
+}
+.reverse{
+    transform: rotate(0deg) scaleX(-1) translateX(-20px);
+}
+.forward{
+    transform: translateX(-20px);
+}
+#pointer {
+    width: 20px;
+    height: 32px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#pointer:before {
+    content: "";
+    position: absolute;
+    right: -12px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 12px solid #ff5700;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+}
+.grabbable {
+    cursor: pointer;
+}
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}</style>
+<!-- Swiper -->
+<div class="py-4">
+<div class="swiper-offers mySwiperOffers" style="position: relative;">
+<span class="fade-left" style="background-color: red;height: 100px;"></span>
+<span class="fade-right"></span>
+<div class="swiper-wrapper grabbable"><div class="swiper-slide position-relative">
+<img src="../assets/car-2.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-3.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-5.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-1.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-1.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-1.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-1.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-1.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-1.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div><div class="swiper-slide position-relative">
+<img src="../assets/car-1.png" alt="">
+<div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+</div>
+</div></div>
+<div style="display: flex; position: absolute; left: 0; bottom: 10px; width: 60% !important;" class="text-primary p-4">
+<div style="z-index: 3;">
+<i class="m-4 forward bg-primary btn-next" id="pointer">
+<i class="fas fa-angle-right"></i>
+</i>
+<i class="m-4 reverse bg-primary btn-prev" id="pointer">
+<i class="fas fa-angle-right"></i>
+</i>
+</div>
+<div style="flex-grow: 1; text-align: end;">
+<a class="fw-bolder cursor-pointer text-primary" style="text-decoration: none;" >شاهد الكل <i class="fas fa-angle-left"></i></p>
+<hr style="width: 80%; margin-right: 20%; z-index: 0;">
+</div>
+</div>
+</div>
+</div>
+<div id="arrow"></div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>var swiper = new Swiper(".mySwiperOffers", {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    slidesPerGroup: 1,
+    observeParents: true,
+    preventClicksPropagation: true,
+    loopPreventsSlide: true,
+    grapCursor: true,
+    loop: true,
+    centeredSlides:false,
+    loopFillGroupWithBlank: true,
+    speed: 1000,
+    navigation: {
+        nextEl: ".btn-next",
+        prevEl: ".btn-prev",
+    },
+});
+</script></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<style>.swiper-h {
+    width: 100%;
+    height: fit-content;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-h .swiper-button-next,
+.swiper-h .swiper-button-prev{
+    color: transparent;
+}
+
+.swiper-h .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+    border-radius: 8px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100px;
+}
+
+.swiper-h .swiper-slide img {
+    display: block;
+    max-width: 90%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.swiper-h #arrow {
+    background: red;
+    display: inline-block;
+    height: 55px;
+    margin-left: 20px;
+    margin-top: 55px;
+    position: relative;
+    width: 100px;
+}
+.swiper-h #arrow:before {
+    border-bottom: 35px solid red;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: -35px;
+    width: 0;
+}
+.swiper-h #btn-right{
+    
+}
+
+div:has(>#pointer){
+    transform: translateX(-100px);
+    display: flex;
+    flex-direction: row;
+}
+.reverse{
+    transform: rotate(0deg) scaleX(-1) translateX(-20px);
+}
+.forward{
+    transform: translateX(-20px);
+}
+#pointer {
+    width: 20px;
+    height: 32px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#pointer:before {
+    content: "";
+    position: absolute;
+    right: -12px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 12px solid #ff5700;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+}
+.grabbable {
+    cursor: pointer;
+}
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+.slider-h-wrapper::after,.slider-h-wrapper::before{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    content: '-';
+    color: white;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    display: inline-block;
+    background: linear-gradient(to right ,transparent, white);
+}
+.slider-h-wrapper::after{
+    right: 0px;
+}
+.slider-h-wrapper::before{
+    left: 0px;
+    transform: rotate(180deg);
+}</style>
+<!-- Swiper -->
+<div class="py-4 bg-secondary slider-h-wrapper position-relative">
+<h1 class="py-4 text-primary text-center w-100">تصفح السيارات حسب الماركة</h1><div class="swiper-h mySwiperHorizontal" style="position: relative;">
+<span class="fade-left" style="background-color: red;height: 100px;"></span>
+<span class="fade-right"></span>
+<div class="swiper-wrapper grabbable"><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-1.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-2.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-3.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-4.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-5.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-6.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-7.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-8.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-9.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-10.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
+<img src="./../assets/brands-11.png" alt="" class="">
+<div class="d-none mb-3">sedan</div>
+</div></div>
+<div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+<div style="display: flex; justify-content: space-between; z-index: 3;" class="text-primary p-4">
+<div>
+<i class="m-4 forward bg-primary btn-prev" id="pointer">
+<i class="fas fa-angle-right"></i>
+</i>
+<i class="m-4 reverse bg-primary btn-next" id="pointer">
+<i class="fas fa-angle-right"></i>
+</i>
+</div>
+<p class="fw-bolder p-4 cursor-pointer text-clickable" style="z-index:3;">جميع الماركات <i class="fas fa-angle-left"></i></p>
+</div>
+</div>
+</div>
+<div id="arrow"></div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>var swiper = new Swiper(".mySwiperHorizontal", {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    slidesPerGroup: 1,
+    grapCursor: true,
+    loopPreventsSlide: true,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+        prevEl: ".btn-prev",
+        nextEl: ".btn-next",
+    },
+});</script><div class="text-center w-100 my-4 container">
+<h1 class="text-primary pb-4 m-4" style="border-bottom: 2px solid #e7e7e7; display: inline-block;">اعثر على سيارتك المستعملة</h1><div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0">
+<label style="display: flex; gap: 8px;" class="ps-4 col-12 col-lg-6"><span>البحث بالاسم</span><input type="text" placeholder="ابحث هنا" style="flex-grow: 1; height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
+</label>
+<label style="display: flex; gap: 8px;"class="col-5 col-lg-3"><span>الموديل</span><input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
+</label>
+<label style="display: flex; gap: 8px;" for="order-select-cards" class="px-0 px-lg-2 col-6 col-lg-3"><span>السعر</span><div class="dropdown fs-7 text-secondary border-secondary">
+<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
+<ul class="dropdown-menu">
+<li>من أقل إلى أعلى</li>
+<li>من أعلى إلى أقل</li>
+</ul>
+</div>
+</label>
+</div>
+<div  style="display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center;"><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
+</div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
+</div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
+</div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
+</div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
+</div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
+</div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
+</div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
+</div></div>
+<p class="text-start m-4 text-primary fw-bolder text-clickable">شاهد الكل <i class="fas fa-angle-left"></i></p>
+</div>
+<div class="bg-secondary position-relative d-flex flex-wrap">
+<div style="flex: 1; display: grid; place-content: center right; min-width: 385px;" class="p-4">
+<h2 class="display-6 fw-bold"> كل اللي تحتاجه <span class="text-primary"> .... <span style="border-bottom: 1px solid #cccccc">تلاقيه</span></span></h2>
+<p class="display-8"> جميع خدمات العناية بالسيارات وجميع قطع الغيار <br>وكل ما تحتاجه سيارتك </p>
+<span class="text-center d-inline-block w-100">
+<button class="btn btn-primary mx-2 rounded-xl shadow-custom"><i class="fas fa-arrow-right"></i> خدمات الصيانة </button>
+<button class="btn btn-outline-primary mx-2 rounded-xl shadow-custom-inset"><i class="fas fa-arrow-right"></i> قطع الغيار </i></button>
+</span>
+</div>
+<div style="display: grid; place-items: center;flex: 1; position: relative; min-width: 385px;" class="m-4">
+<img src="../assets/slider-2.jpg" alt="plc_img" width="200px" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
+<img src="../assets/slider-1.jpg" alt="plc_img" width="315px" style="margin: 15%;z-index: 2;">
+<img src="../assets/slider-4.jpg" alt="plc_img" width="200px" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
+<span style=" z-index: 1; position: absolute;  display: flex; flex-direction: column; height: 200px; gap: 8px; width: 100px;transform: skew(15deg, 15deg) rotate(15deg); bottom: 40px; left: 20%;">
+<i class="bg-primary" style="flex: 8"></i>
+<i class="bg-primary" style="flex: 4"></i>
+<i class="bg-primary" style="flex: 4"></i>
+<i class="bg-primary" style="flex: 2"></i>
+<i class="bg-primary" style="flex: 1"></i>
+</span>
+</div>
+</div>
+<div class="text-center w-100 container">
+<h1 class="text-primary border-underline d-inline-block pb-4 m-4">أسئلة متكررة</h1><div class="row w-100">
+<div class="col-12 col-md-5 text-center">
+<div class="accordion accordion-flush" id="accordionFlushExample">
+<style>.accordion-button{
+    background-color: var(--bs-primary-color) !important;
+    color: white !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border:none !important;
+    outline:none !important;
+    width: minmax(max-content, 100%);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 0 20px 0 0;
+    box-shadow: none !important;
+}
+.accordion-button::after{
+    width: 0;
+}
+.accordion-text{
+    background-color: #f8f8f8 !important;
+    padding: 20px 40px;
+    clip-path: polygon(0% 0%, 90% 0, 100% 100%, 0 100%);
+    font-size: 11px;
+    width: 100%;
+    transform: scale(1.03) ;
+    position:relative;
+}
+.collapsed{
+    color: grey !important;
+    background-color: #ececec !important;
+}
+.accordion-body{
+    text-align: right;
+    position: relative;
+}
+
+.accordion-body::before{
+    content:"";
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+    top: 0px; 
+    bottom: 0px;
+    background-color: var(--bs-primary-color) !important;
+    margin-top: 8px;
+    height: calc(100% - 24px);
+    width: 4px !important;
+}
+</style><div class="accordion-item my-2" >
+<h2 class="accordion-header" id="flush-heading1" style="border: none !important; outline: none !important;">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">01 <span class="h-100 text-dark accordion-text me-2">ما هي خطوات شراء سيارة من موقع سيارتك؟</span></button>
+</h2>
+<div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1" data-bs-parent="#accordionFlushExample">
+<div class="accordion-body fs-7">placeholder</div>
+</div>
+</div><div class="accordion-item my-2" >
+<h2 class="accordion-header" id="flush-heading2" style="border: none !important; outline: none !important;">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">02 <span class="h-100 text-dark accordion-text me-2">ما هي مدة ضمان السيارات المستعملة؟</span></button>
+</h2>
+<div id="flush-collapse2" class="accordion-collapse collapse" aria-labelledby="flush-heading2" data-bs-parent="#accordionFlushExample">
+<div class="accordion-body fs-7">Placeholder</div>
+</div>
+</div><div class="accordion-item my-2" >
+<h2 class="accordion-header" id="flush-heading3" style="border: none !important; outline: none !important;">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">03 <span class="h-100 text-dark accordion-text me-2">كيف احجز سيارة من موقع سيارتك؟</span></button>
+</h2>
+<div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3" data-bs-parent="#accordionFlushExample">
+<div class="accordion-body fs-7">كل ما عليك هو اختيار السيارة المناسبة لك وإكمال التسجيل لإضافتها وسيتم التواصل معكم لمعرفة كيفية الإستلام سواء كان من المعرض أو التوصيل للمنزل.</div>
+</div>
+</div><div class="accordion-item my-2" >
+<h2 class="accordion-header" id="flush-heading4" style="border: none !important; outline: none !important;">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">04 <span class="h-100 text-dark accordion-text me-2">ما الأوراق المضمونة للحصول على التأمين التابع لموقع سيارتك؟</span></button>
+</h2>
+<div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
+<div class="accordion-body fs-7">Placeholder</div>
+</div>
+</div></div></div>
+<div class="col-0 col-md-7 d-none d-md-inline-block position-relative">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/BlankMap-World_gray.svg" alt="world-map" class="w-100 opacity-25"/>
+<img src="https://freepngimg.com/thumb/aston_martin/2-2-aston-martin-free-download-png.png" alt="car" style="position: absolute; top: 60px; right: 20%; max-width: 360px;"/>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h1 class="text-primary border-underline d-inline-block pb-4 my-4">آراء العملاء</h1></div>
+<style>.mobile-app {
+display: flex;
+justify-content: center;
+transform: scale(1.8)
+}
+.mobile-app button {
+display: flex;
+background: #060606;
+border-radius: 4px;
+margin: 5px;
+align-items: center;
+}
+.mobile-app i {
+color: #fff;
+font-size: 25px;
+margin-right: 4px;
+}
+.mobile-app .google-play p {
+color: #9e9e9e;
+font-size: 6px;
+margin-bottom: 0;
+}
+.mobile-app .google-play h6 {
+margin-bottom: 0;
+font-size: 9px;
+font-weight: bold;
+color: white;
+}</style>
+<div class="text-center">
+<h1 class="text-primary border-underline d-inline-block pb-4 m-4">يمكنك العثور علينا أيضاً على</h1><div class="d-flex bg-secondary flex-wrap" style="min-height: 300px; align-items: center;">
+<div class="text-center" style="flex: 1; min-width: 320px;">
+<p class="h4 mb-4 mx-2 ">للحصول على العديد من المزايا وإستقبال العروض الحديثة والمزادات يمكنك تحميل التطبيق والمتابعة</p>
+<p class="h6 mb-4">
+  متوفر الآن على<div class="mobile-app">
+<button>
+<div class="google-play">
+<p>Available for free</p>
+<h6>Google play</h6>
+</div>
+<i class="fa-brands fa-google-play text-white"></i>
+</button>
+<button>
+<div class="google-play">
+<p>Download for free</p>
+<h6>App store</h6>
+</div>
+<i class="fa-brands fa-apple text-white"></i>
+</button>
+</p></div>
+</div>
+<div style="flex: 1; padding: 40px; padding-inline: 120px;" class="d-none d-md-inline-block">
+<div style="border-radius: 32px 0 32px 0; overflow: hidden; padding: 32px; height: 300px; background-image: url(../assets/slider-3.jpg); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+</div>
+</div>
+</div>
+<style>/* start footer */
+.footer {
+background: #1e1e1e;
+padding: 60px 0;
+}
+.footer .footer-abstract {
+color: #9e9e9e;
+font-size: 12px;
+line-height: 1.7;
+margin-top: 15px;
+margin-bottom: 45px;
+}
+.footer .footer-mobile {
+font-weight: bold;
+color: #ffff;
+font-size: 13px;
+margin-bottom: 12px;
+}
+.footer .mobile-app {
+display: flex;
+justify-content: center;
+}
+.footer .mobile-app button {
+display: flex;
+background: #060606;
+border-radius: 4px;
+margin: 5px;
+align-items: center;
+}
+.footer .mobile-app i {
+color: #fff;
+font-size: 25px;
+margin-right: 4px;
+}
+.footer .mobile-app .google-play p {
+color: #9e9e9e;
+font-size: 6px;
+margin-bottom: 0;
+}
+.footer .mobile-app .google-play h6 {
+margin-bottom: 0;
+font-size: 9px;
+font-weight: bold;
+color: white;
+}
+.footer .contact-us {
+margin-top: 55px;
+}
+.footer .contact-us .contact-title {
+display: flex;
+margin-right: 6px;
+}
+.footer .contact-us .contact-title .vl {
+border-left: 3px solid #ff5700;
+height: 22px;
+margin-left: 12px;
+}
+.footer .contact-us .contact-title p {
+font-size: 14px;
+color: #ff5700;
+margin-bottom: 29px;
+}
+.footer .contact-us .contact-info {
+display: flex;
+}
+.footer .contact-us .contact-info i {
+color: white;
+font-size: 14px;
+}
+.footer .contact-us .contact-info p {
+color: #9e9e9e;
+font-size: 11px;
+margin-right: 20px;
+margin-bottom: 12px;
+}
+.footer .contact-social i {
+margin-left: 10px;
+font-size: 11px;
+color: white;
+}
+.footer .categories {
+margin-top: 55px;
+padding-right: 36px;
+}
+.footer .categories p {
+font-size: 14px;
+color: #ff5700;
+margin-bottom: 18px;
+}
+.footer .categories h6 {
+color: #fff;
+line-height: 1.9;
+font-size: 14px;
+}
+.footer .news {
+font-size: 14px;
+color: #ff5700;
+margin-bottom: 15px;
+}
+.footer input {
+direction: rtl;
+background: none;
+font-size: 13px;
+padding: 9px;
+margin-top: 16px;
+margin-bottom: 43px;
+}
+.footer input:focus {
+background: none;
+background-color: non;
+box-shadow: none;
+color: #9a9496;
+border-color: #9a9496;
+}
+.footer .payment-method img {
+margin-left: 10px;
+}
+/* end footer */</style>
+<!-- start footer -->
+<div class="footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6" style="padding-left: 96px;">
+<img src="../assets/logo.png" width="85px" alt="logo">
+<p class="footer-abstract">موقع وتطبيق سيارتك هى منصتك المضمونة لبيع وشراء السيارات المفحوصة من قبل فريق عمل محترف ويمكنك أيضاالدخول فى المزادات والحصول على الصفقات الرابحة</p>
+<p class="footer-mobile text-center">متوفر الآن على</p>
+<div class="mobile-app" >
+<button>
+<div class="google-play">
+<p>Available for free</p>
+<h6>Google play</h6>
+</div>
+<i class="fa-brands fa-google-play text-white"></i>
+</button>
+<button>
+<div class="google-play">
+<p>Download for free</p>
+<h6>App store</h6>
+</div>
+<i class="fa-brands fa-apple text-white"></i>
+</button>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="contact-us">
+<div class="contact-title">
+<span class="vl"></span>
+<p>تواصل معنا</p>
+</div>
+<div class="contact-info">
+<i class="fa-solid fa-location-dot"></i>
+<p>شارع السلام متفرع من شارع الملك عبدالعزيز<br> الرياض - السعودية</p>
+</div>
+<div class="contact-info">
+<i class="fa-sharp fa-solid fa-phone"></i>
+<p>الهاتف: 6273-3543-778-1</p>
+</div>
+<div class="contact-info">
+<i class="fa-solid fa-fax"></i>
+<p>الفاكس: 1283-2341-778-1</p>
+</div>
+<div class="contact-info">
+<i class="fa-solid fa-envelope"></i>
+<p>الايميل: info@marvin.com</p>
+</div>
+<div class="contact-social" style="margin-top: 4px;">
+<i class="fa-brands fa-square-instagram"></i>
+<i class="fa-brands fa-youtube"></i>
+<i class="fa-brands fa-twitter"></i>
+<i class="fa-brands fa-facebook-f"></i>
+<i class="fa-brands fa-whatsapp"></i>
+</div>
+</div>
+</div>
+<div class="col-lg-2 col-md-6">
+<div class="categories">
+<p>الرئيسية</p>
+<h6>سيارات جديدة</h6>
+<h6>سيارات مستعملة</h6>
+<h6>خدمات العناية</h6>
+<h6>قطع الغيار</h6>
+<h6>تواصل معنا</h6>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="text-center" style="margin-top: 55px;">
+<p class="news">النشرة الإخبارية</p>
+<span style="font-size:11px;color:#fff">الرجاء كتابة إيميلك للحصول على أحدث العروض</span>
+<input type="email" class="form-control" id="exampleInputEmail1" placeholder="اكتب هنا">
+<p style="font-size: 14px;color: #ff5700;margin-bottom: 15px;">متوفر طرق الدفع الاتية</p>
+<div class="payment-method">
+<img src="../assets/visa.png" width="25px" alt="visa">
+<img src="../assets/mastercard.png" width="25px" alt="master">
+<img src="../assets/cash.png" width="25px" alt="cash">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- end footer --></body>
 </html>

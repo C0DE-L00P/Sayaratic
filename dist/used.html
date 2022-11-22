@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head><!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/index.css"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
+  <head>
+    <link rel="stylesheet" href="../css/fa.css">
+    <link rel="stylesheet" href="../css/bs.css">
+    <link rel="stylesheet" href="../css/index.css"><script src="../js/bs.js" defer></script>
+<script src="../js/fa.js" defer></script>
 <!-- google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
+<link href="../assets/logo.png" rel="icon" type="image/x-icon"/>
+<style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +52,7 @@
 <div class="nav-bar">
 <nav class="navbar navbar-expand-lg ">
 <div class="container-fluid">
-<a class="navbar-brand" href="#">
+<a class="navbar-brand" href="./home.html">
 <img src="../assets/logo.png" width="55px" style="margin-left: 30px;" alt="logo">
 </a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,22 +61,22 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
-<a class="nav-link active" aria-current="page" href="#">الرئيسية</a>
+<a class="nav-link false" aria-current="page" href="./home.html">الرئيسية</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">سيارات جديدة</a>
+<a class="nav-link false" href="./new.html">سيارات جديدة</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">سيارات مستعملة</a>
+<a class="nav-link false" href="./auctions.html">مزادات</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">خدمة العناية</a>
+<a class="nav-link false" href="./parts.html">قطع الغيار</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">قطع الغيار</a>
+<a class="nav-link false" href="#">خدمة العناية</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">تواصل معنا</a>
+<a class="nav-link false" href="#">تواصل معنا</a>
 </li>
 </ul>
 <form class="d-flex">
@@ -81,54 +85,452 @@
 </div>
 </div>
 </nav>
-</div><div><aside class="d-flex flex-column rounded-2" style="width: 30%; border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;"><header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;"><div><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg><span>فلتر النتائج</span></div><div class="text-primary"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="3" y1="3" x2="21" y2="21"></line><path d="M9 5h9.5a1 1 0 0 1 .5 1.5l-4.049 4.454m-.951 3.046v5l-4 -3v-4l-5 -5.5a1 1 0 0 1 .18 -1.316"></path></svg><span class="fs-7">إعادة تعيين</span></div></header><div class="d-flex flex-row shadow-sm" style="z-index: 2;"><label for="rad1" class="col-4 text-center py-2 text-primary fs-6 fw-bold border-bottom border-3 border-primary">مستعملة</label><input type="radio" class="d-none" id="rad1" name="category"><label for="rad2" class="col-4 text-center py-2 text-secondary fs-6">جديدة</label><input type="radio" class="d-none" id="rad2" name="category"><label for="rad3" class="col-4 text-center py-2 text-secondary fs-6">إعلانات مبوبة</label><input type="radio" class="d-none" id="rad3" name="category"></div><div class="accordion"><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الماركة</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الماركة for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">المواصفات</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">المواصفات for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سنة الصنع</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سنة الصنع for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">السعر</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">السعر for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">اللون</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">اللون for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الوارد</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الوارد for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الشكل</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الشكل for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سعة المحرك</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سعة المحرك for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">نوع الوقود</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">نوع الوقود for now</div></div></div></div><div class="d-flex justify-content-between bg-primary text-white p-2" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside><main><div>
-        <main>
-            <header class="d-flex justify-content-between m-3 w-100">
-                <h2 class="d-inline-block h5 text-primary">سيارات مستعملة للبيع في السعودية <span class="text-secondary fs-6">- 1002 سيارة</span></h2>
-                <span class="fs-6">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary mx-2" height="24" width="24" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
-                        <path
-                            d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z">
-                        </path>
-                    </svg><label for="selectShowBy"
-                        style="border: 1px solid rgb(204, 204, 204); user-select: none; border-radius: 8px; padding: 8px; transform: scale(0.8);"><svg
-                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"
-                        class="text-primary" height="28" width="28" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z">
-                        </path>
-                    </svg>الظهور حسب<select id="selectShowBy"
-                        style="background-color: transparent; font-weight: 500; color: black; border: none;">
-                        <option>الأحدث</option>
-                    </select></label></span>
-            </header>
-        </main>
-    </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style="max-width: 300px;transform: scale(0.9);border: 1px solid rgba(204, 204, 204, 0.55);direction:ltr;">
-<h5 class="mb-3 h5" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h5>
-<div class="position-relative overflow-hidden rounded-2" style="height: 148px">
-<img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</div><div><aside class="d-flex flex-column rounded-2" style="width: 30%; border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;"><header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;"><div><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg><span>فلتر النتائج</span></div><div class="text-primary"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="3" y1="3" x2="21" y2="21"></line><path d="M9 5h9.5a1 1 0 0 1 .5 1.5l-4.049 4.454m-.951 3.046v5l-4 -3v-4l-5 -5.5a1 1 0 0 1 .18 -1.316"></path></svg><span class="fs-7 text-clickable">إعادة تعيين</span></div></header><div class="d-flex flex-row shadow-sm" style="z-index: 2;"><label for="rad1" class="col-4 text-center py-2 text-primary fs-6 fw-bold border-bottom border-3 border-primary">مستعملة</label><input type="radio" class="d-none" id="rad1" name="category"><label for="rad2" class="col-4 text-center py-2 text-secondary fs-6">جديدة</label><input type="radio" class="d-none" id="rad2" name="category"><label for="rad3" class="col-4 text-center py-2 text-secondary fs-6">إعلانات مبوبة</label><input type="radio" class="d-none" id="rad3" name="category"></div><div class="accordion"><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الماركة</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الماركة for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">المواصفات</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">المواصفات for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سنة الصنع</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سنة الصنع for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">السعر</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">السعر for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">اللون</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">اللون for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الوارد</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الوارد for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الشكل</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الشكل for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سعة المحرك</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سعة المحرك for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">نوع الوقود</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">نوع الوقود for now</div></div></div></div><div class="d-flex justify-content-between bg-primary text-white p-2" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside><main>
+<header class="d-flex justify-content-between m-3 w-100"><h2 class="d-inline-block h5 text-primary">سيارات مستعملة للبيع في السعودية <span class="text-secondary fs-6">- 1002 سيارة</span></h2><span class="fs-6"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary mx-2" height="24" width="24" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"></path></svg><label for="selectShowBy" style="border: 1px solid rgb(204, 204, 204); user-select: none; border-radius: 8px; padding: 8px; transform: scale(0.8);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="28" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>الظهور حسب<select id="selectShowBy" style="background-color: transparent; font-weight: 500; color: black; border: none;"><option>الأحدث</option></select></label></span></header>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<style>.swiper-offers {
+        width: 100%;
+        height: 500px;
+        padding: 16px;
+        user-select: none;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: start;
+    }
+    
+    .swiper-offers .swiper-button-next,
+    .swiper-offers .swiper-button-prev{
+        color: transparent;
+    }
+    
+    .swiper-offers .swiper-slide {
+        text-align: center;
+        height: 50% !important;
+        background-color: #fafafa !important;
+        font-size: 18px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+        border-radius: 8px;
+        opacity: 0.7;
+        overflow: hidden;
+        transition: height 0.4s !important;
+        height: 35% !important;
+        width: 22% !important;
+    
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-offers .swiper-slide div ,.swiper-offers .swiper-slide img{
+        transition-duration: 1s;
+        display: block;
+        max-height: 60%;
+        object-fit: contain;
+    }
+    
+    .swiper-offers .swiper-slide-next,.swiper-offers .swiper-wrapper:active .swiper-slide, .swiper-offers .swiper-wrapper:active .swiper-slide-active{
+        height: 50% !important;
+        width: max(28%, 235px) !important;
+        opacity: 1;
+        transition: height 0.4s !important;
+    }
+    
+    .swiper-offers .swiper-slide-prev{
+        height: 50% !important;
+        animation: fadeOut 0.3s;
+        transition: height 0.4s !important;
+        opacity: 0;
+    }
+    .swiper-offers .swiper-slide-active{
+        width: max(50%, 400px) !important;
+        background-color: white !important;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        height: 100% !important;
+        transition: height 0.4s !important;
+        opacity: 1;
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @keyframes fadeOut {
+        0% { opacity: 1;}
+        99% { opacity: 0; }
+        100% { opacity: 0;}
+    }
+    .swiper-offers .swiper-slide-duplicate-next,.swiper-slide-duplicate-next{
+        opacity: 0 !important;
+    }
+    
+    .swiper-offers #arrow {
+        background: red;
+        display: inline-block;
+        height: 55px;
+        margin-left: 20px;
+        margin-top: 55px;
+        position: relative;
+        width: 100px;
+    }
+    .swiper-offers #arrow:before {
+        border-bottom: 35px solid red;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        content: "";
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: -35px;
+        width: 0;
+    }
+    .swiper-offers #btn-right{
+        
+    }
+    
+    div:has(>#pointer){
+        display: flex;
+        flex-direction: row;
+    }
+    .reverse{
+        transform: rotate(0deg) scaleX(-1) translateX(-20px);
+    }
+    .forward{
+        transform: translateX(-20px);
+    }
+    #pointer {
+        width: 20px;
+        height: 32px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    #pointer:before {
+        content: "";
+        position: absolute;
+        right: -12px;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-left: 12px solid #ff5700;
+        border-top: 16px solid transparent;
+        border-bottom: 16px solid transparent;
+    }
+    .grabbable {
+        cursor: pointer;
+    }
+    
+    /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+    .grabbable:active {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+    }
+    .clippo {
+        background: white;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    
+        /* trapzoid */
+        /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    
+        clip-path: polygon(0 0,
+                100% 0%,
+                100% 100%,
+                29% 100%, 27.8% 99.5%,
+                27% 99%, 26.4% 98.0%,
+                26% 97%,
+                0% 5%);
+        border-radius: 24px;
+        /* clip-path: path("m56.056 16 458.64 0c0 0 40.768 0 40.768 40.768l0 366.912c0 0 0 40.768-40.768 40.768l-244.608 0c0 0-22.932 2.548-40.768-40.768l-163.072-366.912c0 0-22.932-43.316 40.768-40.768"); */
+        /* box-shadow: rgba(100, 100, 111, 0.7) 0px 7px 29px 0px; */
+    
+        height: 440px;
+        width: 570px;
+        transition-duration: 1s;
+        padding: 20px;
+        display: grid;
+        place-items: center;
+        ;
+    }
+    
+    /* .clippo:hover {
+        clip-path: path("M100 0 230 0C230 0 240 0 250 10L290 70C300 80 290 80 280 80L150 80C140 80 140 80 130 70L100 20C90 0 90 0 100 0");
+    } */
+    
+    .containe {
+        filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.1));
+        direction: ltr;
+    }
+    .count-down{
+        margin: 4px;text-align: center; font-size: 24px; color: black; font-weight: 700;
+    }</style>
+<!-- Swiper -->
+<div class="py-4">
+<div class="swiper-offers mySwiperOffers" style="position: relative;">
+<span class="fade-left" style="background-color: red;height: 100px;"></span>
+<span class="fade-right"></span>
+<div class="swiper-wrapper grabbable"><div class="containe swiper-slide" style="width: fit-content;">
+<div class="clippo ">
+<div id="parent" style="position: relative; height: 90%; width:100%;">
+<div style="display: flex; justify-content: space-between; align-items: start; height: 90%; width: calc(100% - 14px);padding-inline-start: 32px;">
+<div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; height: 50px; width: 150px;">
+<p class="count-down">06</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">30</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">53</p>
+<p class="count-down" style="font-size: 12px; ">يوم</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">ساعة</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">دقيقة</p>
 </div>
-<span class="w-100 d-flex flex-row align-items-center gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
-<div class="text-secondary row text-end justify-items-center align-items-center">
-<span class="d-flex flex-column col-4 fs-7"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-4">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-7 fw-bold">شامل الضريبة</span><span class="text-primary fs-4">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-7 fw-bold text-secondary">بدلاً من
-</span><span class="text-secondary fs-4 text-decoration-line-through">83835</span>توفير 300 ريال</span><span class="d-flex flex-column col-4">
-<p></p>
+<div style="text-align: end;">
+<h3 style="margin: 0px;">MAZDA 3 SEDAN</h3>
+<h4 style="margin-top:0" class="text-primary">$11,300</h4>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button class="btn btn-primary text-start px-4  position-relative" style="transform: scale(0.7) translateX(50px);border: none;outline:none;">شراء هذه السيارة <i class="fas fa-angle-double-right bg-white text-primary px-2" style="position: absolute; top:0;right: -3; height: 102%;"></i></button>
+<button class="btn btn-dark text-start px-4 position-relative overflow-hidden" style="transform: scale(0.7) translate(50px,-20px);border: none;outline:none;">شارك في المزاد <i class="fas fa-angle-double-right text-white px-2" style="position: absolute; top:0;right: -3; height: 102%; background-color: #686868;"></i></button>
+</div>
+</div>
+</div>
+<img src="../assets/car-1.png" alt="" style="position: absolute; left: 0; height: 50%; bottom:30px;" />
+<div style="text-align: end;direction: rtl">
+<div class="text-dark row text-start align-items-center" style="width: fit-content;">
+<span class="d-flex flex-column col-4 fs-7">
 <span class="h4 text-black">2021</span>
-<p class="text-secondary fs-9 fw-bold">موديل</p>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">موديل</p>
 </span><span class="d-flex flex-column col-4">
-<p></p>
 <span class="h4 text-black">240<span class="fs-6">km/m</span></span>
-<p class="text-secondary fs-9 fw-bold">أفصى سرعة للسيارة</p>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: max-content;">أفصى سرعة للسيارة</p>
 </span><span class="d-flex flex-column col-4">
-<p></p>
 <span class="h4 text-black">72<span class="fs-6 me-2">k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
-<p class="text-secondary fs-9 fw-bold">المسافة المقطوعة</p>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">المسافة المقطوعة</p>
 </span>
 </div>
-<div class="d-flex justify-content-between align-items-center fs-6">
-<button type="button" class="btn btn-primary">شراء الآن</button><span class="text-secondary">منذ 3 ساعات</span>
 </div>
-</div></main>
+</div>
+</div>
+</div><div class="containe swiper-slide" style="width: fit-content;">
+<div class="clippo ">
+<div id="parent" style="position: relative; height: 90%; width:100%;">
+<div style="display: flex; justify-content: space-between; align-items: start; height: 90%; width: calc(100% - 14px);padding-inline-start: 32px;">
+<div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; height: 50px; width: 150px;">
+<p class="count-down">06</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">30</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">53</p>
+<p class="count-down" style="font-size: 12px; ">يوم</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">ساعة</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">دقيقة</p>
+</div>
+<div style="text-align: end;">
+<h3 style="margin: 0px;">MAZDA 3 SEDAN</h3>
+<h4 style="margin-top:0" class="text-primary">$11,300</h4>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button class="btn btn-primary text-start px-4  position-relative" style="transform: scale(0.7) translateX(50px);border: none;outline:none;">شراء هذه السيارة <i class="fas fa-angle-double-right bg-white text-primary px-2" style="position: absolute; top:0;right: -3; height: 102%;"></i></button>
+<button class="btn btn-dark text-start px-4 position-relative overflow-hidden" style="transform: scale(0.7) translate(50px,-20px);border: none;outline:none;">شارك في المزاد <i class="fas fa-angle-double-right text-white px-2" style="position: absolute; top:0;right: -3; height: 102%; background-color: #686868;"></i></button>
+</div>
+</div>
+</div>
+<img src="../assets/car-5.png" alt="" style="position: absolute; left: 0; height: 50%; bottom:30px;" />
+<div style="text-align: end;direction: rtl">
+<div class="text-dark row text-start align-items-center" style="width: fit-content;">
+<span class="d-flex flex-column col-4 fs-7">
+<span class="h4 text-black">2021</span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<span class="h4 text-black">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: max-content;">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<span class="h4 text-black">72<span class="fs-6 me-2">k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">المسافة المقطوعة</p>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div><div class="containe swiper-slide" style="width: fit-content;">
+<div class="clippo ">
+<div id="parent" style="position: relative; height: 90%; width:100%;">
+<div style="display: flex; justify-content: space-between; align-items: start; height: 90%; width: calc(100% - 14px);padding-inline-start: 32px;">
+<div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; height: 50px; width: 150px;">
+<p class="count-down">06</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">30</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">53</p>
+<p class="count-down" style="font-size: 12px; ">يوم</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">ساعة</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">دقيقة</p>
+</div>
+<div style="text-align: end;">
+<h3 style="margin: 0px;">MAZDA 3 SEDAN</h3>
+<h4 style="margin-top:0" class="text-primary">$11,300</h4>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button class="btn btn-primary text-start px-4  position-relative" style="transform: scale(0.7) translateX(50px);border: none;outline:none;">شراء هذه السيارة <i class="fas fa-angle-double-right bg-white text-primary px-2" style="position: absolute; top:0;right: -3; height: 102%;"></i></button>
+<button class="btn btn-dark text-start px-4 position-relative overflow-hidden" style="transform: scale(0.7) translate(50px,-20px);border: none;outline:none;">شارك في المزاد <i class="fas fa-angle-double-right text-white px-2" style="position: absolute; top:0;right: -3; height: 102%; background-color: #686868;"></i></button>
+</div>
+</div>
+</div>
+<img src="../assets/car-3.png" alt="" style="position: absolute; left: 0; height: 50%; bottom:30px;" />
+<div style="text-align: end;direction: rtl">
+<div class="text-dark row text-start align-items-center" style="width: fit-content;">
+<span class="d-flex flex-column col-4 fs-7">
+<span class="h4 text-black">2021</span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<span class="h4 text-black">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: max-content;">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<span class="h4 text-black">72<span class="fs-6 me-2">k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">المسافة المقطوعة</p>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div><div class="containe swiper-slide" style="width: fit-content;">
+<div class="clippo ">
+<div id="parent" style="position: relative; height: 90%; width:100%;">
+<div style="display: flex; justify-content: space-between; align-items: start; height: 90%; width: calc(100% - 14px);padding-inline-start: 32px;">
+<div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; height: 50px; width: 150px;">
+<p class="count-down">06</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">30</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">53</p>
+<p class="count-down" style="font-size: 12px; ">يوم</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">ساعة</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">دقيقة</p>
+</div>
+<div style="text-align: end;">
+<h3 style="margin: 0px;">MAZDA 3 SEDAN</h3>
+<h4 style="margin-top:0" class="text-primary">$11,300</h4>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button class="btn btn-primary text-start px-4  position-relative" style="transform: scale(0.7) translateX(50px);border: none;outline:none;">شراء هذه السيارة <i class="fas fa-angle-double-right bg-white text-primary px-2" style="position: absolute; top:0;right: -3; height: 102%;"></i></button>
+<button class="btn btn-dark text-start px-4 position-relative overflow-hidden" style="transform: scale(0.7) translate(50px,-20px);border: none;outline:none;">شارك في المزاد <i class="fas fa-angle-double-right text-white px-2" style="position: absolute; top:0;right: -3; height: 102%; background-color: #686868;"></i></button>
+</div>
+</div>
+</div>
+<img src="../assets/car-2.png" alt="" style="position: absolute; left: 0; height: 50%; bottom:30px;" />
+<div style="text-align: end;direction: rtl">
+<div class="text-dark row text-start align-items-center" style="width: fit-content;">
+<span class="d-flex flex-column col-4 fs-7">
+<span class="h4 text-black">2021</span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<span class="h4 text-black">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: max-content;">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<span class="h4 text-black">72<span class="fs-6 me-2">k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">المسافة المقطوعة</p>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div><div class="containe swiper-slide" style="width: fit-content;">
+<div class="clippo ">
+<div id="parent" style="position: relative; height: 90%; width:100%;">
+<div style="display: flex; justify-content: space-between; align-items: start; height: 90%; width: calc(100% - 14px);padding-inline-start: 32px;">
+<div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; height: 50px; width: 150px;">
+<p class="count-down">06</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">30</p>
+<p class="count-down text-secondary" >:</p>
+<p class="count-down">53</p>
+<p class="count-down" style="font-size: 12px; ">يوم</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">ساعة</p>
+<p class="count-down" style="font-size: 12px; "> </p>
+<p class="count-down" style="font-size: 12px; ">دقيقة</p>
+</div>
+<div style="text-align: end;">
+<h3 style="margin: 0px;">MAZDA 3 SEDAN</h3>
+<h4 style="margin-top:0" class="text-primary">$11,300</h4>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button class="btn btn-primary text-start px-4  position-relative" style="transform: scale(0.7) translateX(50px);border: none;outline:none;">شراء هذه السيارة <i class="fas fa-angle-double-right bg-white text-primary px-2" style="position: absolute; top:0;right: -3; height: 102%;"></i></button>
+<button class="btn btn-dark text-start px-4 position-relative overflow-hidden" style="transform: scale(0.7) translate(50px,-20px);border: none;outline:none;">شارك في المزاد <i class="fas fa-angle-double-right text-white px-2" style="position: absolute; top:0;right: -3; height: 102%; background-color: #686868;"></i></button>
+</div>
+</div>
+</div>
+<img src="../assets/car-4.png" alt="" style="position: absolute; left: 0; height: 50%; bottom:30px;" />
+<div style="text-align: end;direction: rtl">
+<div class="text-dark row text-start align-items-center" style="width: fit-content;">
+<span class="d-flex flex-column col-4 fs-7">
+<span class="h4 text-black">2021</span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<span class="h4 text-black">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: max-content;">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<span class="h4 text-black">72<span class="fs-6 me-2">k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-10 fw-bold text-center" style="min-width: fit-content;">المسافة المقطوعة</p>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div style="display: flex; position: absolute; left: 0; bottom: 10px; width: 60% !important;" class="text-primary p-4">
+<div style="z-index: 3;">
+<i class="m-4 forward bg-primary btn-next" id="pointer">
+<i class="fas fa-angle-right"></i>
+</i>
+<i class="m-4 reverse bg-primary btn-prev" id="pointer">
+<i class="fas fa-angle-right"></i>
+</i>
+</div>
+<div style="flex-grow: 1; text-align: end;">
+<p class="fw-bolder cursor-pointer">اسمع مني <i class="fas fa-angle-left"></i></p>
+<hr style="width: 80%; margin-right: 20%; z-index: 0;">
+</div>
+</div>
+</div>
+</div>
+<div id="arrow"></div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>var swiper = new Swiper(".mySwiperOffers", {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        slidesPerGroup: 1,
+        observeParents: true,
+        preventClicksPropagation: true,
+        loopPreventsSlide: true,
+        grapCursor: true,
+        loop: true,
+        centeredSlides:false,
+        loopFillGroupWithBlank: true,
+        speed: 1000,
+        navigation: {
+            nextEl: ".btn-next",
+            prevEl: ".btn-prev",
+        },
+    });
+    </script></main>
 </div>
   </body>
 </html>
