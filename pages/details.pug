@@ -1,0 +1,76 @@
+include _components/slider-h
+include _components/car-card
+include _components/slider-offers-3
+include _components/nav-bar
+
+- var dbtns = [{title: "الأمان",points: ["وسائد هوائية أمامية","فرامل ABS","سنتر لوك","مراقبة ضغط الإطارات","الثبات الإلكتروني ESP","مساعد الفرامل BA","أحزمة أمان","توزيع قوة الفرامل إلكترونياً EBD","نظام التحكم بالإنزلاق (TRC)","فرامل يد إلكتروني",]},{title: "الراحة",points: ["placeholder","placeholder"]},{title: "تقنيات",points: ["placeholder"]},{title: "تجهيزات خارجية",points: ["placeholder"]}]
+
+
+
+doctype html
+html(lang="ar",dir="rtl")
+    head
+        include _components/shared-head
+        link(rel="stylesheet", href="../css/used.css")
+        title تفاصيل عن السيارة
+    body 
+        +nav-bar("details")
+        <div class="text-secondary m-4">الرئيسية / سيارات مستعملة / نيسان صني </div>
+
+        <div> placeholder</div>
+
+        //- Details section
+        <div class="row mx-4">
+            <div class="col-12 col-md-9 accordion accordion-flush" id="accordionFlushExample">
+                each dbtn,index in dbtns 
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading-#{index}">
+                            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-#{index}" aria-expanded="false" aria-controls="flush-collapse-#{index}">#{dbtn.title}</button>
+                        </h2>
+                        <div id="flush-collapse-#{index}" class="accordion-collapse collapse" aria-labelledby="flush-heading-#{index}" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body row">
+                                each point, i in dbtn.points
+                                    <div class="col-6" style="color: var(--bs-grey-400);"> - #{point}</div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <p class="pt-3 fs-6">رقم الإعلان : 2541236985 <div class="text-secondary fs-7">( اذكر رقم الإعلان عند الاتصال بخدمة العملاء )</div></p>
+                <hr class="my-4"/>
+                <div>
+                    h4(class="text-primary text-center") قارن بسيارة آخرى
+                    <!-- يمكن اضافة توقعات لاسم السيارة لتحسين تجربة المستخدم -->
+                    input(class="bg-secondary rounded-3 w-100 placeholder-grey p-2 mt-2 mb-4" placeholder="إسم السيارة" id="compareTo", style="border: none; outline:none; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;")
+                </div>
+            </div>     
+            
+            //- You May also like 
+            <div class="d-flex justify-content-between my-4 align-items-end">
+                h2(class="text-primary") قد يعجبك أيضاً
+                <p class="text-clickable text-primary">شاهد الكل <i class="fas fa-angle-left"></i></p>
+            </div>
+            <div style="direction: ltr;display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center; " class="mb-4">
+                <div class="my-4 shadow-sm bg-white rounded py-3 pe-1" style="height: max-content;">
+                    <span class="d-inline-block pe-2" style="width: 70%">
+                        <h4>تقييم العملاء</h4>
+                        <span class="text-dark">    
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i> 5.0
+                        </span>
+                    </span>
+
+                    <span class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
+                </div>
+                +car-card
+                +car-card
+                +car-card 
+            </div>
+        </div>
+
+        
+        include _components/footer

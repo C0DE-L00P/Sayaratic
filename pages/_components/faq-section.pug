@@ -56,7 +56,7 @@ mixin faq-section(questions)
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse#{index+1}" aria-expanded="false" aria-controls="flush-collapse#{index+1}">0#{index+1} <span class="h-100 text-dark accordion-text me-2">#{question.question}</span></button>
                 </h2>
                 <div id="flush-collapse#{index+1}" class="accordion-collapse collapse" aria-labelledby="flush-heading#{index+1}" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body fs-7">#{question.answer}</div>
+                    <div class="accordion-body fs-7 text-dark">#{question.answer}</div>
                 </div>
             </div>
     </div>

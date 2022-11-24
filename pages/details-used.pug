@@ -1,0 +1,160 @@
+include _components/slider-h
+include _components/car-card
+include _components/slider-offers-3
+include _components/nav-bar
+
+- var details = [{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"},{icon: "fas fa-car-rear",title: "الماركة",content: "نيسان"}]
+- var dbtns = [{title: "الأمان",points: ["وسائد هوائية أمامية","فرامل ABS","سنتر لوك","مراقبة ضغط الإطارات","الثبات الإلكتروني ESP","مساعد الفرامل BA","أحزمة أمان","توزيع قوة الفرامل إلكترونياً EBD","نظام التحكم بالإنزلاق (TRC)","فرامل يد إلكتروني",]},{title: "الراحة",points: ["placeholder","placeholder"]},{title: "تقنيات",points: ["placeholder"]},{title: "تجهيزات خارجية",points: ["placeholder"]}]
+
+
+
+doctype html
+html(lang="ar",dir="rtl")
+    head
+        include _components/shared-head
+        link(rel="stylesheet", href="../css/used.css")
+        title تفاصيل عن السيارة
+        <style>
+        .
+            span input[type="radio"] + label{
+                color: var(--bs-grey-400);
+                background-color: transparent;
+                line-height: 56px;
+                cursor: pointer;
+            }
+            span input[type="radio"]:checked + label{
+                background-color: white;
+                border-radius: 16px;
+                color: var(--bs-primary-color);
+                font-weight: 900;
+                width: 100%;
+                height: 100%;
+            }
+            .sloped-left{
+                clip-path: polygon(0% 0%, 90% 0, 100% 100%, 0 100%);
+            }
+        </style>
+    body 
+        +nav-bar("details-used")
+        <div class="text-secondary m-4">الرئيسية / سيارات مستعملة / بي ام دبليو هاي لاين</div>
+        <div class="row p-0 m-0"> 
+            <div class="col-12 col-md-8">IMGER</div>
+            <div class="col-12 col-md-4">
+                h3(class="mb-4 fw-bolder")  بي ام دبليو هاي لاين 
+                //- price card
+                <div class="rounded-3 shadow-sm bg-white overflow-hidden mx-2">
+                    <div class="bg-secondary p-2 d-flex text-center" style="justify-content: stretch;">
+                        <span class="flex-grow-1">
+                            <input type="radio" checked name="price-type" id="price_type_cash" class="d-none"/>
+                            <label for="price_type_cash" class="price-type-radio">كاش</label>
+                        </span>
+                        <span class="flex-grow-1 text-center">
+                            <input type="radio" name="price-type" id="price_type_installments" class="d-none"/>
+                            <label for="price_type_installments" class=" price-type-radio">تقسيط</label>
+                        </span>
+                    </div>
+                    <div class="row px-2 py-4">
+                        <div class="col-6 text-center">
+                            <div style="border-left: 2px solid grey;">
+                                <div>السعر قبل الضريبة</div>
+                                <div class="h3 text-primary fw-bolder mb-4 mt-2">56,400 ريال</div>
+                            </div>
+                            <button class="btn btn-primary w-100">احجزها الآن</button>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div>
+                                <div>السعر بعد الضريبة</div>
+                                <div class="h3 text-dark fw-bolder mb-4 mt-2">64,840 ريال</div>
+                            </div>
+                            <button class="btn btn-outline-primary w-100">إتصل بنا للحجز</button>
+                        </div>  
+                    </div>
+                </div>
+                
+                <p class="py-3 fs-7">رقم الإعلان : 2541236985 <span class="text-secondary">(اذكر رقم الإعلان عند الاتصال بخدمة العملاء)</span></p>
+                <div class="d-flex gap-1">
+                    <button class="flex-grow-1 btn btn-primary p-0 mx-1 border-0 d-flex align-items-center rounded-3 overflow-hidden" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"><i class="fas fa-phone pe-2 ps-1"></i><span class="flex-grow-1 text-primary bg-white w-75 text-center sloped-left d-inline-block h-100" style="width: max-content; line-height: 40px;">إتصل بالبائع</span></button>
+                    <button class="flex-grow-1 btn btn-primary p-0 mx-1 border-0 d-flex align-items-center rounded-3 overflow-hidden" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"><i class="fas fa-message pe-2 ps-1"></i><span class="flex-grow-1 text-primary bg-white w-75 text-center sloped-left d-inline-block h-100" style="width: max-content; line-height: 40px;">دردشة</span></button>
+                    <button class="flex-grow-1 btn btn-success mx-1"><i class="fab fa-whatsapp"></i> واتساب</button>
+                </div>
+            </div>
+        </div>
+
+         //- all details section
+        <main class="container my-4">
+            <h1 class="display-6 text-primary">تفاصيل السيارة </h1>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));" class="mt-4">
+                each detail,index in details
+                    <div class="px-4 py-2 d-flex gap-2 align-items-center">
+                        <i class="#{detail.icon} text-dark" style="flex:1; height: 24px;"></i>
+                        span(class="ml-4 d-inline-block",style="flex:2") #{detail.title}:
+                        span(class="fw-bold text-dark", style="flex:7") #{detail.content}
+                    </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-12 col-md-9 accordion accordion-flush" id="accordionFlushExample">
+                    each dbtn,index in dbtns 
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading-#{index}">
+                                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-#{index}" aria-expanded="false" aria-controls="flush-collapse-#{index}">#{dbtn.title}</button>
+                            </h2>
+                            <div id="flush-collapse-#{index}" class="accordion-collapse collapse" aria-labelledby="flush-heading-#{index}" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body row">
+                                    each point, i in dbtn.points
+                                        <div class="col-6" style="color: var(--bs-grey-400);"> - #{point}</div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    p(class="text-center text-primary") الألوان المتاحة 
+                    <div class="d-flex gap-3 justify-content-center">
+                        <i class="text-clickable bg-warning shadow-sm rounded-3" style="width: 24px; height: 24px;"></i>
+                        <i class="text-clickable bg-danger shadow-sm rounded-3" style="width: 24px; height: 24px;"></i>
+                        <i class="text-clickable bg-dark shadow-sm rounded-3" style="width: 24px; height: 24px;"></i>
+                        <i class="text-clickable bg-white shadow-sm rounded-3" style="width: 24px; height: 24px;"></i>
+                        <i class="text-clickable bg-success shadow-sm rounded-3" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <hr class="mb-4"/>
+
+                    <div class="my-4 shadow-sm bg-white rounded py-3">
+                        <span class="d-inline-block pe-2" style="width: 70%">
+                            <h4>تقييم العملاء</h4>
+                            <span class="text-dark">    
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i> 5.0
+                            </span>
+                        </span>
+
+                        <span class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
+                    </div>
+                    <hr class="my-4"/>
+
+                    <div>
+                        h4(class="text-primary text-center") قارن بسيارة آخرى
+                        <!-- يمكن اضافة توقعات لاسم السيارة لتحسين تجربة المستخدم -->
+                        input(class="bg-secondary rounded-3 w-100 placeholder-grey p-2 mt-2 mb-4" placeholder="إسم السيارة" id="compareTo", style="border: none; outline:none; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;")
+                    </div>
+                </div>                        
+
+            </div>
+            
+            //- You May also like 
+            <div class="d-flex justify-content-between my-4 align-items-end">
+                h2(class="text-primary") قد يعجبك أيضاً
+                <p class="text-clickable text-primary">شاهد الكل <i class="fas fa-angle-left"></i></p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center;">
+                +car-card
+                +car-card
+                +car-card
+                +car-card
+            </div>
+        </main>
+
+        include _components/footer
