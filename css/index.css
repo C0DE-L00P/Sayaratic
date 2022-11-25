@@ -11,7 +11,7 @@
   --bs-btn-success: #29d245;
   --bs-btn-active-success: #06ba27;
 }
-.accordion-button::after{
+.accordion-button-enhanced::after{
   margin-right: auto;
   margin-left: 0px;
   color: black !important;
@@ -19,11 +19,11 @@
 .mx-auto{
   margin-inline: auto !important;
 }
-.accordion-button:not(.collapsed){
+.accordion-button-enhanced:not(.collapsed){
   color: black !important;
   background-color: transparent !important;
 }
-.accordion-button:focus{
+.accordion-button-enhanced:focus{
   box-shadow: none !important;
 }
 .btn-success{

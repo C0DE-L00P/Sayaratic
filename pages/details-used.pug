@@ -36,6 +36,7 @@ html(lang="ar",dir="rtl")
         </style>
     body 
         +nav-bar("details-used")
+        include _components/comments-modal
         <div class="text-secondary m-4">الرئيسية / سيارات مستعملة / بي ام دبليو هاي لاين</div>
         <div class="row p-0 m-0"> 
             <div class="col-12 col-md-8">IMGER</div>
@@ -97,7 +98,7 @@ html(lang="ar",dir="rtl")
                     each dbtn,index in dbtns 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-heading-#{index}">
-                                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-#{index}" aria-expanded="false" aria-controls="flush-collapse-#{index}">#{dbtn.title}</button>
+                                <button class="accordion-button accordion-button-enhanced collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-#{index}" aria-expanded="false" aria-controls="flush-collapse-#{index}">#{dbtn.title}</button>
                             </h2>
                             <div id="flush-collapse-#{index}" class="accordion-collapse collapse" aria-labelledby="flush-heading-#{index}" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body row">
@@ -130,8 +131,7 @@ html(lang="ar",dir="rtl")
                                 <i class="fas fa-star text-warning"></i> 5.0
                             </span>
                         </span>
-
-                        <span class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
+                        <span data-bs-toggle="modal" data-bs-target="#exampleModal" class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
                     </div>
                     <hr class="my-4"/>
 

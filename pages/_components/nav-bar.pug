@@ -46,25 +46,22 @@ mixin nav-bar(selected)
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link #{selected === 'home' && 'active'}" aria-current="page" href="./home.html">الرئيسية</a>
+                            <a class="nav-link #{selected === 'home' && 'active'}" aria-current="page" href="./index.html">الرئيسية</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link #{selected === 'new' && 'active'}" href="./new.html">سيارات جديدة</a>
                         </li>
-                        //- <li class="nav-item">
-                        //-     <a class="nav-link #{selected === 'used' && 'active'}" href="./used.html">سيارات مستعملة</a>
-                        //- </li>
                         <li class="nav-item">
-                            <a class="nav-link #{selected === 'auctions' && 'active'}" href="./auctions.html">مزادات</a>
+                            <a class="nav-link #{selected === 'used' && 'active'}" href="./used.html">سيارات مستعملة</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link #{selected === 'parts' && 'active'}" href="./parts.html">قطع الغيار</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link #{selected === 'care' && 'active'}" href="#">خدمة العناية</a>
+                            <a class="nav-link #{selected === 'care' && 'active'}" href="./care.html">خدمات العناية</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link #{selected === 'contact' && 'active'}" href="#">تواصل معنا</a>
+                            <a class="nav-link #{selected === 'contact' && 'active'}" href="./contact.html">تواصل معنا</a>
                         </li>
                     </ul>
                     <form class="d-flex">

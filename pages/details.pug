@@ -22,10 +22,10 @@ html(lang="ar",dir="rtl")
         //- Details section
         <div class="row mx-4">
             <div class="col-12 col-md-9 accordion accordion-flush" id="accordionFlushExample">
-                each dbtn,index in dbtns 
+                each dbtn,index in dbtns
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-heading-#{index}">
-                            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-#{index}" aria-expanded="false" aria-controls="flush-collapse-#{index}">#{dbtn.title}</button>
+                            <button class="accordion-button accordion-button-enhanced collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-#{index}" aria-expanded="false" aria-controls="flush-collapse-#{index}">#{dbtn.title}</button>
                         </h2>
                         <div id="flush-collapse-#{index}" class="accordion-collapse collapse" aria-labelledby="flush-heading-#{index}" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body row">

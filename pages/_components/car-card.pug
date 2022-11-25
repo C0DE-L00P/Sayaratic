@@ -1,8 +1,12 @@
-mixin car-card(isComparingPossible = true)
+mixin car-card(isComparingPossible = true, url="./details.html")
     <div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
-        <h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+        <a href="#{url}" style="text-decoration: none;">
+            <h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+        </a>
         <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
-            <img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+            <a href="#{url}">
+                <img src="../assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+            </a>
         </div>
         <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
         <div class="text-dark row text-end justify-items-center align-items-start">

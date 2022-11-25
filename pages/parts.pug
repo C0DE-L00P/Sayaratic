@@ -5,14 +5,22 @@ include _components/car-card
 include _components/slider-offers-3
 include _components/nav-bar
 
+- var tires = [{title: "جنط من BBC ألومنيوم",img: "../assets/tire-1.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-2.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-3.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-4.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-5.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-6.jpg"}]
+- var categories = [{title: "اكتشف جميع قطع الغيار", icon: "../assets/p-cat-1.jpg"},{title: "الفرامل والأقمشة", icon: "../assets/p-cat-2.jpg"},{title: "الأبواب والرفرف والكبوت", icon: "../assets/p-cat-3.jpg"},{title: "الشمعات والإصطبات", icon: "../assets/p-cat-4.jpg"},{title: "البواجي والفلاتر والسيور", icon: "../assets/p-cat-5.jpg"},{title: "المساعدات والمقصات", icon: "../assets/p-cat-6.jpg"},{title: "الدفرنس والرمانات", icon: "../assets/p-cat-7.jpg"},{title: "الشكمان", icon: "../assets/p-cat-8.jpg"},{title: "نظام الوقود", icon: "../assets/p-cat-9.jpg"},{title: "نظام التكييف والتبريد", icon: "../assets/p-cat-10.jpg"},{title: "المكائن والقيرات وملحقاتها", icon: "../assets/p-cat-11.jpg"}]
+
 
 doctype html
 html(lang="ar",dir="rtl")
     head
         include _components/shared-head
-        link(rel="stylesheet", href="../css/used.css")
         title قطع الغيار
-    body 
+        <style>
+        .
+            input[type="checkbox"]:checked + label{
+                color: var(--bs-danger) !important;
+            }
+        </style>
+    body()
         +nav-bar("parts")
         <div class="position-relative" style="height: calc(100% - 78px)">
             +slider-v(true,[
@@ -33,7 +41,7 @@ html(lang="ar",dir="rtl")
                     </div>
                 </form>
                 
-                <div class="text-white" style="display: flex; flex-direction: column; gap: 8px;  position: absolute; left: 16px; bottom: 10px; align-items: center; justify-content: center; z-index: 11;">
+                <div class="text-white" style="display: flex; flex-direction: column; gap: 16px;  position: absolute; left: 40px; bottom: 80px; align-items: center; justify-content: center; z-index: 11;">
                     <i class="fa-brands cursor-pointer fa-whatsapp"></i>
                     <i class="fa-brands cursor-pointer fa-twitter"></i>
                     <i class="fa-brands cursor-pointer fa-facebook-f"></i>
@@ -45,7 +53,7 @@ html(lang="ar",dir="rtl")
 
     //- TODO make toggle for filter modal
     <div class="row">
-        <div class="col-0 d-none d-md-inline-block col-md-3">
+        <div class="col-0 d-none d-lg-inline-block col-lg-3 px-0">
             <h3 class="text-primary py-2" style="margin-top: 40px; margin-bottom: 20px;"><span class="text-white bg-primary pt-4 ps-1 pe-3" style="border-radius: 100% 0% 0% 100% / 80% 4% 0% 20%;"> فلتر </span>البحث</h3>
             <div class="p-4">
                 <!-- first filter -->
@@ -58,7 +66,7 @@ html(lang="ar",dir="rtl")
                             </div>
                             <span class="text-primary fs-7" >(#{choice.count})</span>
                         </div>
-                    p(class="text-clickable text-center w-100 text-primary mt-2") عرض المزيد
+                    p(class="text-clickable text-center w-100 text-primary mt-2 pb-3") عرض المزيد
                 </div>
                 <!-- second filter -->
                 <div class="bg-secondary rounded-2 my-3">
@@ -70,7 +78,7 @@ html(lang="ar",dir="rtl")
                             </div>
                             <span class="text-primary fs-7" >(#{choice.count})</span>
                         </div>
-                    p(class="text-clickable text-center w-100 text-primary mt-2") عرض المزيد
+                    p(class="text-clickable text-center w-100 text-primary mt-2 pb-3") عرض المزيد
                 </div>
                 <!-- third filter -->
                 <div class="bg-secondary rounded-2 my-3">
@@ -82,12 +90,76 @@ html(lang="ar",dir="rtl")
                             </div>
                             <span class="text-primary fs-7" >(#{choice.count})</span>
                         </div>
-                    p(class="text-clickable text-center w-100 text-primary mt-2") عرض المزيد
+                    p(class="text-clickable text-center w-100 text-primary mt-2 pb-3") عرض المزيد
                 </div>
                 <button class="btn btn-primary w-100"> اظهر النتائج ( 520 )</button>
             </div>
         </div>
-        <div class="col-12 col-md-9">
-            +slider-tabs(["الإطارات","الفرامل والأقمشة",'الصدامات والشبوك','المكائن والقيرات',"الشمعات والاصطبات","الأبواب والنوافذ",'الكشافات والأضواء'])
+
+        <button class="btn btn-primary rounded-circle position-fixed d-inline-block d-lg-none" style="bottom: 24px; right: 24px; width: 44px; height: 44px; z-index: 4; padding-top: 12px;"><i class="fas fa-filter"></i></button>
+
+        <div class="col-12 col-lg-9 px-0">
+            +slider-tabs(["الفرامل والأقمشة",'الصدامات والشبوك','المكائن والقيرات',"الشمعات والاصطبات","الأبواب والنوافذ",'الكشافات والأضواء',"الإطارات"])
+                
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, 260px); place-content: center center; gap: 40px;" class="mb-4">
+                each tire, index in tires
+                    <div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+                        <h6 class="mb-3 mt-1 fs-6" style="color: rgb(108, 108, 108)">#{tire.title}</h6>
+                        <div class="position-relative overflow-hidden rounded-2 mb-2" style="height: 148px"> 
+                            <img src="#{tire.img}" alt="tire_img" height="100%" style="border-radius: 8px" class="hoverZoomLink" />
+                        </div>
+                        <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+                        <div class="text-dark row text-end justify-items-center align-items-start">
+                            <span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">50.00</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">450.00</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+                                </span><span class="text-dark fs-5 text-decoration-line-through">750.00</span class="fs-9">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+                                <p></p>
+
+                                //- <span class="h6 text-black" style="font-weight: 700;">2021</span>
+                                
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+                            <button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+                            <span>
+                                <input type="checkbox" class="d-none" id="favored-#{index}">
+                                <label class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1" for="favored-#{index}">إضافة للمفضلة <i class="fas fa-heart"></i></label>
+                            </span>
+                        </div>
+                    </div>
+            </div>
+            p(class="container text-primary text-clickable fw-bolder fs-5 mt-2 mb-4 text-start") شاهد الكل <i class="fas fa-angle-left"></i>
+        </div>
+        
+        <!-- part categories section -->
+
+        <div class="p-0 text-center">
+            h1(style="border-bottom: 2px solid var(--bs-grey-200);", class="text-primary h3 fw-bold pb-2 mt-4 mb-2 d-inline-block") استكشف خدمات العناية
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, 240px); gap: 24px; place-content: center center;" class="my-4">
+                <!-- زود hover effect هنا -->
+                each cat, index in categories
+                    <div class="text-center rounded-3 pt-3 pb-2 cursor-pointer" style="border: 1px solid var(--bs-grey-400); height: 140px;">
+                        <img src="#{cat.icon}" alt="#{cat.title} img" style="height: 60%;"/>
+                        p(class="text-primary mt-2") #{cat.title}
+                    </div>
+            </div>
+
+            <!-- slider on brand -->
+
+            +slider-h("تصفح السيارات حسب الماركة","جميع الماركات",false,[
+                    {img: "./../assets/brands-1.png", title: 'sedan'},
+                    {img: "./../assets/brands-2.png", title: 'sedan'},
+                    {img: "./../assets/brands-3.png", title: 'sedan'},
+                    {img: "./../assets/brands-4.png", title: 'sedan'},
+                    {img: "./../assets/brands-5.png", title: 'sedan'},
+                    {img: "./../assets/brands-6.png", title: 'sedan'},
+                    {img: "./../assets/brands-7.png", title: 'sedan'},
+                    {img: "./../assets/brands-8.png", title: 'sedan'},
+                    {img: "./../assets/brands-9.png", title: 'sedan'},
+                    {img: "./../assets/brands-10.png", title: 'sedan'},
+                    {img: "./../assets/brands-11.png", title: 'sedan'},
+                    ])
         </div>
     </div>
+    
+    include _components/mobile-ad-banner
+    include _components/sellers
+    include _components/footer

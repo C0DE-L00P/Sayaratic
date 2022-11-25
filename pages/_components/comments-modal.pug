@@ -1,0 +1,57 @@
+<!-- Vertically centered scrollable modal -->
+<style>
+.
+    .modal-dialog #in_comment:empty{
+
+    }
+</style>
+
+- var comments = []
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content position-relative">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary">تعليقات المنشور</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            
+            <div class="modal-body">
+                each comment, index in comments
+                    <div class="d-flex px-4">
+                        <img src="#{comment.img}" alt="comment writer img" style="border-radius: 50%; border: 1px solid grey; width: 45px; height: 45px;"/>
+                        <div class="flex-grow-1">
+                            <span class="d-inline-block ms-2">ahmed<span>
+                            <span>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </span>
+                            <p class="fs-4 my-3">csa</p>
+                        </div>
+                        <p class="text-semi-secondary fs-9 mb-2" style="align-self: end;">16 يونيو 2022 , مصر</p>
+                        <hr/>
+                    </p>
+
+                <!-- input and rate -->
+
+                <div class="d-flex flex-wrap">
+                    <input type="text" id="in_comment" placeholder="شاركنا تجربتك !" class="placeholder-secondary bg-secondary rounded-3 flex-grow-1" style="min-width: 200px;"/>
+                    p(class="text-primary") مدى رضائك عن الخدمة
+                    <!-- خلي النجوم هنا ديناميك مش بس شكل -->
+                    <span>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                    </span>
+                    <i class="mx-2 fas fa-paper-plane cursor-pointer text-secondary"></i> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

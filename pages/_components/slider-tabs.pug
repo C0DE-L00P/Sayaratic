@@ -26,12 +26,12 @@ mixin slider-tabs(items)
 
 
     <!-- Swiper -->
-    <div class="py-4 slider-tabs-wrapper position-relative">
+    <div class="py-4 slider-tabs-wrapper position-relative overflow-hidden" style="direction: ltr;">
         <div class="swiper-tabs mySwiperTabs" style="position: relative;">
             <div class="swiper-wrapper grabbable">
                 each item, index in items
                     <div class="swiper-slide" style="width:max-content;">
-                        <input type="radio" name="parts-cat" class="d-none" id="#{item}"/>
+                        <input type="radio" name="parts-cat" class="d-none" id="#{item}" checked="#{index===0}"/>
                         <label class="py-2" style="width: max-content;"  for="#{item}">#{item}</label>
                     </div>
             </div>
