@@ -1,0 +1,25 @@
+include _components/slider-h
+include _components/car-card
+include _components/slider-offers-3
+include _components/nav-bar
+include _components/auction-card
+
+- var auctions = [{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-1.png"},date: "20 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-2.png"},date: "20 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-4.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-5.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-3.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"}]
+
+doctype html
+html(lang="ar" dir="rtl")
+    head
+        include _components/shared-head
+        title مزايداتي
+    body 
+        +nav-bar("my-auctions")
+        
+        <div class="text-center py-4 d-flex flex-column container" style="min-height: 90vh;">
+            <p class="fs-6 mb-4 text-primary w-100 text-end mt-4 fw-bolder"> مزايداتي <span class="text-secondary fw-light">- #{auctions.length}</span></p>
+
+            each auction,index in auctions 
+                +auction-card(auction.car, auction.date,auction.timeLeft)
+        </div>
+        
+        include _components/footer
+        +footer("my-auctions")

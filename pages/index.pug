@@ -7,7 +7,6 @@ include _components/nav-bar
 include _components/faq-section
 
 
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
@@ -25,7 +24,7 @@ include _components/faq-section
         "../assets/slider-3.jpg",
         "../assets/slider-4.jpg",
       ])
-      <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 10;flex-direction: column;">
+      <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 5;flex-direction: column;">
         <h3 class="text-white d-block">جاهز لبدء رحلتك <span class="text-primary h1">!</span></h3>
         <form class="row">
             <div class="col-auto">
@@ -37,20 +36,20 @@ include _components/faq-section
             </div>
         </form>
         
-        <div class="text-white" style="display: flex; flex-direction: column; gap: 16px;  position: absolute; left: 40px; bottom: 80px; align-items: center; justify-content: center; z-index: 11;">
-            <i class="fa-brands cursor-pointer fa-whatsapp"></i>
-            <i class="fa-brands cursor-pointer fa-twitter"></i>
-            <i class="fa-brands cursor-pointer fa-facebook-f"></i>
-            <i class="fa-brands cursor-pointer fa-youtube"></i>
-            <i class="fa-brands cursor-pointer fa-instagram"></i>
+        <div class="text-white" style="display: flex; flex-direction: column; gap: 16px;  position: absolute; left: 40px; bottom: 80px; align-items: center; justify-content: center; z-index: 6;">
+            <i class="text-clickable fa-brands cursor-pointer fa-whatsapp"></i>
+            <i class="text-clickable fa-brands cursor-pointer fa-twitter"></i>
+            <i class="text-clickable fa-brands cursor-pointer fa-facebook-f"></i>
+            <i class="text-clickable fa-brands cursor-pointer fa-youtube"></i>
+            <i class="text-clickable fa-brands cursor-pointer fa-instagram"></i>
         </div>
       </div>
     </div>
 
     <div style="height: max(300px, max-content); margin:0px;" class="row grid">
-      +category-card("شراء سيارة", "اكتشف ما تريده","fas fa-key","../assets/slider-3.jpg")
-      +category-card("شراء سيارة", "لا ما تريده","fas fa-key","../assets/slider-2.jpg")
-      +category-card("شراء سيارة", "اكتشف ما تريده","fas fa-key","../assets/slider-4.jpg")
+      +category-card("بيع سيارة", "بيع سيارتك القديمة","fas fa-hand-holding-dollar","../assets/slider-3.jpg",'./used.html')
+      +category-card("شراء سيارة", "اكتشف ما تريده","fas fa-key","../assets/slider-2.jpg",'new.html')
+      +category-card("قطع غيار سيارات", "اكتشف ما تريده","fas fa-gears","../assets/slider-4.jpg",'parts.html')
     </div>
 
     <div class="text-center py-4">
@@ -120,7 +119,9 @@ include _components/faq-section
         +car-card
         +car-card
       </div>
-      <p class="text-start m-4 text-primary fw-bolder text-clickable">شاهد الكل <i class="fas fa-angle-left"></i></p>
+      <div class="text-start my-4">
+        <a href="./used-more.html" class="text-decoration-none text-start m-4 text-primary fw-bolder text-clickable">شاهد الكل <i class="fas fa-angle-left"></i></a>
+      </div>
     </div>
 
     <div class="bg-secondary position-relative d-flex flex-wrap">
@@ -166,6 +167,7 @@ include _components/faq-section
 
     include _components/mobile-ad-banner
     include _components/footer
+    +footer("home")
 
   </body>
 </html>

@@ -1,0 +1,72 @@
+<!-- Vertically centered scrollable modal -->
+<style>
+.
+    .modal-dialog #in_comment:empty{
+
+    }
+</style>
+
+- var comments = [{author: "إسلام ياسر",img: "../assets/img (1).jpg", content: "خدمة ممتازة جداً ... أتمنى لكم التوفيق", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "خدمة ممتازة جداً ... أتمنى لكم التوفيق خدمة ممتازة جداً ... أتمنى لكم التوفيق خدمة ممتازة جداً ... أتمنى لكم التوفيق خدمة ممتازة جداً ... أتمنى لكم التوفيق خدمة ممتازة جداً ... أتمنى لكم التوفيق", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "../assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"}]
+
+<div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="commentsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content position-relative">
+            <button type="button" class="btn-close m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <h5 class="modal-title text-primary text-center fw-bolder">تعليقات المنشور</h5>
+            
+            <div class="modal-body px-4">
+                each comment, index in comments
+                    <div class="d-flex px-4 gap-2">
+                        <img src="#{comment.img}" alt="comment writer img" style="border-radius: 50%; border: 1px solid grey; width: 50px; height: 50px;"/>
+                        <div class="flex-grow-1">
+                            <span class="d-inline-block ms-2 fs-5 fw-bold">#{comment.author}<span>
+                            <span style="min-width: max-content; display: inline-block">
+                                <i class="fas fs-6 fa-star text-warning"></i>
+                                <i class="fas fs-6 fa-star text-warning"></i>
+                                <i class="fas fs-6 fa-star text-warning"></i>
+                                <i class="fas fs-6 fa-star text-warning"></i>
+                                <i class="fas fs-6 fa-star text-warning"></i>
+                            </span>
+                            <p class="fs-6 my-3 fw-light">#{comment.content}</p>
+                        </div>
+                    </div>
+                    <p class="text-semi-secondary fs-9 mb-2 text-start" style="align-self: end;">#{comment.date}</p>
+                    <hr/>
+            </div>
+            
+            <!-- input and rate -->
+            <div class="modal-footer">
+                <div class="d-flex flex-wrap align-items-center gap-2 w-100">
+                    <input type="text" id="in_comment" placeholder="شاركنا تجربتك !" class="placeholder-secondary bg-secondary rounded-3 flex-grow-1 px-3 py-2 fs-7" style="min-width: 320px; border: none; outline: none;"/>
+                    p(class="text-primary p-0 m-0") مدى رضائك عن الخدمة
+                    <span>
+                        <i id="star1" class="text-clickable fas fa-star text-warning" onclick="Rate(1)"></i>
+                        <i id="star2" class="text-clickable fas fa-star text-secondary" onclick="Rate(2)"></i>
+                        <i id="star3" class="text-clickable fas fa-star text-secondary" onclick="Rate(3)"></i>
+                        <i id="star4" class="text-clickable fas fa-star text-secondary" onclick="Rate(4)"></i>
+                        <i id="star5" class="text-clickable fas fa-star text-secondary" onclick="Rate(5)"></i>
+                    </span>
+                    <i class="mx-2 fas fa-paper-plane cursor-pointer text-secondary"></i> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+.
+    function Rate(rating){
+        let rest = 5;
+        while(rest > rating){
+            document.querySelector("#star"+rest).classList.remove("text-warning")
+            document.querySelector("#star"+rest).classList.add("text-secondary")
+            rest--;
+        }
+        while(rating > 0){
+            document.querySelector("#star"+rating).classList.add("text-warning")
+            document.querySelector("#star"+rating).classList.remove("text-secondary")
+            rating--;
+        }
+    }
+</script>

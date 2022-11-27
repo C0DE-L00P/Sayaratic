@@ -20,8 +20,10 @@ html(lang="ar",dir="rtl")
                 color: var(--bs-danger) !important;
             }
         </style>
-    body()
+    body(style="overflow-x: hidden;")
         +nav-bar("parts")
+        include _components/modal-side-filter-parts
+
         <div class="position-relative" style="height: calc(100% - 78px)">
             +slider-v(true,[
                 "../assets/slider-1.jpg",
@@ -29,19 +31,19 @@ html(lang="ar",dir="rtl")
                 "../assets/slider-3.jpg",
                 "../assets/slider-4.jpg",
             ])
-            <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 10;flex-direction: column;">
+            <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 6;flex-direction: column;">
                 <h3 class="text-white d-block">كل اللي تحتاجه تلاقيه <span class="text-primary h1">!</span></h3>
                 <form class="row">
                     <div class="col-auto">
                         <label for="inputSearch" class="visually-hidden">Search</label>
-                        <input type="text" class="form-control p-2 px-4 placeholder-secondary placeholder-sm" id="inputSearch" placeholder="ابحث عن الموديل او نوع المركبة الذي تريده">
+                        <input type="text" class="form-control p-2 px-4 placeholder-secondary placeholder-sm" id="inputSearch" placeholder="ابحث عن فطع غيار السيارات">
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary mb-3 p-2 px-4"><span class="d-none d-md-inline-block mx-2">البحث الآن </span><i class="fas fa-magnifying-glass"></i></button>
                     </div>
                 </form>
                 
-                <div class="text-white" style="display: flex; flex-direction: column; gap: 16px;  position: absolute; left: 40px; bottom: 80px; align-items: center; justify-content: center; z-index: 11;">
+                <div class="text-white" style="display: flex; flex-direction: column; gap: 16px;  position: absolute; left: 40px; bottom: 80px; align-items: center; justify-content: center; z-index: 7;">
                     <i class="fa-brands cursor-pointer fa-whatsapp"></i>
                     <i class="fa-brands cursor-pointer fa-twitter"></i>
                     <i class="fa-brands cursor-pointer fa-facebook-f"></i>
@@ -51,52 +53,12 @@ html(lang="ar",dir="rtl")
         </div>
     </div>
 
-    //- TODO make toggle for filter modal
     <div class="row">
         <div class="col-0 d-none d-lg-inline-block col-lg-3 px-0">
-            <h3 class="text-primary py-2" style="margin-top: 40px; margin-bottom: 20px;"><span class="text-white bg-primary pt-4 ps-1 pe-3" style="border-radius: 100% 0% 0% 100% / 80% 4% 0% 20%;"> فلتر </span>البحث</h3>
-            <div class="p-4">
-                <!-- first filter -->
-                <div class="bg-secondary rounded-2 my-3">
-                    each choice,index in [{title: "إطارات من BBC",count: 2512},{title: "إطارات من BBC",count: 2512},{title: "إطارات من BBC",count: 2512},{title: "إطارات من BBC",count: 2512},{title: "إطارات من BBC",count: 2512}]
-                        <div class="w-100 d-flex px-4 py-2 justify-content-between">
-                            <div>
-                                <input type="radio" name="rad-manufacturer" id="#{choice.title}"/>
-                                <label for="#{choice.title}" class="fs-6-5 fw-semibold" style="margin-inline-start: 8px;">#{choice.title}</label>
-                            </div>
-                            <span class="text-primary fs-7" >(#{choice.count})</span>
-                        </div>
-                    p(class="text-clickable text-center w-100 text-primary mt-2 pb-3") عرض المزيد
-                </div>
-                <!-- second filter -->
-                <div class="bg-secondary rounded-2 my-3">
-                    each choice,index in [{title: "مقاس 250 * 20",count: 2512},{title: "مقاس 210 * 20",count: 2512},{title: "مقاس 250 * 15",count: 2512}]
-                        <div class="w-100 d-flex px-4 py-2 justify-content-between">
-                            <div>
-                                <input type="radio" name="rad-size" id="#{choice.title}"/>
-                                <label for="#{choice.title}" class="fs-6-5 fw-semibold" style="margin-inline-start: 8px;">#{choice.title}</label>
-                            </div>
-                            <span class="text-primary fs-7" >(#{choice.count})</span>
-                        </div>
-                    p(class="text-clickable text-center w-100 text-primary mt-2 pb-3") عرض المزيد
-                </div>
-                <!-- third filter -->
-                <div class="bg-secondary rounded-2 my-3">
-                    each choice,index in [{title: "2022",count: 2512},{title: "2021",count: 2512},{title: "2020",count: 2512},{title: "2019",count: 2512}]
-                        <div class="w-100 d-flex px-4 py-2 justify-content-between">
-                            <div>
-                                <input type="radio" name="rad-model-year" id="#{choice.title}"/>
-                                <label for="#{choice.title}" class="fs-6-5 fw-semibold" style="margin-inline-start: 8px;">#{choice.title}</label>
-                            </div>
-                            <span class="text-primary fs-7" >(#{choice.count})</span>
-                        </div>
-                    p(class="text-clickable text-center w-100 text-primary mt-2 pb-3") عرض المزيد
-                </div>
-                <button class="btn btn-primary w-100"> اظهر النتائج ( 520 )</button>
-            </div>
+            include _components/side-filter-parts
         </div>
-
-        <button class="btn btn-primary rounded-circle position-fixed d-inline-block d-lg-none" style="bottom: 24px; right: 24px; width: 44px; height: 44px; z-index: 4; padding-top: 12px;"><i class="fas fa-filter"></i></button>
+        
+        <button data-bs-toggle="modal" data-bs-target="#sideFilterPartsModal" data-bs-whatever="@getbootstrap" class="btn btn-primary rounded-circle position-fixed d-inline-block d-lg-none" style="bottom: 24px; right: 24px; width: 44px; height: 44px; z-index: 21; padding-top: 12px;"><i class="fas fa-filter"></i></button>
 
         <div class="col-12 col-lg-9 px-0">
             +slider-tabs(["الفرامل والأقمشة",'الصدامات والشبوك','المكائن والقيرات',"الشمعات والاصطبات","الأبواب والنوافذ",'الكشافات والأضواء',"الإطارات"])
@@ -104,8 +66,8 @@ html(lang="ar",dir="rtl")
             <div style="display: grid; grid-template-columns: repeat(auto-fit, 260px); place-content: center center; gap: 40px;" class="mb-4">
                 each tire, index in tires
                     <div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
-                        <h6 class="mb-3 mt-1 fs-6" style="color: rgb(108, 108, 108)">#{tire.title}</h6>
-                        <div class="position-relative overflow-hidden rounded-2 mb-2" style="height: 148px"> 
+                        <h6 class="text-clickable mb-3 mt-1 fs-6" style="color: rgb(108, 108, 108)">#{tire.title}</h6>
+                        <div class="text-clickable position-relative overflow-hidden rounded-2 mb-2" style="height: 148px"> 
                             <img src="#{tire.img}" alt="tire_img" height="100%" style="border-radius: 8px" class="hoverZoomLink" />
                         </div>
                         <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
@@ -163,3 +125,4 @@ html(lang="ar",dir="rtl")
     include _components/mobile-ad-banner
     include _components/sellers
     include _components/footer
++footer("parts")

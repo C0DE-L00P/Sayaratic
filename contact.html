@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <link rel="stylesheet" href="./css/fa.css">
+    <link rel="stylesheet" href="./css/bs.css">
+    <link rel="stylesheet" href="./css/index.css"><script src="./js/bs.js" defer></script>
+<script src="./js/fa.js" defer></script>
+<!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
+<link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
+<style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا</title><style>.form-contact .form-control-c{
+        background-color: white !important;
+        border: none;
+        padding-bottom: 16px;
+        border-bottom: 3px solid var(--bs-primary-color);
+    }
+    .form-contact .form-control-c::placeholder{
+        color: grey;
+    }
+    .form-contact .form-control-c:active,.form-contact .form-control:focus{
+        box-shadow: none;
+        border-color: black;
+    }
+    .form-contact textarea{
+        border: 2px solid var(--bs-primary-color);
+        border-radius: 18px;
+        padding: 24px;
+        resize: none;
+    }
+    .form-contact textarea::placeholder{
+        color: var(--bs-grey-400);
+    }
+    #map {
+        height: 380px;
+        width: 98%;
+        margin-inline: auto;
+        border-radius: 16px;
+        margin-bottom: 24px;
+    }
+    .type-card {
+        display: flex;
+        width: 100%;
+        background: #fafafa;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 2px 15px -8px rgb(0 0 0 / 31%);
+        justify-content: space-between;
+        align-items: center;
+    }
+    .type-card p {
+        margin-bottom: 0;
+        color: grey;
+        user-select: none;
+    }
+    .type-card i {
+        color: #ff5700;
+    }</style>
+  </head>
+  <body style="overflow-x: hidden;"> 
+    <style>.nav-bar {
+        box-shadow: 0 3px 5px #80808029;
+    }
+    .nav-bar .navbar {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+    .nav-bar .navbar-expand-lg .navbar-nav .nav-link {
+        margin-left: 30px;
+        font-weight: 500;
+        padding-right: 0;
+        padding-left: 0;
+        font-size: 18px;
+        line-height: 1.2;
+        color: #cccccc;
+    }
+    .nav-bar .navbar-expand-lg .navbar-nav .nav-link:hover {
+        color: #113250 !important;
+    }
+    .nav-bar .active {
+        color: #113250 !important;
+        border-bottom: 2px solid #ff5700;
+        border-right: none;
+    }
+    @media screen and (max-width: 990px){
+        .nav-bar .active {
+            border-bottom: none;
+            border-right: 3px solid #ff5700;
+        }
+    }
+    .nav-bar .btn-outline-success {
+        color: #ff5700;
+        border-color: #ff5700;
+    }
+    .nav-bar .btn-outline-success:hover {
+        color: #fff;
+        background: #ff5700;
+    }
+    #side-bar{
+        right: -80px;
+        transition-duration: 0.3s;
+    }
+    #show-side-bar:checked + #side-bar{
+        right: -2px;
+    }
+    .navbar-toggler-icon{
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background-image: var(--bs-navbar-toggler-icon-bg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }</style>
+    <style>.modal-login input[type="checkbox"] + label > .fa-check{
+        color: white;
+        background-color: white;
+        cursor: pointer;
+    }
+    .modal-login input[type="checkbox"]:checked + label > .fa-check{
+        background-color: var(--bs-primary-color);
+    }
+    .modal-login input[type="text"], .modal-dialog input[type="password"]{
+        border: none;
+        border-bottom: 1px solid var(--bs-grey-200);
+        width: 80%;
+        margin-inline: auto;
+    }
+    .modal-login input[type="text"]:focus,.modal-login input[type="password"]:focus{
+        box-shadow: none;
+        border-color: var(--bs-primary-color) !important;
+    }</style>
+<script>function login(){
+      if(document.querySelector("#remember_me").checked)  localStorage.setItem('user', JSON.stringify({name: 'Anonymous',id: 242775444, email: 'anonymous@gmail.com',phone: '+996 125 4768', location: 'الرياض ,السعودية' }));
+      else sessionStorage.setItem('user', JSON.stringify({name: 'Anonymous',id: 242775444, email: 'anonymous@gmail.com',phone: '+996 125 4768', location: 'الرياض ,السعودية' }));
+    }</script>
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" style=" backdrop-filter: blur(4px);">
+<div class="modal-dialog modal-login p-4 overflow-hidden" style="width: min(100%, 425px);">
+<div class="modal-content">
+<div class="modal-header" style="border:none;">
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body text-center">
+<img src="./assets/logo.png" alt="logo img" height="120px"/>
+<form onsubmit="login()">
+    <p class="fs-7">مرحباً بعودتك من جديد </p><div class="mb-3">
+<input type="text" class="form-control" id="in_phone" placeholder="رقم الجوال" required>
+</div>
+<div class="mb-3">
+<input type="password" class="form-control" id="in_pass" placeholder="كلمة المرور" required>
+</div>
+<div class="w-100 text-end mx-2">
+<input type="checkbox" id="remember_me" class="d-none"/>
+<label for="remember_me" class="cursor-pointer"><i class="rounded-3 p-1 shadow-sm fas fa-check" style="width: 12px; height: 12px; margin-right: 34px;"></i>  تذكرني</label>
+</div><br/><div style="border: none;" class="mb-4">
+<button type="submit" class="d-block btn btn-primary mx-auto">تسجيل الدخول</button>
+<p class="fs-7 text-center mt-4">نسيت كلمة المرور؟ <span class="text-primary text-clickable">إعادة</span></p>
+<p class="fs-7  text-center">لا تمتلك حساباً؟ <span class="text-primary text-clickable">إشترك الآن</span></p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div><input class="d-none" id="show-side-bar" type="checkbox"/><div id="side-bar" style="position: fixed; justify-content: space-between; z-index: 21; bottom: 0px; top: 0px; margin-top: 70px; margin-bottom: 24px; background-color: var(--bs-primary-color); padding: 40px 8px 8px; display: flex; flex-direction: column; gap: 12px; color: white; text-align: center; border-radius: 32px 0 0 32px; transition-duration: 0.3s;">
+<div class="d-flex flex-column gap-1">
+<div class="text-clickable" data-bs-toggle="modal" data-bs-target="#accountModal" data-bs-whatever="@getbootstrap">
+<i class="d-block fas fa-user fs-4 mx-auto"></i>
+<p class="fs-7">ملفي</p>
+</div>
+<a class="text-decoration-none text-clickable text-white" href="./my-auctions.html">
+<i class="d-block fas fa-chart-simple fs-4 mx-auto"></i>
+<p class="fs-7">مزايداتي</p>
+</a>
+<a class="text-decoration-none text-clickable text-white" href="./my-favourites.html">
+<i class="d-block fas fa-heart fs-4 mx-auto"></i>
+<p class="fs-7">المفضلة</p>
+</a>
+<a class="text-decoration-none text-clickable text-white" href="./my-chats.html">
+<i class="d-block fas fa-comments fs-4 mx-auto"></i>
+<p class="fs-7">المحادثات</p>
+</a>
+<div class="text-clickable" onclick="localStorage.removeItem('user'); sessionStorage.removeItem('user'); location.reload();">
+<i class="d-block fas fa-door-open fs-4 mx-auto"></i>
+<p class="fs-7">خروج</p>
+</div>
+</div>
+<!-- ممكن تزود انيمشن لزرار الـ close -->
+<label class="text-clickable mb-4" style="justify-self: end;" for="show-side-bar">
+<i class="d-block fas fa-xmark fs-4 mx-auto"></i>
+<!-- style="border-radius: 50%; border: 1px solid white; height: 32px; width: 32px;" -->    
+</label>
+</div><div class="nav-bar">
+<nav class="navbar navbar-expand-lg ">
+<div class="container-fluid">
+<a class="navbar-brand" href="./home.html">
+<img src="./assets/logo-transparent.png" width="55px" style="margin-left: 30px;" alt="logo">
+</a>
+<button style="background-color: transparent !important;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link false" aria-current="page" href="./index.html">الرئيسية</a>
+</li>
+<li class="nav-item">
+<a class="nav-link false" href="./new.html">سيارات جديدة</a>
+</li>
+<li class="nav-item">
+<a class="nav-link false" href="./used.html">سيارات مستعملة</a>
+</li>
+<li class="nav-item">
+<a class="nav-link false" href="./care.html">خدمات العناية</a>
+</li>
+<li class="nav-item">
+<a class="nav-link false" href="./parts.html">قطع الغيار</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" href="./contact.html">تواصل معنا</a>
+</li>
+</ul>
+    <style>.modal-login input[type="checkbox"] + label > .fa-check{
+        color: white;
+        background-color: white;
+        cursor: pointer;
+    }
+    .modal-login input[type="checkbox"]:checked + label > .fa-check{
+        background-color: var(--bs-primary-color);
+    }
+    .modal-login input[type="text"], .modal-dialog input[type="password"]{
+        border: none;
+        border-bottom: 1px solid var(--bs-grey-200);
+        width: 80%;
+        margin-inline: auto;
+    }
+    .modal-login input[type="text"]:focus,.modal-login input[type="password"]:focus{
+        box-shadow: none;
+        border-color: var(--bs-primary-color) !important;
+    }
+    .shown-on-hover{
+        opacity: 0;
+        transition-duration: 0.3s;
+        cursor: pointer;
+    }
+    div:has(>.shown-on-hover):hover > .shown-on-hover{
+        opacity: 1;
+    }</style>
+<div  class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true" style=" backdrop-filter: blur(4px);">
+<div class="modal-dialog modal-login p-4 overflow-hidden" style="border:none;">
+<div class="modal-content position-relative" style="border-radius: 32px;">
+<div class="modal-body text-center">
+<div style="position: absolute;top: 40px;right: -8px; border-radius: 16px 0 0 40px; background-color: var(--bs-primary-color); color: white; width: 80%;display: flex; flex-direction: row; align-items: end;" >
+<div class="position-relative m-2" style="height: 110px; border-radius: 50%; overflow: hidden;">
+<img src="./assets/img (1).jpg" alt="user img" class="h-100"/>
+<div class="shown-on-hover" style="position: absolute; background: linear-gradient(to top, black, transparent); height: 30%; width: 100%; bottom: 0px; left: 0px; right: 0px;">
+<i class="fas fa-pen text-white mb-0 text-clickable" style="opacity: 0.7;"></i>
+</div>
+</div>
+<div class="flex-grow-1 text-end px-4" style="min-width: max-content;">
+<h6 class="fs-5">Anonymous</h6>
+<p class="fw-light fs-7 ">ID: 242775444</p>
+</div>
+</div>
+<i class="d-block"style="height: 110px; width: 1px;"></i><br/><br/><br/><div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
+<div class="text-end" style="direction: ltr;">+996 125 4768 <i class="mx-2 text-primary fas fa-phone"></i> </div>
+<div class="text-end"><i class="mx-2 text-primary fas fa-location-arrow"></i> الرياض ,السعودية</div><br/><a style="border: none;" class="mb-4 text-decoration-none" href="./my-account.html">
+<button type="button" class="d-block btn btn-primary mx-auto">تعديل ملفي</button>
+</a>
+</div>
+</div>
+</div>
+</div><label for="show-side-bar" id="user_btn"><img style="border-radius: 50%; border: none; height: 50px; margin-inline: 24px;" src="./assets/img (1).jpg" alt="user img" class="text-clickable" /></label>
+<button class="btn btn-outline-success" id="login_btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">تسجيل الدخول</button>
+</div>
+</div>
+</nav>
+</div>
+<script>function onInit(){
+        console.log('inited')
+        let isLoggedIn = !!localStorage.getItem("user") || !!sessionStorage.getItem("user");
+    
+        document.querySelector("#login_btn").style.display = !isLoggedIn? 'inline-block':'none';
+        document.querySelector("#user_btn").style.display = isLoggedIn? 'inline-block':'none';
+    }
+    onInit();</script><!-- banner with info -->
+<div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./assets/bg-contact.jpg); background-size: cover; background-position: center center; height: 92vh;">
+<div class="col-12 col-md-6 p-4">
+<div class="mx-4 text-white"><br><br><br>
+    <h1>تواصل معنا </h1>
+    <p class="mb-4 fw-light fs-6">نرحب دائماً بجميع رسائلك سواء كانت استفسارات شكاوى أو اقتراحات لتحسين مستوى الخدمة</p><div class="d-flex justify-content-between">
+<div>
+    <h5 class="text-primary mb-3">العنوان</h5>
+    <p class="text-white pb-1 mb-0">شارع العربية - الدمام 12</p>
+    <p class="text-white">المملكة العربية السعودية</p><br/>
+<br/>
+    <h5 class="text-primary">البريد الإلكتروني</h5><a class="text-white fs-6" style="text-decoration: none;" href="mailto:Support@SYARATK.com.sa">Support@SYARATK.com.sa</a></div>
+<div>
+    <h6 class="text-primary">رقم الجوال</h6>
+    <p class="text-white pb-1" style="direction: ltr; text-align: end;">+966 123 4567</p><br/>
+<br/>
+<div class="text-white user-select-none">
+<i class="cursor-pointer fab fa-facebook-square"></i>
+<i class="cursor-pointer mx-2 fab fa-linkedin-in"></i>
+<i class="cursor-pointer mx-2 fab fa-twitter"></i>
+<i class="cursor-pointer mx-2 fab fa-instagram"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-0 col-md-6 d-none d-md-inline-block" style="height: 100%;">
+<img alt="contact illustration" src="./assets/contact-img.png" style="height: 80%;margin-top: 10%; opacity: 0.9;"/>
+</div>
+</div>
+</div>
+<!-- form contact us -->
+<div class="text-center form-contact container">
+    <h1 class="text-primary pb-4 m-4" style="border-bottom: 2px solid #e7e7e7; display: inline-block;">ابقى على تواصل</h1><form class="row g-3" id="contact_form">
+<div class="col-md-5 offset-md-2 my-4">
+<input type="text" class="form-control form-control-c" id="in_name" placeholder="الاسم" required>
+</div>
+<div class="col-md-5 my-4">
+<input type="email" class="form-control form-control-c" id="in_email"  required placeholder="بريدك الإلكتروني">
+</div>
+<div class="col-md-5 offset-md-2 my-4">
+<input type="text" class="form-control form-control-c" id="in_title"  required placeholder="عنوان الرسالة">
+</div>
+<div class="col-md-5 my-4 search-type">
+<div class="type-card">
+<!-- حول الزرار دا لقائمة select يختار بين شكاوى ومقترحات -->
+<p>مقترحات</p>
+<i class="fa-solid fa-chevron-down text-primary cursor-pointer"></i>
+</div>
+</div>
+<div class="col-md-12 position-relative">
+<!-- ضيف رمز الدبوس -->
+<i style="position: absolute; top: -38px; left: 60px; width: 40px; height: 90px; background-image: url(./assets/paper-clip.png); background-repeat: no-repeat;"></i>
+<textarea type="text" rows="6" class="form-control" id="in_message"  required placeholder="رسالتك"></textarea>
+</div>
+<div class="col-12 text-start mb-4 mt-4">
+<button type="submit" class="btn btn-primary btn-lg px-4" style="width: 200px;">إرسال الرسالة</button>
+</div>
+</form>
+</div>
+<!-- Map geolocation -->            
+<div class="text-center">
+    <h3 class="text-dark display-5">موقعنا</h3>
+    <p class="fs-6">أقرب إليك مما تتخيل !</p><br/>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"defer></script>
+<script>// Initialize and add the map
+    function initMap() {
+        const uluru = { lat: 24.8614079, lng: 46.7175068 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 16,
+            center: uluru,
+        });
+        const marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+        });
+    }
+    
+    window.initMap = initMap;</script>
+</div>
+  </body>
+</html>
+    <style>/* start footer */
+    .footer {
+    background: #1e1e1e;
+    padding: 60px 0;
+    }
+    .footer .footer-abstract {
+    color: #9e9e9e;
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 15px;
+    margin-bottom: 45px;
+    }
+    .footer .footer-mobile {
+    font-weight: bold;
+    color: #ffff;
+    font-size: 13px;
+    margin-bottom: 12px;
+    }
+    .footer .mobile-app {
+    display: flex;
+    justify-content: center;
+    }
+    .footer .mobile-app button {
+    display: flex;
+    background: #060606;
+    border-radius: 4px;
+    padding: 4px;
+    border: none;
+    margin: 5px;
+    align-items: center;
+    }
+    .footer .mobile-app button:active{
+        background: #161616;
+    }
+    .footer .mobile-app i {
+    color: #fff;
+    font-size: 25px;
+    margin-right: 4px;
+    }
+    .footer .mobile-app .google-play p {
+    color: #9e9e9e;
+    font-size: 6px;
+    margin-bottom: 0;
+    }
+    .footer .mobile-app .google-play h6 {
+    margin-bottom: 0;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    }
+    .footer .contact-us {
+    margin-top: 55px;
+    }
+    .footer .contact-us .contact-title {
+    display: flex;
+    margin-right: 6px;
+    }
+    .footer .contact-us .contact-title .vl {
+    border-left: 3px solid #ff5700;
+    height: 22px;
+    margin-left: 12px;
+    }
+    .footer .contact-us .contact-title p {
+    font-size: 14px;
+    color: #ff5700;
+    margin-bottom: 29px;
+    }
+    .footer .contact-us .contact-info {
+    display: flex;
+    }
+    .footer .contact-us .contact-info i {
+    color: white;
+    font-size: 14px;
+    }
+    .footer .contact-us .contact-info p {
+    color: #9e9e9e;
+    font-size: 11px;
+    margin-right: 20px;
+    margin-bottom: 12px;
+    }
+    .footer .contact-social{
+        display: flex;
+        gap: 16px;
+        justify-content: start;
+    }
+    .footer .contact-social i {
+    margin-left: 10px;
+    font-size: 11px;
+    color: white;
+    }
+    .footer .categories {
+    margin-top: 55px;
+    padding-right: 36px;
+    }
+    .footer .categories p {
+    font-size: 14px;
+    color: #ff5700;
+    margin-bottom: 18px;
+    }
+    .footer .categories h6 {
+    color: #fff;
+    line-height: 1.9;
+    font-size: 14px;
+    }
+    .footer .news {
+    font-size: 14px;
+    color: #ff5700;
+    margin-bottom: 15px;
+    }
+    .footer input {
+    direction: rtl;
+    background: none;
+    font-size: 13px;
+    padding: 9px;
+    margin-top: 16px;
+    margin-bottom: 43px;
+    }
+    .footer input:focus {
+    background: none;
+    background-color: non;
+    box-shadow: none;
+    color: #9a9496;
+    border-color: #9a9496;
+    }
+    .footer .payment-method img {
+    margin-left: 10px;
+    }
+    /* end footer */</style>
+<!-- start footer -->
+<div class="footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6" style="padding-left: 96px;">
+<img src="./assets/logo-footer.jpg" width="85px" alt="logo">
+<p class="footer-abstract">موقع وتطبيق سيارتك هى منصتك المضمونة لبيع وشراء السيارات المفحوصة من قبل فريق عمل محترف ويمكنك أيضاالدخول فى المزادات والحصول على الصفقات الرابحة</p>
+<p class="footer-mobile text-center">متوفر الآن على</p>
+<div class="mobile-app" >
+<button>
+<div class="google-play">
+<p>Available for free</p>
+<h6>Google play</h6>
+</div>
+<i class="fa-brands fa-google-play text-white"></i>
+</button>
+<button>
+<div class="google-play">
+<p>Download for free</p>
+<h6>App store</h6>
+</div>
+<i class="fa-brands fa-apple text-white"></i>
+</button>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="contact-us">
+<div class="contact-title">
+<span class="vl"></span>
+<p>تواصل معنا</p>
+</div>
+<div class="contact-info">
+<i class="fa-solid fa-location-dot"></i>
+<p>شارع السلام متفرع من شارع الملك عبدالعزيز<br> الرياض - السعودية</p>
+</div>
+<div class="contact-info">
+<i class="fa-sharp fa-solid fas fa-phone"></i>
+<p>الهاتف: 6273-3543-778-1</p>
+</div>
+<div class="contact-info">
+<i class="fa-solid fa-fax"></i>
+<p>الفاكس: 1283-2341-778-1</p>
+</div>
+<div class="contact-info">
+<i class="fa-solid fa-envelope"></i>
+<p>الايميل: info@marvin.com</p>
+</div>
+<div class="contact-social text-white" style="margin-top: 4px;">
+<i class="text-clickable fa-brands fa-instagram"></i>
+<i class="text-clickable fa-brands fa-youtube"></i>
+<i class="text-clickable fa-brands fa-twitter"></i>
+<i class="text-clickable fa-brands fa-facebook-f"></i>
+<i class="text-clickable fa-brands fa-whatsapp"></i>
+</div>
+</div>
+</div>
+<div class="col-lg-2 col-md-6">
+<div class="categories d-flex flex-column align-items-start gap-2">
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./index.html">الرئيسية</a>
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./new.html">سيارات جديدة</a>
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./used.html">سيارات مستعملة</a>
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./care.html">خدمات العناية</a>
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./parts.html">قطع الغيار</a>
+<a class="fs-6 text-clickable text-decoration-none text-primary"href="./contact.html">تواصل معنا</a>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="text-center" style="margin-top: 55px;">
+<p class="news">النشرة الإخبارية</p>
+<span style="font-size:11px;color:#fff">الرجاء كتابة إيميلك للحصول على أحدث العروض</span>
+<input type="email" class="form-control" id="exampleInputEmail1" placeholder="اكتب هنا">
+<p style="font-size: 14px;color: #ff5700;margin-bottom: 15px;">متوفر طرق الدفع الاتية</p>
+<div class="payment-method">
+<img src="./assets/visa.png" width="25px" alt="visa">
+<img src="./assets/mastercard.png" width="25px" alt="master">
+<img src="./assets/cash.png" width="25px" alt="cash">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- end footer -->

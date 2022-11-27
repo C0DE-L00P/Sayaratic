@@ -1,0 +1,49 @@
+include _components/slider-h
+include _components/car-card
+include _components/slider-offers-3
+include _components/nav-bar
+
+- var shops = [{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg"},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg"},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg"},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg"},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg"},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg"},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg"},]
+
+doctype html
+html(lang="ar" dir="rtl")
+    head
+        include _components/shared-head
+        title وكالات سيارات
+    body 
+        +nav-bar("shops")
+
+        <header style="margin-inline: 0px;width: 100%; background-color: #fff6f1; height: max-content; padding-top: 12px; padding-bottom: 12px; place-content: center center;" class="row">
+            h1(class="text-primary h3 col-12 col-md-5") <span style="display: inline-block; border-radius: 30% 62% 74% 26% / 35% 56% 44% 55%; background-color: var(--bs-primary-color); color: white; padding-top: 22px; padding-bottom: 22px; padding-inline: 12px;"> وكالات </span> للسيارات في السعودية
+            <form class="col-12 col-md-7 d-flex align-items-center my-2">
+                <div class="col-auto">
+                    <label for="inputSearch" class="visually-hidden">Search</label>
+                    <input type="text" class="form-control p-2 px-4 placeholder-secondary placeholder-sm" style="border: none; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;" id="inputSearch" placeholder="ابحث عن وكالة">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary p-2 px-4" style="border-radius: 8px 0px 8px 8px;transform: translateX(10px)"><span class="d-none d-md-inline-block mx-2">ابحث </span><i class="fas fa-magnifying-glass d-inline-block d-md-none"></i></button>
+                </div>
+            </form>
+        </header>
+
+        <main class="mx-4" style="display: grid; grid-template-columns: repeat(auto-fit,min(100%, 380px)); gap: 24px; place-content: center center; margin-top: 48px;">
+            each shop, index in shops
+                <div style="overflow: hidden; position: relative; height: 230px; border-radius: 12px; background-image: url(#{shop.img}); background-size: cover; cursor: pointer;">
+                    <i style="width: 100%; background: linear-gradient(to top, black, transparent); height: 60px; position: absolute; bottom: 0px; left: 0px; right: 0px;"></i>
+                    <div style="z-index: 4; display: flex; justify-content: space-between; align-items: end; position: absolute; bottom: 0px; color: white; padding: 16px; width: 100%;">
+                        <div class="m-0 p-0 w-100">
+                            <h5 class="mb-2" style="width: 100%;">#{shop.title}</h6>
+                            <p class="p-0 m-0"><i class="fas fa-building text-primary"></i> 9 فروع</p>
+                        </div>
+                        <p class="p-0 m-0 w-50 text-start">133 سيارة</p>
+                    </div>
+                </div>
+        </main>
+
+        br
+        br
+        br
+        br
+
+        include _components/footer
++footer("shops")

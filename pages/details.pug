@@ -11,11 +11,11 @@ doctype html
 html(lang="ar",dir="rtl")
     head
         include _components/shared-head
-        link(rel="stylesheet", href="../css/used.css")
         title تفاصيل عن السيارة
     body 
         +nav-bar("details")
-        <div class="text-secondary m-4">الرئيسية / سيارات مستعملة / نيسان صني </div>
+        include _components/modal-comments
+        <div class="text-secondary m-4 user-select-none"><a class="text-decoration-none text-secondary text-clickable" href="./index.html">الرئيسية</a> / <a class="text-decoration-none text-secondary text-clickable" href="./new.html">سيارات جديدة </a> /  نيسان صني</div>
 
         <div> placeholder</div>
 
@@ -64,7 +64,7 @@ html(lang="ar",dir="rtl")
                         </span>
                     </span>
 
-                    <span class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
+                    <span data-bs-toggle="modal" data-bs-target="#commentsModal" data-bs-whatever="@getbootstrap" class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
                 </div>
                 +car-card
                 +car-card
@@ -74,3 +74,4 @@ html(lang="ar",dir="rtl")
 
         
         include _components/footer
++footer("details")

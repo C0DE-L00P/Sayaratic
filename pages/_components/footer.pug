@@ -1,216 +1,217 @@
-<style>
-.       
-    /* start footer */
-    .footer {
-    background: #1e1e1e;
-    padding: 60px 0;
-    }
-    .footer .footer-abstract {
-    color: #9e9e9e;
-    font-size: 12px;
-    line-height: 1.7;
-    margin-top: 15px;
-    margin-bottom: 45px;
-    }
-    .footer .footer-mobile {
-    font-weight: bold;
-    color: #ffff;
-    font-size: 13px;
-    margin-bottom: 12px;
-    }
-    .footer .mobile-app {
-    display: flex;
-    justify-content: center;
-    }
-    .footer .mobile-app button {
-    display: flex;
-    background: #060606;
-    border-radius: 4px;
-    padding: 4px;
-    border: none;
-    margin: 5px;
-    align-items: center;
-    }
-    .footer .mobile-app button:active{
-        background: #161616;
-    }
-    .footer .mobile-app i {
-    color: #fff;
-    font-size: 25px;
-    margin-right: 4px;
-    }
-    .footer .mobile-app .google-play p {
-    color: #9e9e9e;
-    font-size: 6px;
-    margin-bottom: 0;
-    }
-    .footer .mobile-app .google-play h6 {
-    margin-bottom: 0;
-    font-size: 9px;
-    font-weight: bold;
-    color: white;
-    }
-    .footer .contact-us {
-    margin-top: 55px;
-    }
-    .footer .contact-us .contact-title {
-    display: flex;
-    margin-right: 6px;
-    }
-    .footer .contact-us .contact-title .vl {
-    border-left: 3px solid #ff5700;
-    height: 22px;
-    margin-left: 12px;
-    }
-    .footer .contact-us .contact-title p {
-    font-size: 14px;
-    color: #ff5700;
-    margin-bottom: 29px;
-    }
-    .footer .contact-us .contact-info {
-    display: flex;
-    }
-    .footer .contact-us .contact-info i {
-    color: white;
-    font-size: 14px;
-    }
-    .footer .contact-us .contact-info p {
-    color: #9e9e9e;
-    font-size: 11px;
-    margin-right: 20px;
-    margin-bottom: 12px;
-    }
-    .footer .contact-social{
+mixin footer(selected)
+    <style>
+    .       
+        /* start footer */
+        .footer {
+        background: #1e1e1e;
+        padding: 60px 0;
+        }
+        .footer .footer-abstract {
+        color: #9e9e9e;
+        font-size: 12px;
+        line-height: 1.7;
+        margin-top: 15px;
+        margin-bottom: 45px;
+        }
+        .footer .footer-mobile {
+        font-weight: bold;
+        color: #ffff;
+        font-size: 13px;
+        margin-bottom: 12px;
+        }
+        .footer .mobile-app {
         display: flex;
-        gap: 16px;
-        justify-content: start;
-    }
-    .footer .contact-social i {
-    margin-left: 10px;
-    font-size: 11px;
-    color: white;
-    }
-    .footer .categories {
-    margin-top: 55px;
-    padding-right: 36px;
-    }
-    .footer .categories p {
-    font-size: 14px;
-    color: #ff5700;
-    margin-bottom: 18px;
-    }
-    .footer .categories h6 {
-    color: #fff;
-    line-height: 1.9;
-    font-size: 14px;
-    }
-    .footer .news {
-    font-size: 14px;
-    color: #ff5700;
-    margin-bottom: 15px;
-    }
-    .footer input {
-    direction: rtl;
-    background: none;
-    font-size: 13px;
-    padding: 9px;
-    margin-top: 16px;
-    margin-bottom: 43px;
-    }
-    .footer input:focus {
-    background: none;
-    background-color: non;
-    box-shadow: none;
-    color: #9a9496;
-    border-color: #9a9496;
-    }
-    .footer .payment-method img {
-    margin-left: 10px;
-    }
-    /* end footer */
-</style>
+        justify-content: center;
+        }
+        .footer .mobile-app button {
+        display: flex;
+        background: #060606;
+        border-radius: 4px;
+        padding: 4px;
+        border: none;
+        margin: 5px;
+        align-items: center;
+        }
+        .footer .mobile-app button:active{
+            background: #161616;
+        }
+        .footer .mobile-app i {
+        color: #fff;
+        font-size: 25px;
+        margin-right: 4px;
+        }
+        .footer .mobile-app .google-play p {
+        color: #9e9e9e;
+        font-size: 6px;
+        margin-bottom: 0;
+        }
+        .footer .mobile-app .google-play h6 {
+        margin-bottom: 0;
+        font-size: 9px;
+        font-weight: bold;
+        color: white;
+        }
+        .footer .contact-us {
+        margin-top: 55px;
+        }
+        .footer .contact-us .contact-title {
+        display: flex;
+        margin-right: 6px;
+        }
+        .footer .contact-us .contact-title .vl {
+        border-left: 3px solid #ff5700;
+        height: 22px;
+        margin-left: 12px;
+        }
+        .footer .contact-us .contact-title p {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 29px;
+        }
+        .footer .contact-us .contact-info {
+        display: flex;
+        }
+        .footer .contact-us .contact-info i {
+        color: white;
+        font-size: 14px;
+        }
+        .footer .contact-us .contact-info p {
+        color: #9e9e9e;
+        font-size: 11px;
+        margin-right: 20px;
+        margin-bottom: 12px;
+        }
+        .footer .contact-social{
+            display: flex;
+            gap: 16px;
+            justify-content: start;
+        }
+        .footer .contact-social i {
+        margin-left: 10px;
+        font-size: 11px;
+        color: white;
+        }
+        .footer .categories {
+        margin-top: 55px;
+        padding-right: 36px;
+        }
+        .footer .categories p {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 18px;
+        }
+        .footer .categories h6 {
+        color: #fff;
+        line-height: 1.9;
+        font-size: 14px;
+        }
+        .footer .news {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 15px;
+        }
+        .footer input {
+        direction: rtl;
+        background: none;
+        font-size: 13px;
+        padding: 9px;
+        margin-top: 16px;
+        margin-bottom: 43px;
+        }
+        .footer input:focus {
+        background: none;
+        background-color: non;
+        box-shadow: none;
+        color: #9a9496;
+        border-color: #9a9496;
+        }
+        .footer .payment-method img {
+        margin-left: 10px;
+        }
+        /* end footer */
+    </style>
 
-<!-- start footer -->
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6" style="padding-left: 96px;">
-                <img src="../assets/logo.png" width="85px" alt="logo">
-                <p class="footer-abstract">موقع وتطبيق سيارتك هى منصتك المضمونة لبيع وشراء السيارات المفحوصة من قبل فريق عمل محترف ويمكنك أيضاالدخول فى المزادات والحصول على الصفقات الرابحة</p>
-                <p class="footer-mobile text-center">متوفر الآن على</p>
-                <div class="mobile-app" >
-                    <button>
-                        <div class="google-play">
-                            <p>Available for free</p>
-                            <h6>Google play</h6>
-                        </div>
-                        <i class="fa-brands fa-google-play text-white"></i>
-                    </button>
-                    <button>
-                        <div class="google-play">
-                            <p>Download for free</p>
-                            <h6>App store</h6>
-                        </div>
-                        <i class="fa-brands fa-apple text-white"></i>
-                    </button>
+    <!-- start footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6" style="padding-left: 96px;">
+                    <img src="../assets/logo-footer.jpg" width="85px" alt="logo">
+                    <p class="footer-abstract">موقع وتطبيق سيارتك هى منصتك المضمونة لبيع وشراء السيارات المفحوصة من قبل فريق عمل محترف ويمكنك أيضاالدخول فى المزادات والحصول على الصفقات الرابحة</p>
+                    <p class="footer-mobile text-center">متوفر الآن على</p>
+                    <div class="mobile-app" >
+                        <button>
+                            <div class="google-play">
+                                <p>Available for free</p>
+                                <h6>Google play</h6>
+                            </div>
+                            <i class="fa-brands fa-google-play text-white"></i>
+                        </button>
+                        <button>
+                            <div class="google-play">
+                                <p>Download for free</p>
+                                <h6>App store</h6>
+                            </div>
+                            <i class="fa-brands fa-apple text-white"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="contact-us">
-                    <div class="contact-title">
-                        <span class="vl"></span>
-                        <p>تواصل معنا</p>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>شارع السلام متفرع من شارع الملك عبدالعزيز<br> الرياض - السعودية</p>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fa-sharp fa-solid fas fa-phone"></i>
-                        <p>الهاتف: 6273-3543-778-1</p>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fa-solid fa-fax"></i>
-                        <p>الفاكس: 1283-2341-778-1</p>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fa-solid fa-envelope"></i>
-                        <p>الايميل: info@marvin.com</p>
-                    </div>
-                    <div class="contact-social text-white" style="margin-top: 4px;">
-                        <i class="fa-brands fa-square-instagram"></i>
-                        <i class="fa-brands fa-youtube"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-us">
+                        <div class="contact-title">
+                            <span class="vl"></span>
+                            <p>تواصل معنا</p>
+                        </div>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>شارع السلام متفرع من شارع الملك عبدالعزيز<br> الرياض - السعودية</p>
+                        </div>
+                        <div class="contact-info">
+                            <i class="fa-sharp fa-solid fas fa-phone"></i>
+                            <p>الهاتف: 6273-3543-778-1</p>
+                        </div>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-fax"></i>
+                            <p>الفاكس: 1283-2341-778-1</p>
+                        </div>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>الايميل: info@marvin.com</p>
+                        </div>
+                        <div class="contact-social text-white" style="margin-top: 4px;">
+                            <i class="text-clickable fa-brands fa-instagram"></i>
+                            <i class="text-clickable fa-brands fa-youtube"></i>
+                            <i class="text-clickable fa-brands fa-twitter"></i>
+                            <i class="text-clickable fa-brands fa-facebook-f"></i>
+                            <i class="text-clickable fa-brands fa-whatsapp"></i>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="categories">
-                    <p>الرئيسية</p>
-                    <h6>سيارات جديدة</h6>
-                    <h6>سيارات مستعملة</h6>
-                    <h6>خدمات العناية</h6>
-                    <h6>قطع الغيار</h6>
-                    <h6>تواصل معنا</h6>
+                <div class="col-lg-2 col-md-6">
+                    <div class="categories d-flex flex-column align-items-start gap-2">
+                        <a class="fs-6 text-clickable text-decoration-none #{selected === 'home'? 'text-primary': 'text-white'}"href="./index.html">الرئيسية</a>
+                        <a class="fs-6 text-clickable text-decoration-none #{selected === 'new'? 'text-primary': 'text-white'}"href="./new.html">سيارات جديدة</a>
+                        <a class="fs-6 text-clickable text-decoration-none #{selected === 'used'? 'text-primary': 'text-white'}"href="./used.html">سيارات مستعملة</a>
+                        <a class="fs-6 text-clickable text-decoration-none #{selected === 'care'? 'text-primary': 'text-white'}"href="./care.html">خدمات العناية</a>
+                        <a class="fs-6 text-clickable text-decoration-none #{selected === 'parts'? 'text-primary': 'text-white'}"href="./parts.html">قطع الغيار</a>
+                        <a class="fs-6 text-clickable text-decoration-none #{selected === 'contact'? 'text-primary': 'text-white'}"href="./contact.html">تواصل معنا</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="text-center" style="margin-top: 55px;">
-                    <p class="news">النشرة الإخبارية</p>
-                    <span style="font-size:11px;color:#fff">الرجاء كتابة إيميلك للحصول على أحدث العروض</span>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="اكتب هنا">
-                    <p style="font-size: 14px;color: #ff5700;margin-bottom: 15px;">متوفر طرق الدفع الاتية</p>
-                    <div class="payment-method">
-                        <img src="../assets/visa.png" width="25px" alt="visa">
-                        <img src="../assets/mastercard.png" width="25px" alt="master">
-                        <img src="../assets/cash.png" width="25px" alt="cash">
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center" style="margin-top: 55px;">
+                        <p class="news">النشرة الإخبارية</p>
+                        <span style="font-size:11px;color:#fff">الرجاء كتابة إيميلك للحصول على أحدث العروض</span>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="اكتب هنا">
+                        <p style="font-size: 14px;color: #ff5700;margin-bottom: 15px;">متوفر طرق الدفع الاتية</p>
+                        <div class="payment-method">
+                            <img src="../assets/visa.png" width="25px" alt="visa">
+                            <img src="../assets/mastercard.png" width="25px" alt="master">
+                            <img src="../assets/cash.png" width="25px" alt="cash">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- end footer -->
+    <!-- end footer -->

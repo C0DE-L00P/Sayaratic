@@ -1,0 +1,49 @@
+include _components/slider-h
+include _components/car-card
+include _components/slider-offers-3
+include _components/nav-bar
+include _components/auction-card
+
+- var tires = [{title: "جنط من BBC ألومنيوم",img: "../assets/tire-1.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-2.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-3.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-4.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-5.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-6.jpg"}]
+
+
+doctype html
+html(lang="ar" dir="rtl")
+    head
+        include _components/shared-head
+        title المفضلة
+    body 
+        +nav-bar("my-favourites")
+
+        <div class="container py-4" style="min-height: 90vh;">
+            <p class="fs-6 mb-4 text-primary w-100 text-end mt-4 fw-bolder"> المفضلة <span class="text-secondary fw-light">- #{tires.length}</span></p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, 260px); place-content: center center; gap: 40px;" class="mb-4">
+                each tire, index in tires
+                    <div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+                        <h6 class="mb-3 mt-1 fs-6" style="color: rgb(108, 108, 108)">#{tire.title}</h6>
+                        <div class="position-relative overflow-hidden rounded-2 mb-2" style="height: 148px"> 
+                            <img src="#{tire.img}" alt="tire_img" height="100%" style="border-radius: 8px" class="hoverZoomLink" />
+                        </div>
+                        <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+                        <div class="text-dark row text-end justify-items-center align-items-start">
+                            <span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">50.00</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">450.00</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+                                </span><span class="text-dark fs-5 text-decoration-line-through">750.00</span class="fs-9">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+                                <p></p>
+
+                                //- <span class="h6 text-black" style="font-weight: 700;">2021</span>
+                                
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+                            <button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+                            <span>
+                                <input type="checkbox" class="d-none" id="favored-#{index}">
+                                <label class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1" for="favored-#{index}">إضافة للمفضلة <i class="fas fa-heart"></i></label>
+                            </span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        include _components/footer
+        +footer("my-favourites")

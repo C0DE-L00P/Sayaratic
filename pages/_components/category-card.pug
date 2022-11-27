@@ -1,9 +1,11 @@
-mixin category-card(title,subtitle,icon,img)
-    <div class="col-12 col-md-4" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(#{img});background-size: cover; background-position: center center; height: 100%;display: flex; justify-content: center; align-items: center; cursor: pointer; position: relative; color: white; flex-direction: column; font-size: 32px; gap: 16px; min-height: 300px;">
-        <i class="#{icon}"></i>
-        <h3>#{title}</h3>
-        <div style="position: absolute; bottom: 0; right: 0; display: flex; flex-direction: row-reverse;">
-            <span style="padding-inline: 2rem; padding-top: 6px;color: white; font-size: 18px;border-radius: 16px 0 0 0;" class="bg-primary">#{subtitle}</span>
-            <i class="fas fa-angle-right p-2"></i>
+mixin category-card(title,subtitle,icon,img,url)
+    <a class="text-decoration-none col-12 col-md-4 mx-0 px-0 text-clickable" href="#{url}">
+        <div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(#{img});background-size: cover; background-position: center center; height: 100%;display: flex; justify-content: center; align-items: center; cursor: pointer; position: relative; color: white; flex-direction: column; font-size: 32px; gap: 16px; min-height: 300px;">
+            <div style="border-radius: 50%; border: 2px solid white; height: 60px; width: 60px;text-align: center;"><i class="mx-auto #{icon}" style="margin-top: 10px;"></i></div>
+            <h3>#{title}</h3>
+            <div style="position: absolute; bottom: 0; right: 0; display: flex; flex-direction: row-reverse; align-items: end;">
+                <span style="padding-inline: 2rem; color: white;border-radius: 16px 0 0 0;" class="bg-primary py-2 fs-7">#{subtitle}</span>
+                <i class="fas fa-angle-double-right px-2 fs-6 mb-2"></i>
+            </div>
         </div>
-    </div>
+    </a>

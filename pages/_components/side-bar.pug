@@ -1,0 +1,29 @@
+<div id="side-bar" style="position: fixed; justify-content: space-between; z-index: 21; bottom: 0px; top: 0px; margin-top: 70px; margin-bottom: 24px; background-color: var(--bs-primary-color); padding: 40px 8px 8px; display: flex; flex-direction: column; gap: 12px; color: white; text-align: center; border-radius: 32px 0 0 32px; transition-duration: 0.3s;">
+    <div class="d-flex flex-column gap-1">
+        <div class="text-clickable" data-bs-toggle="modal" data-bs-target="#accountModal" data-bs-whatever="@getbootstrap">
+            <i class="d-block fas fa-user fs-4 mx-auto"></i>
+            <p class="fs-7">ملفي</p>
+        </div>
+        <a class="text-decoration-none text-clickable text-white" href="./my-auctions.html">
+            <i class="d-block fas fa-chart-simple fs-4 mx-auto"></i>
+            <p class="fs-7">مزايداتي</p>
+        </a>
+        <a class="text-decoration-none text-clickable text-white" href="./my-favourites.html">
+            <i class="d-block fas fa-heart fs-4 mx-auto"></i>
+            <p class="fs-7">المفضلة</p>
+        </a>
+        <a class="text-decoration-none text-clickable text-white" href="./my-chats.html">
+            <i class="d-block fas fa-comments fs-4 mx-auto"></i>
+            <p class="fs-7">المحادثات</p>
+        </a>
+        <div class="text-clickable" onclick="localStorage.removeItem('user'); sessionStorage.removeItem('user'); location.reload();">
+            <i class="d-block fas fa-door-open fs-4 mx-auto"></i>
+            <p class="fs-7">خروج</p>
+        </div>
+    </div>
+    <!-- ممكن تزود انيمشن لزرار الـ close -->
+    <label class="text-clickable mb-4" style="justify-self: end;" for="show-side-bar">
+        <i class="d-block fas fa-xmark fs-4 mx-auto"></i>
+        <!-- style="border-radius: 50%; border: 1px solid white; height: 32px; width: 32px;" -->    
+    </label>
+</div>

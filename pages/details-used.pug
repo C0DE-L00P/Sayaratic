@@ -12,11 +12,11 @@ doctype html
 html(lang="ar",dir="rtl")
     head
         include _components/shared-head
-        link(rel="stylesheet", href="../css/used.css")
         title تفاصيل عن السيارة
         <style>
         .
             span input[type="radio"] + label{
+                width: 100%;
                 color: var(--bs-grey-400);
                 background-color: transparent;
                 line-height: 56px;
@@ -36,8 +36,8 @@ html(lang="ar",dir="rtl")
         </style>
     body 
         +nav-bar("details-used")
-        include _components/comments-modal
-        <div class="text-secondary m-4">الرئيسية / سيارات مستعملة / بي ام دبليو هاي لاين</div>
+        include _components/modal-comments
+        <div class="text-secondary m-4 user-select-none"><a class="text-decoration-none text-secondary text-clickable" href="./index.html">الرئيسية</a> / <a class="text-decoration-none text-secondary text-clickable" href="./used.html">سيارات مستعملة </a> /  بي ام دبليو هاي لاين</div>
         <div class="row p-0 m-0"> 
             <div class="col-12 col-md-8">IMGER</div>
             <div class="col-12 col-md-4">
@@ -131,7 +131,7 @@ html(lang="ar",dir="rtl")
                                 <i class="fas fa-star text-warning"></i> 5.0
                             </span>
                         </span>
-                        <span data-bs-toggle="modal" data-bs-target="#exampleModal" class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
+                        <span data-bs-toggle="modal" data-bs-target="#commentsModal" data-bs-whatever="@getbootstrap" class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
                     </div>
                     <hr class="my-4"/>
 
@@ -158,3 +158,4 @@ html(lang="ar",dir="rtl")
         </main>
 
         include _components/footer
++footer("details")

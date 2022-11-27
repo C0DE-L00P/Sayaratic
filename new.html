@@ -39,6 +39,13 @@
     .nav-bar .active {
         color: #113250 !important;
         border-bottom: 2px solid #ff5700;
+        border-right: none;
+    }
+    @media screen and (max-width: 990px){
+        .nav-bar .active {
+            border-bottom: none;
+            border-right: 3px solid #ff5700;
+        }
     }
     .nav-bar .btn-outline-success {
         color: #ff5700;
@@ -47,14 +54,108 @@
     .nav-bar .btn-outline-success:hover {
         color: #fff;
         background: #ff5700;
+    }
+    #side-bar{
+        right: -80px;
+        transition-duration: 0.3s;
+    }
+    #show-side-bar:checked + #side-bar{
+        right: -2px;
+    }
+    .navbar-toggler-icon{
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background-image: var(--bs-navbar-toggler-icon-bg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
     }</style>
-<div class="nav-bar">
+    <style>.modal-login input[type="checkbox"] + label > .fa-check{
+        color: white;
+        background-color: white;
+        cursor: pointer;
+    }
+    .modal-login input[type="checkbox"]:checked + label > .fa-check{
+        background-color: var(--bs-primary-color);
+    }
+    .modal-login input[type="text"], .modal-dialog input[type="password"]{
+        border: none;
+        border-bottom: 1px solid var(--bs-grey-200);
+        width: 80%;
+        margin-inline: auto;
+    }
+    .modal-login input[type="text"]:focus,.modal-login input[type="password"]:focus{
+        box-shadow: none;
+        border-color: var(--bs-primary-color) !important;
+    }</style>
+<script>function login(){
+      if(document.querySelector("#remember_me").checked)  localStorage.setItem('user', JSON.stringify({name: 'Anonymous',id: 242775444, email: 'anonymous@gmail.com',phone: '+996 125 4768', location: 'الرياض ,السعودية' }));
+      else sessionStorage.setItem('user', JSON.stringify({name: 'Anonymous',id: 242775444, email: 'anonymous@gmail.com',phone: '+996 125 4768', location: 'الرياض ,السعودية' }));
+    }</script>
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" style=" backdrop-filter: blur(4px);">
+<div class="modal-dialog modal-login p-4 overflow-hidden" style="width: min(100%, 425px);">
+<div class="modal-content">
+<div class="modal-header" style="border:none;">
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body text-center">
+<img src="./assets/logo.png" alt="logo img" height="120px"/>
+<form onsubmit="login()">
+    <p class="fs-7">مرحباً بعودتك من جديد </p><div class="mb-3">
+<input type="text" class="form-control" id="in_phone" placeholder="رقم الجوال" required>
+</div>
+<div class="mb-3">
+<input type="password" class="form-control" id="in_pass" placeholder="كلمة المرور" required>
+</div>
+<div class="w-100 text-end mx-2">
+<input type="checkbox" id="remember_me" class="d-none"/>
+<label for="remember_me" class="cursor-pointer"><i class="rounded-3 p-1 shadow-sm fas fa-check" style="width: 12px; height: 12px; margin-right: 34px;"></i>  تذكرني</label>
+</div><br/><div style="border: none;" class="mb-4">
+<button type="submit" class="d-block btn btn-primary mx-auto">تسجيل الدخول</button>
+<p class="fs-7 text-center mt-4">نسيت كلمة المرور؟ <span class="text-primary text-clickable">إعادة</span></p>
+<p class="fs-7  text-center">لا تمتلك حساباً؟ <span class="text-primary text-clickable">إشترك الآن</span></p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div><input class="d-none" id="show-side-bar" type="checkbox"/><div id="side-bar" style="position: fixed; justify-content: space-between; z-index: 21; bottom: 0px; top: 0px; margin-top: 70px; margin-bottom: 24px; background-color: var(--bs-primary-color); padding: 40px 8px 8px; display: flex; flex-direction: column; gap: 12px; color: white; text-align: center; border-radius: 32px 0 0 32px; transition-duration: 0.3s;">
+<div class="d-flex flex-column gap-1">
+<div class="text-clickable" data-bs-toggle="modal" data-bs-target="#accountModal" data-bs-whatever="@getbootstrap">
+<i class="d-block fas fa-user fs-4 mx-auto"></i>
+<p class="fs-7">ملفي</p>
+</div>
+<a class="text-decoration-none text-clickable text-white" href="./my-auctions.html">
+<i class="d-block fas fa-chart-simple fs-4 mx-auto"></i>
+<p class="fs-7">مزايداتي</p>
+</a>
+<a class="text-decoration-none text-clickable text-white" href="./my-favourites.html">
+<i class="d-block fas fa-heart fs-4 mx-auto"></i>
+<p class="fs-7">المفضلة</p>
+</a>
+<a class="text-decoration-none text-clickable text-white" href="./my-chats.html">
+<i class="d-block fas fa-comments fs-4 mx-auto"></i>
+<p class="fs-7">المحادثات</p>
+</a>
+<div class="text-clickable" onclick="localStorage.removeItem('user'); sessionStorage.removeItem('user'); location.reload();">
+<i class="d-block fas fa-door-open fs-4 mx-auto"></i>
+<p class="fs-7">خروج</p>
+</div>
+</div>
+<!-- ممكن تزود انيمشن لزرار الـ close -->
+<label class="text-clickable mb-4" style="justify-self: end;" for="show-side-bar">
+<i class="d-block fas fa-xmark fs-4 mx-auto"></i>
+<!-- style="border-radius: 50%; border: 1px solid white; height: 32px; width: 32px;" -->    
+</label>
+</div><div class="nav-bar">
 <nav class="navbar navbar-expand-lg ">
 <div class="container-fluid">
 <a class="navbar-brand" href="./home.html">
-<img src="./assets/logo.png" width="55px" style="margin-left: 30px;" alt="logo">
+<img src="./assets/logo-transparent.png" width="55px" style="margin-left: 30px;" alt="logo">
 </a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<button style="background-color: transparent !important;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -69,22 +170,79 @@
 <a class="nav-link false" href="./used.html">سيارات مستعملة</a>
 </li>
 <li class="nav-item">
-<a class="nav-link false" href="./parts.html">قطع الغيار</a>
+<a class="nav-link false" href="./care.html">خدمات العناية</a>
 </li>
 <li class="nav-item">
-<a class="nav-link false" href="./care.html">خدمات العناية</a>
+<a class="nav-link false" href="./parts.html">قطع الغيار</a>
 </li>
 <li class="nav-item">
 <a class="nav-link false" href="./contact.html">تواصل معنا</a>
 </li>
 </ul>
-<form class="d-flex">
-<button class="btn btn-outline-success" type="submit">تسجيل الدخول</button>
-</form>
+    <style>.modal-login input[type="checkbox"] + label > .fa-check{
+        color: white;
+        background-color: white;
+        cursor: pointer;
+    }
+    .modal-login input[type="checkbox"]:checked + label > .fa-check{
+        background-color: var(--bs-primary-color);
+    }
+    .modal-login input[type="text"], .modal-dialog input[type="password"]{
+        border: none;
+        border-bottom: 1px solid var(--bs-grey-200);
+        width: 80%;
+        margin-inline: auto;
+    }
+    .modal-login input[type="text"]:focus,.modal-login input[type="password"]:focus{
+        box-shadow: none;
+        border-color: var(--bs-primary-color) !important;
+    }
+    .shown-on-hover{
+        opacity: 0;
+        transition-duration: 0.3s;
+        cursor: pointer;
+    }
+    div:has(>.shown-on-hover):hover > .shown-on-hover{
+        opacity: 1;
+    }</style>
+<div  class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true" style=" backdrop-filter: blur(4px);">
+<div class="modal-dialog modal-login p-4 overflow-hidden" style="border:none;">
+<div class="modal-content position-relative" style="border-radius: 32px;">
+<div class="modal-body text-center">
+<div style="position: absolute;top: 40px;right: -8px; border-radius: 16px 0 0 40px; background-color: var(--bs-primary-color); color: white; width: 80%;display: flex; flex-direction: row; align-items: end;" >
+<div class="position-relative m-2" style="height: 110px; border-radius: 50%; overflow: hidden;">
+<img src="./assets/img (1).jpg" alt="user img" class="h-100"/>
+<div class="shown-on-hover" style="position: absolute; background: linear-gradient(to top, black, transparent); height: 30%; width: 100%; bottom: 0px; left: 0px; right: 0px;">
+<i class="fas fa-pen text-white mb-0 text-clickable" style="opacity: 0.7;"></i>
+</div>
+</div>
+<div class="flex-grow-1 text-end px-4" style="min-width: max-content;">
+<h6 class="fs-5">Anonymous</h6>
+<p class="fw-light fs-7 ">ID: 242775444</p>
+</div>
+</div>
+<i class="d-block"style="height: 110px; width: 1px;"></i><br/><br/><br/><div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
+<div class="text-end" style="direction: ltr;">+996 125 4768 <i class="mx-2 text-primary fas fa-phone"></i> </div>
+<div class="text-end"><i class="mx-2 text-primary fas fa-location-arrow"></i> الرياض ,السعودية</div><br/><a style="border: none;" class="mb-4 text-decoration-none" href="./my-account.html">
+<button type="button" class="d-block btn btn-primary mx-auto">تعديل ملفي</button>
+</a>
+</div>
+</div>
+</div>
+</div><label for="show-side-bar" id="user_btn"><img style="border-radius: 50%; border: none; height: 50px; margin-inline: 24px;" src="./assets/img (1).jpg" alt="user img" class="text-clickable" /></label>
+<button class="btn btn-outline-success" id="login_btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">تسجيل الدخول</button>
 </div>
 </div>
 </nav>
-</div><div class="position-relative" style="height: calc(100% - 78px)">
+</div>
+<script>function onInit(){
+        console.log('inited')
+        let isLoggedIn = !!localStorage.getItem("user") || !!sessionStorage.getItem("user");
+    
+        document.querySelector("#login_btn").style.display = !isLoggedIn? 'inline-block':'none';
+        document.querySelector("#user_btn").style.display = isLoggedIn? 'inline-block':'none';
+    }
+    onInit();</script><div class="position-relative" style="height: calc(100% - 78px)">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 <style>html,
     body {
@@ -396,7 +554,7 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -427,7 +585,7 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -458,7 +616,7 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -489,7 +647,7 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -520,7 +678,7 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -551,7 +709,7 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -582,7 +740,7 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -613,7 +771,7 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -936,6 +1094,8 @@
 </div>
 </div>
 </div>
+  </body>
+</html>
     <style>/* start footer */
     .footer {
     background: #1e1e1e;
@@ -1069,7 +1229,7 @@
 <div class="container">
 <div class="row">
 <div class="col-lg-4 col-md-6" style="padding-left: 96px;">
-<img src="./assets/logo.png" width="85px" alt="logo">
+<img src="./assets/logo-footer.jpg" width="85px" alt="logo">
 <p class="footer-abstract">موقع وتطبيق سيارتك هى منصتك المضمونة لبيع وشراء السيارات المفحوصة من قبل فريق عمل محترف ويمكنك أيضاالدخول فى المزادات والحصول على الصفقات الرابحة</p>
 <p class="footer-mobile text-center">متوفر الآن على</p>
 <div class="mobile-app" >
@@ -1112,22 +1272,22 @@
 <p>الايميل: info@marvin.com</p>
 </div>
 <div class="contact-social text-white" style="margin-top: 4px;">
-<i class="fa-brands fa-square-instagram"></i>
-<i class="fa-brands fa-youtube"></i>
-<i class="fa-brands fa-twitter"></i>
-<i class="fa-brands fa-facebook-f"></i>
-<i class="fa-brands fa-whatsapp"></i>
+<i class="text-clickable fa-brands fa-instagram"></i>
+<i class="text-clickable fa-brands fa-youtube"></i>
+<i class="text-clickable fa-brands fa-twitter"></i>
+<i class="text-clickable fa-brands fa-facebook-f"></i>
+<i class="text-clickable fa-brands fa-whatsapp"></i>
 </div>
 </div>
 </div>
 <div class="col-lg-2 col-md-6">
-<div class="categories">
-<p>الرئيسية</p>
-<h6>سيارات جديدة</h6>
-<h6>سيارات مستعملة</h6>
-<h6>خدمات العناية</h6>
-<h6>قطع الغيار</h6>
-<h6>تواصل معنا</h6>
+<div class="categories d-flex flex-column align-items-start gap-2">
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./index.html">الرئيسية</a>
+<a class="fs-6 text-clickable text-decoration-none text-primary"href="./new.html">سيارات جديدة</a>
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./used.html">سيارات مستعملة</a>
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./care.html">خدمات العناية</a>
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./parts.html">قطع الغيار</a>
+<a class="fs-6 text-clickable text-decoration-none text-white"href="./contact.html">تواصل معنا</a>
 </div>
 </div>
 <div class="col-lg-3 col-md-6">
@@ -1147,5 +1307,3 @@
 </div>
 </div>
 <!-- end footer -->
-  </body>
-</html>

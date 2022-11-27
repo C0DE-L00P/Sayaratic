@@ -1,0 +1,93 @@
+include _components/slider-h
+include _components/car-card
+include _components/slider-offers-3
+include _components/nav-bar
+include _components/auction-card
+
+
+doctype html
+html(lang="ar" dir="rtl")
+    head
+        include _components/shared-head
+        title ملفي 
+        <style>
+        .
+            .chat-cat{
+                color: grey;
+            }
+            .chat-cat input[type=radio] + label{
+                color: grey;
+                border-bottom: 3px solid transparent;
+                padding-bottom: 12px;
+                transition-duration: 0.1s;
+            }
+            .chat-cat input[type=radio]:checked + label{
+                color: black;
+                font-weight: 600;
+                border-bottom: 3px solid var(--bs-primary-color);
+            }
+        </style>
+    body 
+        +nav-bar("my-account")
+
+        <div class="container py-4 my-4" style="min-height: 90vh;">
+            
+            <!-- my account data -->
+
+            <div class="text-end w-100">
+                <div style="display: flex; flex-direction: row; align-items: end;" >
+                    <div class="position-relative m-2" style="height: 110px; border-radius: 50%; overflow: hidden;">
+                        <img src="../assets/img (1).jpg" alt="user img" class="h-100"/>
+                        <div class="shown-on-hover" style="position: absolute; background: linear-gradient(to top, black, transparent); height: 30%; width: 100%; bottom: 0px; left: 0px; right: 0px;">
+                            <i class="fas fa-pen text-white mb-0 text-clickable" style="opacity: 0.7;"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 text-end px-4" style="min-width: max-content;">
+                        <h6 class="fs-4">Anonymous</h6>
+                        <p class="fw-light fs-6">ID: 242775444</p>
+                    </div>
+                </div>
+
+                br
+                <div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
+                <div class="text-end" style="direction: ltr;">+996 125 4768 <i class="mx-2 text-primary fas fa-phone"></i> </div>
+                <div class="text-end"><i class="mx-2 text-primary fas fa-location-arrow"></i> الرياض ,السعودية</div>
+                br
+            </div>
+            <div class="d-flex justify-content-between flex-wrap">
+                <button type="button" class="btn btn-primary px-4 shadow-sm mb-4" style="width: 35%; min-width: max-content;">تعديل الملف الشخصي</button>
+                <div class="chat-cat">
+                    <input class="d-none" type="radio" name="chat-state" checked id="chat-state-still"/>
+                    <label for="chat-state-still" class="px-2 text-clickable mx-4">قيد التنفيذ</label> /
+                    <input class="d-none" type="radio" name="chat-state" checked id="chat-state-ended"/>
+                    <label for="chat-state-ended" class="px-2 text-clickable mx-4">انتهى</label>
+                </div>
+            </div>
+
+            <!-- processes -->
+            <!-- خليها رسبونسيف بشكل اكبر -->
+
+            - var processes = [{id: 4156234, title: "تعديل فوانيس ليد",count: 2, date: "25 / 08 / 2022 Sunday - 12:00 PM"},{id: 4156234, title: "تعديل فوانيس ليد",count: 2, date: "25 / 08 / 2022 Sunday - 12:00 PM"},{id: 4156234, title: "تعديل فوانيس ليد",count: 2, date: "25 / 08 / 2022 Sunday - 12:00 PM"},{id: 4156234, title: "تعديل فوانيس ليد",count: 2, date: "25 / 08 / 2022 Sunday - 12:00 PM"}]
+
+            <div>
+                <div class="d-flex my-4">
+                    h5(class="text-center" style="flex: 3;") <span class="d-none d-md-inline-block">عملية </span> رقم
+                    h5(class="text-center" style="flex: 3;") <span class="d-none d-md-inline-block">اسم </span> العملية
+                    h5(class="text-center" style="min-width: max-content; flex: 2;") عدد <span class="d-none d-md-inline-block">المنتجات </span>
+                    h5(class="text-center" style="flex: 5;") تاريخ <span class="d-none d-md-inline-block"> العملية</span>
+                    i(style="display: inline-block; width: 45px;")
+                </div>
+                each process, index in processes
+                    <div class="d-flex mb-2 py-2 position-relative" style="border-radius: 16px; border: 1px solid var(--bs-grey-100); align-items: center;">
+                        p(class="text-center p-0 m-0 fs-6 flex-grow-1") ##{process.id}
+                        p(class="text-center p-0 m-0 fs-6 flex-grow-1") #{process.title}
+                        p(class="text-center p-0 m-0 fs-6 flex-grow-1" style="min-width: 160px;") X #{process.count}
+                        p(class="text-center p-0 m-0 fs-6 flex-grow-1" style="direction: ltr;") #{process.date}
+                        i(style="display: inline-block; width: 45px; color: grey;" class="fs-1 fas fa-angle-left text-clickable p-0 m-0 ")
+                        <i style="position: absolute; right: -1px; top: 12px; height: 52%; background-color: var(--bs-primary-color); display: inline-block; width: 3px;"></i>
+                    </div>
+            </div>
+        </div>
+
+        include _components/footer
+        +footer("my-account")
