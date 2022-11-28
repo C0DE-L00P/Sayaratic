@@ -301,7 +301,7 @@
     }
     </style>
 <div class="swiper mySwiper">
-<div class="swiper-wrapper"><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./assets/slider-3.jpg); background-size: cover; background-position: center center;"></div><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./assets/slider-4.jpg); background-size: cover; background-position: center center;"></div><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./assets/slider-1.jpg); background-size: cover; background-position: center center;"></div></div>
+<div class="swiper-wrapper"><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./assets/slider-3.webp); background-size: cover; background-position: center center;"></div><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./assets/slider-4.webp); background-size: cover; background-position: center center;"></div><div class="swiper-slide" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(./assets/slider-1.webp); background-size: cover; background-position: center center;"></div></div>
 <div class="swiper-pagination"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -397,7 +397,7 @@
     }
     
     div:has(>#pointer){
-        transform: translateX(-100px);
+        z-index: 12;
         display: flex;
         flex-direction: row;
     }
@@ -499,7 +499,7 @@
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
 </div>
-<div style="display: flex; justify-content: space-between; z-index: 3;" class="text-primary p-4">
+<div style="display: flex; justify-content: space-between; z-index: 12;" class="text-primary p-4">
 <div>
 <i class="m-4 forward bg-primary btn-prev" id="pointer">
 <i class="fas fa-angle-right"></i>
@@ -867,7 +867,7 @@
     }
     
     div:has(>#pointer){
-        transform: translateX(-100px);
+        z-index: 12;
         display: flex;
         flex-direction: row;
     }
@@ -966,7 +966,7 @@
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
 </div>
-<div style="display: flex; justify-content: space-between; z-index: 3;" class="text-primary p-4">
+<div style="display: flex; justify-content: space-between; z-index: 12;" class="text-primary p-4">
 <div>
 <i class="m-4 forward bg-primary btn-prev" id="pointer">
 <i class="fas fa-angle-right"></i>

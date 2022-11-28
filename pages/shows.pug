@@ -3,7 +3,7 @@ include _components/car-card
 include _components/slider-offers-3
 include _components/nav-bar
 
-- var shows = [{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: true, isVIP: true},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: false, isVIP: true},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: false, isVIP: false},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: true, isVIP: true},{title: "وكالة الشرق هيونداي",img: "../assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: true, isVIP: true}]
+- var shows = [{title: "وكالة الشرق هيونداي",img: "./assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: true, isVIP: true},{title: "وكالة الشرق هيونداي",img: "./assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: false, isVIP: true},{title: "وكالة الشرق هيونداي",img: "./assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: false, isVIP: false},{title: "وكالة الشرق هيونداي",img: "./assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: true, isVIP: true},{title: "وكالة الشرق هيونداي",img: "./assets/service-1.jpg", carsCount: 133, location: "الرياض", isGolden: true, isVIP: true}]
 
 doctype html
 html(lang="ar" dir="rtl")
@@ -31,7 +31,7 @@ html(lang="ar" dir="rtl")
                 <div class="p-2" style="position: relative; border: 1px solid var(--bs-grey-150); border-radius: 8px; cursor: pointer;">
                     <div style="position: relative; ">
                         <img src="#{show.img}" alt="show img" class="mb-3"style="border-radius: 8px; height: 175px; width: 100%; object-fit: cover; "/>
-                        <i class="#{show.isVIP? 'd-inline-block':'d-none'}"style="width: 48px; height: 50px; position: absolute; top: -6px; left: 20px; background-image: url(../assets/vip.png); background-size: contain; background-repeat: no-repeat;"></i>
+                        <i class="#{show.isVIP? 'd-inline-block':'d-none'}"style="width: 48px; height: 50px; position: absolute; top: -6px; left: 20px; background-image: url(./assets/vip.png); background-size: contain; background-repeat: no-repeat;"></i>
                     </div>
                     <div class="#{show.isGolden? 'd-inline-block': 'd-none'}"style="position: absolute; top: 20px; right:-4px; color: white; background-color: #eeae00; padding-left: 16px; padding-right: 8px; border-radius: 4px; padding-top: 4px;padding-bottom: 4px;"> وكالات جولد</div>
 

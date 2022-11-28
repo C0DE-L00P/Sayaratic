@@ -11,7 +11,7 @@ include _components/faq-section
 <html lang="ar" dir="rtl">
   <head>
     include _components/shared-head
-    //- <link href="../css/home.css" rel="stylesheet">
+    //- <link href="./css/home.css" rel="stylesheet">
     <title>الصفحة الرئيسية</title>
 </head>
   <body style="overflow-x: hidden;">
@@ -19,10 +19,10 @@ include _components/faq-section
 
     <div class="position-relative" style="height: calc(100% - 78px)">
       +slider-v(true,[
-        "../assets/slider-1.jpg",
-        "../assets/slider-2.jpg",
-        "../assets/slider-3.jpg",
-        "../assets/slider-4.jpg",
+        "./assets/slider-1.webp",
+        "./assets/slider-2.webp",
+        "./assets/slider-3.webp",
+        "./assets/slider-4.webp",
       ])
       <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 5;flex-direction: column;">
         <h3 class="text-white d-block">جاهز لبدء رحلتك <span class="text-primary h1">!</span></h3>
@@ -47,9 +47,9 @@ include _components/faq-section
     </div>
 
     <div style="height: max(300px, max-content); margin:0px;" class="row grid">
-      +category-card("بيع سيارة", "بيع سيارتك القديمة","fas fa-hand-holding-dollar","../assets/slider-3.jpg",'./used.html')
-      +category-card("شراء سيارة", "اكتشف ما تريده","fas fa-key","../assets/slider-2.jpg",'new.html')
-      +category-card("قطع غيار سيارات", "اكتشف ما تريده","fas fa-gears","../assets/slider-4.jpg",'parts.html')
+      +category-card("بيع سيارة", "بيع سيارتك القديمة","fas fa-hand-holding-dollar","./assets/slider-3.webp",'./used.html')
+      +category-card("شراء سيارة", "اكتشف ما تريده","fas fa-key","./assets/slider-2.webp",'new.html')
+      +category-card("قطع غيار سيارات", "اكتشف ما تريده","fas fa-gears","./assets/slider-4.webp",'parts.html')
     </div>
 
     <div class="text-center py-4">
@@ -59,45 +59,45 @@ include _components/faq-section
         |  وجميع موديلات السنه الحديثة والقديمة</p>
 
         +slider-offers("شاهد الكل",[
-                    "../assets/car-2.png",
-                    "../assets/car-3.png",
-                    "../assets/car-5.png",
-                    "../assets/car-1.png",
-                    "../assets/car-1.png",
-                    "../assets/car-1.png",
-                    "../assets/car-1.png",
-                    "../assets/car-1.png",
-                    "../assets/car-1.png",
-                    "../assets/car-1.png",
+                    "./assets/car-2.png",
+                    "./assets/car-3.png",
+                    "./assets/car-5.png",
+                    "./assets/car-1.png",
+                    "./assets/car-1.png",
+                    "./assets/car-1.png",
+                    "./assets/car-1.png",
+                    "./assets/car-1.png",
+                    "./assets/car-1.png",
+                    "./assets/car-1.png",
                     ])
     </div>
 
     +slider-h("تصفح السيارات حسب الماركة","جميع الماركات",false,[
-            {img: "./../assets/brands-1.png", title: 'sedan'},
-            {img: "./../assets/brands-2.png", title: 'sedan'},
-            {img: "./../assets/brands-3.png", title: 'sedan'},
-            {img: "./../assets/brands-4.png", title: 'sedan'},
-            {img: "./../assets/brands-5.png", title: 'sedan'},
-            {img: "./../assets/brands-6.png", title: 'sedan'},
-            {img: "./../assets/brands-7.png", title: 'sedan'},
-            {img: "./../assets/brands-8.png", title: 'sedan'},
-            {img: "./../assets/brands-9.png", title: 'sedan'},
-            {img: "./../assets/brands-10.png", title: 'sedan'},
-            {img: "./../assets/brands-11.png", title: 'sedan'},
+            {img: "././assets/brands-1.png", title: 'sedan'},
+            {img: "././assets/brands-2.png", title: 'sedan'},
+            {img: "././assets/brands-3.png", title: 'sedan'},
+            {img: "././assets/brands-4.png", title: 'sedan'},
+            {img: "././assets/brands-5.png", title: 'sedan'},
+            {img: "././assets/brands-6.png", title: 'sedan'},
+            {img: "././assets/brands-7.png", title: 'sedan'},
+            {img: "././assets/brands-8.png", title: 'sedan'},
+            {img: "././assets/brands-9.png", title: 'sedan'},
+            {img: "././assets/brands-10.png", title: 'sedan'},
+            {img: "././assets/brands-11.png", title: 'sedan'},
             ])
 
-    <div class="text-center w-100 my-4 container">
+    <div class="text-center w-100 overflow-hidden my-4 container">
       h1(style="border-bottom: 2px solid #e7e7e7; display: inline-block;", class="text-primary pb-4 m-4") اعثر على سيارتك المستعملة
       <div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0">
-        <label style="display: flex; gap: 8px;" class="ps-4 col-12 col-lg-6">
+        <label style="display: flex; gap: 8px; max-width: 100%;" class="ps-4 col-12 col-lg-6">
           span البحث بالاسم
-          <input type="text" placeholder="ابحث هنا" style="flex-grow: 1; height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
+          <input type="text" placeholder="ابحث هنا" style="max-width: 70%; height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
         </label>
-        <label style="display: flex; gap: 8px;"class="col-5 col-lg-3">
+        <label style="display: flex; gap: 8px; max-width: 100%;"class="col-12 col-lg-3">
           span الموديل
           <input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
         </label>
-        <label style="display: flex; gap: 8px;" for="order-select-cards" class="px-0 px-lg-2 col-6 col-lg-3">
+        <label style="display: flex; gap: 8px; max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3">
           span السعر
           <div class="dropdown fs-7 text-secondary border-secondary">
             <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
@@ -134,9 +134,9 @@ include _components/faq-section
         </span>
       </div>
       <div style="display: grid; place-items: center;flex: 1; position: relative; min-width: 385px;" class="m-4">
-        <img src="../assets/slider-2.jpg" alt="plc_img" width="200px" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
-        <img src="../assets/slider-1.jpg" alt="plc_img" width="315px" style="margin: 15%;z-index: 2;">
-        <img src="../assets/slider-4.jpg" alt="plc_img" width="200px" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
+        <img src="./assets/slider-2.webp" alt="plc_img" width="200px" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
+        <img src="./assets/slider-1.webp" alt="plc_img" width="315px" style="margin: 15%;z-index: 2;">
+        <img src="./assets/slider-4.webp" alt="plc_img" width="200px" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
         <span style=" z-index: 1; position: absolute;  display: flex; flex-direction: column; height: 200px; gap: 8px; width: 100px;transform: skew(15deg, 15deg) rotate(15deg); bottom: 40px; left: 20%;">
           <i class="bg-primary" style="flex: 8"></i>
           <i class="bg-primary" style="flex: 4"></i>

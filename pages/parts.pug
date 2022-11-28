@@ -5,8 +5,8 @@ include _components/car-card
 include _components/slider-offers-3
 include _components/nav-bar
 
-- var tires = [{title: "جنط من BBC ألومنيوم",img: "../assets/tire-1.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-2.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-3.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-4.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-5.jpg"},{title: "جنط من BBC ألومنيوم",img: "../assets/tire-6.jpg"}]
-- var categories = [{title: "اكتشف جميع قطع الغيار", icon: "../assets/p-cat-1.jpg"},{title: "الفرامل والأقمشة", icon: "../assets/p-cat-2.jpg"},{title: "الأبواب والرفرف والكبوت", icon: "../assets/p-cat-3.jpg"},{title: "الشمعات والإصطبات", icon: "../assets/p-cat-4.jpg"},{title: "البواجي والفلاتر والسيور", icon: "../assets/p-cat-5.jpg"},{title: "المساعدات والمقصات", icon: "../assets/p-cat-6.jpg"},{title: "الدفرنس والرمانات", icon: "../assets/p-cat-7.jpg"},{title: "الشكمان", icon: "../assets/p-cat-8.jpg"},{title: "نظام الوقود", icon: "../assets/p-cat-9.jpg"},{title: "نظام التكييف والتبريد", icon: "../assets/p-cat-10.jpg"},{title: "المكائن والقيرات وملحقاتها", icon: "../assets/p-cat-11.jpg"}]
+- var tires = [{title: "جنط من BBC ألومنيوم",img: "./assets/tire-1.jpg"},{title: "جنط من BBC ألومنيوم",img: "./assets/tire-2.jpg"},{title: "جنط من BBC ألومنيوم",img: "./assets/tire-3.jpg"},{title: "جنط من BBC ألومنيوم",img: "./assets/tire-4.jpg"},{title: "جنط من BBC ألومنيوم",img: "./assets/tire-5.jpg"},{title: "جنط من BBC ألومنيوم",img: "./assets/tire-6.jpg"}]
+- var categories = [{title: "اكتشف جميع قطع الغيار", icon: "./assets/p-cat-1.jpg"},{title: "الفرامل والأقمشة", icon: "./assets/p-cat-2.jpg"},{title: "الأبواب والرفرف والكبوت", icon: "./assets/p-cat-3.jpg"},{title: "الشمعات والإصطبات", icon: "./assets/p-cat-4.jpg"},{title: "البواجي والفلاتر والسيور", icon: "./assets/p-cat-5.jpg"},{title: "المساعدات والمقصات", icon: "./assets/p-cat-6.jpg"},{title: "الدفرنس والرمانات", icon: "./assets/p-cat-7.jpg"},{title: "الشكمان", icon: "./assets/p-cat-8.jpg"},{title: "نظام الوقود", icon: "./assets/p-cat-9.jpg"},{title: "نظام التكييف والتبريد", icon: "./assets/p-cat-10.jpg"},{title: "المكائن والقيرات وملحقاتها", icon: "./assets/p-cat-11.jpg"}]
 
 
 doctype html
@@ -26,10 +26,10 @@ html(lang="ar",dir="rtl")
 
         <div class="position-relative" style="height: calc(100% - 78px)">
             +slider-v(true,[
-                "../assets/slider-1.jpg",
-                "../assets/slider-2.jpg",
-                "../assets/slider-3.jpg",
-                "../assets/slider-4.jpg",
+                "./assets/slider-1.webp",
+                "./assets/slider-2.webp",
+                "./assets/slider-3.webp",
+                "./assets/slider-4.webp",
             ])
             <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 6;flex-direction: column;">
                 <h3 class="text-white d-block">كل اللي تحتاجه تلاقيه <span class="text-primary h1">!</span></h3>
@@ -107,17 +107,17 @@ html(lang="ar",dir="rtl")
             <!-- slider on brand -->
 
             +slider-h("تصفح السيارات حسب الماركة","جميع الماركات",false,[
-                    {img: "./../assets/brands-1.png", title: 'sedan'},
-                    {img: "./../assets/brands-2.png", title: 'sedan'},
-                    {img: "./../assets/brands-3.png", title: 'sedan'},
-                    {img: "./../assets/brands-4.png", title: 'sedan'},
-                    {img: "./../assets/brands-5.png", title: 'sedan'},
-                    {img: "./../assets/brands-6.png", title: 'sedan'},
-                    {img: "./../assets/brands-7.png", title: 'sedan'},
-                    {img: "./../assets/brands-8.png", title: 'sedan'},
-                    {img: "./../assets/brands-9.png", title: 'sedan'},
-                    {img: "./../assets/brands-10.png", title: 'sedan'},
-                    {img: "./../assets/brands-11.png", title: 'sedan'},
+                    {img: "././assets/brands-1.png", title: 'sedan'},
+                    {img: "././assets/brands-2.png", title: 'sedan'},
+                    {img: "././assets/brands-3.png", title: 'sedan'},
+                    {img: "././assets/brands-4.png", title: 'sedan'},
+                    {img: "././assets/brands-5.png", title: 'sedan'},
+                    {img: "././assets/brands-6.png", title: 'sedan'},
+                    {img: "././assets/brands-7.png", title: 'sedan'},
+                    {img: "././assets/brands-8.png", title: 'sedan'},
+                    {img: "././assets/brands-9.png", title: 'sedan'},
+                    {img: "././assets/brands-10.png", title: 'sedan'},
+                    {img: "././assets/brands-11.png", title: 'sedan'},
                     ])
         </div>
     </div>

@@ -14,7 +14,7 @@ html(lang="ar" dir="rtl")
     body 
         +nav-bar("auctions")        
         <div class="position-relative" style="height: calc(100% - 78px)">
-            +slider-v(false,["../assets/slider-3.jpg","../assets/slider-4.jpg","../assets/slider-1.jpg"])
+            +slider-v(false,["./assets/slider-3.webp","./assets/slider-4.webp","./assets/slider-1.webp"])
 
             <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 10;flex-direction: column;">
                 <div class="text-white" style="display: flex; flex-direction: column; gap: 8px;  position: absolute; left: 16px; bottom: 10px; align-items: center; justify-content: center; z-index: 11;">
@@ -33,7 +33,7 @@ html(lang="ar" dir="rtl")
             <p class="fs-6 mb-6"> العديد من السيارات المشاركة المضمونة والمفحوصة من قبل فريق عمل <span class="text-primary"> سيارتك </span>
                 |  وجميع موديلات السنه الحديثة والقديمة</p>
 
-            each auction,index in [{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-1.png"},date: "20 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-2.png"},date: "20 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-4.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-5.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "../assets/car-3.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"}]
+            each auction,index in [{car: {name:"جي ام سي يوكان ديالي",img: "./assets/car-1.png"},date: "20 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "./assets/car-2.png"},date: "20 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "./assets/car-4.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "./assets/car-5.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"},{car: {name:"جي ام سي يوكان ديالي",img: "./assets/car-3.png"},date: "22 / 8 / 2022",timeLeft: "01:04:18:38"}]
                 +auction-card(auction.car, auction.date,auction.timeLeft)
         </div>
         include _components/footer
