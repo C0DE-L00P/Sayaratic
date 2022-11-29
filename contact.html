@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
 <link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
-<style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
+<style>*{font-family: "Noto Kufi Arabic", sans-serif} div {border: 1px solid #3ef43188 !important;}</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,7 +103,7 @@
         background: #ff5700;
     }
     #side-bar{
-        right: -80px;
+        right: -150px;
         transition-duration: 0.3s;
     }
     #show-side-bar:checked + #side-bar{
@@ -256,7 +256,7 @@
 <div class="modal-dialog modal-login p-4 overflow-hidden" style="border:none;">
 <div class="modal-content position-relative" style="border-radius: 32px;">
 <div class="modal-body text-center">
-<div style="position: absolute;top: 40px;right: -8px; border-radius: 16px 0 0 40px; background-color: var(--bs-primary-color); color: white; width: 80%;display: flex; flex-direction: row; align-items: end;" >
+<div style="position: absolute;top: 40px;right: -8px; border-radius: 16px 0 0 40px; background-color: var(--bs-primary-color); color: white; width: 80%;display: flex; flex-direction: row; align-items: end; flex-wrap: wrap;" >
 <div class="position-relative m-2" style="height: 110px; border-radius: 50%; overflow: hidden;">
 <img src="./assets/img (1).jpg" alt="user img" class="h-100"/>
 <div class="shown-on-hover" style="position: absolute; background: linear-gradient(to top, black, transparent); height: 30%; width: 100%; bottom: 0px; left: 0px; right: 0px;">
@@ -268,7 +268,7 @@
 <p class="fw-light fs-7 ">ID: 242775444</p>
 </div>
 </div>
-<i class="d-block"style="height: 110px; width: 1px;"></i><br/><br/><br/><div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
+<i class="d-block"style="height: 110px; width: 1px;"></i><br/><br/><br/><br class="d-block d-sm-none"/><br class="d-block d-sm-none"/><br class="d-block d-sm-none"/><div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
 <div class="text-end" style="direction: ltr;">+996 125 4768 <i class="mx-2 text-primary fas fa-phone"></i> </div>
 <div class="text-end"><i class="mx-2 text-primary fas fa-location-arrow"></i> الرياض ,السعودية</div><br/><a style="border: none;" class="mb-4 text-decoration-none" href="./my-account.html">
 <button type="button" class="d-block btn btn-primary mx-auto">تعديل ملفي</button>
@@ -290,32 +290,32 @@
         document.querySelector("#user_btn").style.display = isLoggedIn? 'inline-block':'none';
     }
     onInit();</script><!-- banner with info -->
-<div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./assets/bg-contact.jpg); background-size: cover; background-position: center center; height: 92vh;">
+<div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./assets/bg-contact.jpg); background-size: cover; background-position: center center; height: 92vh; max-width: 100%; margin-inline: 0px;">
 <div class="col-12 col-md-6 p-4">
-<div class="mx-4 text-white"><br><br><br>
+<div class="mx-4 text-white"><br><br class="d-none d-md-block"><br class="d-none d-md-block">
     <h1>تواصل معنا </h1>
-    <p class="mb-4 fw-light fs-6">نرحب دائماً بجميع رسائلك سواء كانت استفسارات شكاوى أو اقتراحات لتحسين مستوى الخدمة</p><div class="d-flex justify-content-between">
+    <p class="mb-4 fw-light fs-6">نرحب دائماً بجميع رسائلك سواء كانت استفسارات شكاوى أو اقتراحات لتحسين مستوى الخدمة</p><div class="d-flex justify-content-between flex-wrap">
 <div>
-    <h5 class="text-primary mb-3">العنوان</h5>
+    <h5 class="text-primary mb-2">العنوان</h5>
     <p class="text-white pb-1 mb-0">شارع العربية - الدمام 12</p>
-    <p class="text-white">المملكة العربية السعودية</p><br/>
-<br/>
+    <p class="text-white">المملكة العربية السعودية</p><br class="d-none d-sm-block"/>
+<br class="d-none d-sm-block"/>
     <h5 class="text-primary">البريد الإلكتروني</h5><a class="text-white fs-6" style="text-decoration: none;" href="mailto:Support@SYARATK.com.sa">Support@SYARATK.com.sa</a></div>
 <div>
     <h6 class="text-primary">رقم الجوال</h6>
-    <p class="text-white pb-1" style="direction: ltr; text-align: end;">+966 123 4567</p><br/>
-<br/>
+    <p class="text-white pb-1" style="direction: ltr; text-align: end;">+966 123 4567</p><br class="d-none d-sm-block"/>
+<br class="d-none d-sm-block"/>
 <div class="text-white user-select-none">
-<i class="cursor-pointer fab fa-facebook-square"></i>
-<i class="cursor-pointer mx-2 fab fa-linkedin-in"></i>
-<i class="cursor-pointer mx-2 fab fa-twitter"></i>
-<i class="cursor-pointer mx-2 fab fa-instagram"></i>
+<i class="text-clickable fab fa-facebook-square"></i>
+<i class="text-clickable mx-2 fab fa-linkedin-in"></i>
+<i class="text-clickable mx-2 fab fa-twitter"></i>
+<i class="text-clickable mx-2 fab fa-instagram"></i>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="col-0 col-md-6 d-none d-md-inline-block" style="height: 100%;">
+<div class="col-0 col-md-6 d-none d-md-inline-block overflow-hidden" style="height: 100%;">
 <img alt="contact illustration" src="./assets/contact-img.png" style="height: 80%;margin-top: 10%; opacity: 0.9;"/>
 </div>
 </div>

@@ -26,7 +26,7 @@ include _components/faq-section
       ])
       <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 5;flex-direction: column;">
         <h3 class="text-white d-block">جاهز لبدء رحلتك <span class="text-primary h1">!</span></h3>
-        <form class="row">
+        <form class="row" style="max-width: 90%;">
             <div class="col-auto">
                 <label for="inputSearch" class="visually-hidden">Search</label>
                 <input type="text" class="form-control p-2 px-4 placeholder-secondary placeholder-sm" id="inputSearch" placeholder="ابحث عن الموديل او نوع المركبة الذي تريده">
@@ -86,27 +86,27 @@ include _components/faq-section
             {img: "././assets/brands-11.png", title: 'sedan'},
             ])
 
-    <div class="text-center w-100 overflow-hidden my-4 container">
+    <div class="text-center w-100 my-4 container">
       h1(style="border-bottom: 2px solid #e7e7e7; display: inline-block;", class="text-primary pb-4 m-4") اعثر على سيارتك المستعملة
       <div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0">
-        <label style="display: flex; gap: 8px; max-width: 100%;" class="ps-4 col-12 col-lg-6">
-          span البحث بالاسم
-          <input type="text" placeholder="ابحث هنا" style="max-width: 70%; height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
-        </label>
-        <label style="display: flex; gap: 8px; max-width: 100%;"class="col-12 col-lg-3">
-          span الموديل
-          <input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
-        </label>
-        <label style="display: flex; gap: 8px; max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3">
-          span السعر
-          <div class="dropdown fs-7 text-secondary border-secondary">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
-            <ul class="dropdown-menu">
-              <li>من أقل إلى أعلى</li>
-              <li>من أعلى إلى أقل</li>
-            </ul>
-          </div>
-        </label>
+          <label style="display: flex; gap: 8px; max-width: 100%;" class="ps-4 col-12 col-lg-6">
+              span(style="width: max-content;") البحث بالاسم
+              <input type="text" placeholder="ابحث هنا" style="flex-grow: 1; max-width: calc(100% - 120px); height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
+          </label>
+          <label style="display: flex; gap: 8px; max-width: calc(100% - 26px);"class="col-12 col-lg-3 p-0 m-0">
+              span الموديل
+              <input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
+          </label>
+          <label style="display: flex; gap: 8px; max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3">
+              span السعر
+              <div class="dropdown fs-7 text-secondary border-secondary">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
+                  <ul class="dropdown-menu">
+                  <li>من أقل إلى أعلى</li>
+                  <li>من أعلى إلى أقل</li>
+                  </ul>
+              </div>
+          </label>
       </div>
 
       <div  style="display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center;">
@@ -125,7 +125,7 @@ include _components/faq-section
     </div>
 
     <div class="bg-secondary position-relative d-flex flex-wrap">
-      <div style="flex: 1; display: grid; place-content: center right; min-width: 385px;" class="p-4">
+      <div style="flex: 1; display: grid; place-content: center right;" class="p-4">
         <h2 class="display-6 fw-bold"> كل اللي تحتاجه <span class="text-primary"> .... <span style="border-bottom: 1px solid #cccccc">تلاقيه</span></span></h2>
         <p class="display-8"> جميع خدمات العناية بالسيارات وجميع قطع الغيار <br>وكل ما تحتاجه سيارتك </p>
         <span class="text-center d-inline-block w-100">
@@ -133,10 +133,10 @@ include _components/faq-section
           <button class="btn btn-outline-primary mx-2 rounded-xl shadow-custom-inset"><i class="fas fa-arrow-right"></i> قطع الغيار </i></button>
         </span>
       </div>
-      <div style="display: grid; place-items: center;flex: 1; position: relative; min-width: 385px;" class="m-4">
-        <img src="./assets/slider-2.webp" alt="plc_img" width="200px" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
-        <img src="./assets/slider-1.webp" alt="plc_img" width="315px" style="margin: 15%;z-index: 2;">
-        <img src="./assets/slider-4.webp" alt="plc_img" width="200px" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
+      <div style="display: grid; place-items: center;flex: 1; position: relative; min-width: 272px;" class="m-4">
+        <img src="./assets/slider-2.webp" alt="plc_img" width="30%" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
+        <img src="./assets/slider-1.webp" alt="plc_img" width="70%" style="margin: 15%;z-index: 2;">
+        <img src="./assets/slider-4.webp" alt="plc_img" width="30%" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
         <span style=" z-index: 1; position: absolute;  display: flex; flex-direction: column; height: 200px; gap: 8px; width: 100px;transform: skew(15deg, 15deg) rotate(15deg); bottom: 40px; left: 20%;">
           <i class="bg-primary" style="flex: 8"></i>
           <i class="bg-primary" style="flex: 4"></i>

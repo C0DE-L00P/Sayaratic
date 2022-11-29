@@ -64,40 +64,40 @@ html(lang="ar" dir="rtl")
         +nav-bar("contact")
 
         <!-- banner with info -->
-        <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./assets/bg-contact.jpg); background-size: cover; background-position: center center; height: 92vh;">
+        <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./assets/bg-contact.jpg); background-size: cover; background-position: center center; height: 92vh; max-width: 100%; margin-inline: 0px;">
             <div class="col-12 col-md-6 p-4">
                 <div class="mx-4 text-white">
                     br
-                    br
-                    br
+                    br(class="d-none d-md-block")
+                    br(class="d-none d-md-block")
                     h1 تواصل معنا 
                     p(class="mb-4 fw-light fs-6") نرحب دائماً بجميع رسائلك سواء كانت استفسارات شكاوى أو اقتراحات لتحسين مستوى الخدمة
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between flex-wrap">
                         <div>
-                            h5(class="text-primary mb-3") العنوان
+                            h5(class="text-primary mb-2") العنوان
                             p(class="text-white pb-1 mb-0") شارع العربية - الدمام 12
                             p(class="text-white") المملكة العربية السعودية
-                            <br/>
-                            <br/>
+                            <br class="d-none d-sm-block"/>
+                            <br class="d-none d-sm-block"/>
                             h5(class="text-primary") البريد الإلكتروني
                             a(class="text-white fs-6" style="text-decoration: none;" href="mailto:Support@SYARATK.com.sa") Support@SYARATK.com.sa
                         </div>
                         <div>
                             h6(class="text-primary") رقم الجوال
                             p(class="text-white pb-1" style="direction: ltr; text-align: end;") +966 123 4567
-                            <br/>
-                            <br/>
+                            <br class="d-none d-sm-block"/>
+                            <br class="d-none d-sm-block"/>
                             <div class="text-white user-select-none">
-                                <i class="cursor-pointer fab fa-facebook-square"></i>
-                                <i class="cursor-pointer mx-2 fab fa-linkedin-in"></i>
-                                <i class="cursor-pointer mx-2 fab fa-twitter"></i>
-                                <i class="cursor-pointer mx-2 fab fa-instagram"></i>
+                                <i class="text-clickable fab fa-facebook-square"></i>
+                                <i class="text-clickable mx-2 fab fa-linkedin-in"></i>
+                                <i class="text-clickable mx-2 fab fa-twitter"></i>
+                                <i class="text-clickable mx-2 fab fa-instagram"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-0 col-md-6 d-none d-md-inline-block" style="height: 100%;">
+            <div class="col-0 col-md-6 d-none d-md-inline-block overflow-hidden" style="height: 100%;">
                 <img alt="contact illustration" src="./assets/contact-img.png" style="height: 80%;margin-top: 10%; opacity: 0.9;"/>
             </div>
         </div>

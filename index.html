@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
 <link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
-<style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
+<style>*{font-family: "Noto Kufi Arabic", sans-serif} div {border: 1px solid #3ef43188 !important;}</style>
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>الصفحة الرئيسية</title>
@@ -55,7 +55,7 @@
     background: #ff5700;
 }
 #side-bar{
-    right: -80px;
+    right: -150px;
     transition-duration: 0.3s;
 }
 #show-side-bar:checked + #side-bar{
@@ -208,7 +208,7 @@ div:has(>.shown-on-hover):hover > .shown-on-hover{
 <div class="modal-dialog modal-login p-4 overflow-hidden" style="border:none;">
 <div class="modal-content position-relative" style="border-radius: 32px;">
 <div class="modal-body text-center">
-<div style="position: absolute;top: 40px;right: -8px; border-radius: 16px 0 0 40px; background-color: var(--bs-primary-color); color: white; width: 80%;display: flex; flex-direction: row; align-items: end;" >
+<div style="position: absolute;top: 40px;right: -8px; border-radius: 16px 0 0 40px; background-color: var(--bs-primary-color); color: white; width: 80%;display: flex; flex-direction: row; align-items: end; flex-wrap: wrap;" >
 <div class="position-relative m-2" style="height: 110px; border-radius: 50%; overflow: hidden;">
 <img src="./assets/img (1).jpg" alt="user img" class="h-100"/>
 <div class="shown-on-hover" style="position: absolute; background: linear-gradient(to top, black, transparent); height: 30%; width: 100%; bottom: 0px; left: 0px; right: 0px;">
@@ -220,7 +220,7 @@ div:has(>.shown-on-hover):hover > .shown-on-hover{
 <p class="fw-light fs-7 ">ID: 242775444</p>
 </div>
 </div>
-<i class="d-block"style="height: 110px; width: 1px;"></i><br/><br/><br/><div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
+<i class="d-block"style="height: 110px; width: 1px;"></i><br/><br/><br/><br class="d-block d-sm-none"/><br class="d-block d-sm-none"/><br class="d-block d-sm-none"/><div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
 <div class="text-end" style="direction: ltr;">+996 125 4768 <i class="mx-2 text-primary fas fa-phone"></i> </div>
 <div class="text-end"><i class="mx-2 text-primary fas fa-location-arrow"></i> الرياض ,السعودية</div><br/><a style="border: none;" class="mb-4 text-decoration-none" href="./my-account.html">
 <button type="button" class="d-block btn btn-primary mx-auto">تعديل ملفي</button>
@@ -317,7 +317,7 @@ body {
     },
 });</script><div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 5;flex-direction: column;">
 <h3 class="text-white d-block">جاهز لبدء رحلتك <span class="text-primary h1">!</span></h3>
-<form class="row">
+<form class="row" style="max-width: 90%;">
 <div class="col-auto">
 <label for="inputSearch" class="visually-hidden">Search</label>
 <input type="text" class="form-control p-2 px-4 placeholder-secondary placeholder-sm" id="inputSearch" placeholder="ابحث عن الموديل او نوع المركبة الذي تريده">
@@ -808,11 +808,11 @@ div:has(>#pointer){
         prevEl: ".btn-prev",
         nextEl: ".btn-next",
     },
-});</script><div class="text-center w-100 overflow-hidden my-4 container">
+});</script><div class="text-center w-100 my-4 container">
 <h1 class="text-primary pb-4 m-4" style="border-bottom: 2px solid #e7e7e7; display: inline-block;">اعثر على سيارتك المستعملة</h1><div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0">
-<label style="display: flex; gap: 8px; max-width: 100%;" class="ps-4 col-12 col-lg-6"><span>البحث بالاسم</span><input type="text" placeholder="ابحث هنا" style="max-width: 70%; height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
+<label style="display: flex; gap: 8px; max-width: 100%;" class="ps-4 col-12 col-lg-6"><span style="width: max-content;">البحث بالاسم</span><input type="text" placeholder="ابحث هنا" style="flex-grow: 1; max-width: calc(100% - 120px); height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
 </label>
-<label style="display: flex; gap: 8px; max-width: 100%;"class="col-12 col-lg-3"><span>الموديل</span><input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
+<label style="display: flex; gap: 8px; max-width: calc(100% - 26px);"class="col-12 col-lg-3 p-0 m-0"><span>الموديل</span><input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
 </label>
 <label style="display: flex; gap: 8px; max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3"><span>السعر</span><div class="dropdown fs-7 text-secondary border-secondary">
 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
@@ -1077,7 +1077,7 @@ div:has(>#pointer){
 </div>
 </div>
 <div class="bg-secondary position-relative d-flex flex-wrap">
-<div style="flex: 1; display: grid; place-content: center right; min-width: 385px;" class="p-4">
+<div style="flex: 1; display: grid; place-content: center right;" class="p-4">
 <h2 class="display-6 fw-bold"> كل اللي تحتاجه <span class="text-primary"> .... <span style="border-bottom: 1px solid #cccccc">تلاقيه</span></span></h2>
 <p class="display-8"> جميع خدمات العناية بالسيارات وجميع قطع الغيار <br>وكل ما تحتاجه سيارتك </p>
 <span class="text-center d-inline-block w-100">
@@ -1085,10 +1085,10 @@ div:has(>#pointer){
 <button class="btn btn-outline-primary mx-2 rounded-xl shadow-custom-inset"><i class="fas fa-arrow-right"></i> قطع الغيار </i></button>
 </span>
 </div>
-<div style="display: grid; place-items: center;flex: 1; position: relative; min-width: 385px;" class="m-4">
-<img src="./assets/slider-2.webp" alt="plc_img" width="200px" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
-<img src="./assets/slider-1.webp" alt="plc_img" width="315px" style="margin: 15%;z-index: 2;">
-<img src="./assets/slider-4.webp" alt="plc_img" width="200px" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
+<div style="display: grid; place-items: center;flex: 1; position: relative; min-width: 272px;" class="m-4">
+<img src="./assets/slider-2.webp" alt="plc_img" width="30%" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
+<img src="./assets/slider-1.webp" alt="plc_img" width="70%" style="margin: 15%;z-index: 2;">
+<img src="./assets/slider-4.webp" alt="plc_img" width="30%" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
 <span style=" z-index: 1; position: absolute;  display: flex; flex-direction: column; height: 200px; gap: 8px; width: 100px;transform: skew(15deg, 15deg) rotate(15deg); bottom: 40px; left: 20%;">
 <i class="bg-primary" style="flex: 8"></i>
 <i class="bg-primary" style="flex: 4"></i>

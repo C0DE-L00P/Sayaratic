@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
 <link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
-<style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
+<style>*{font-family: "Noto Kufi Arabic", sans-serif} div {border: 1px solid #3ef43188 !important;}</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +56,7 @@
         background: #ff5700;
     }
     #side-bar{
-        right: -80px;
+        right: -150px;
         transition-duration: 0.3s;
     }
     #show-side-bar:checked + #side-bar{
@@ -209,7 +209,7 @@
 <div class="modal-dialog modal-login p-4 overflow-hidden" style="border:none;">
 <div class="modal-content position-relative" style="border-radius: 32px;">
 <div class="modal-body text-center">
-<div style="position: absolute;top: 40px;right: -8px; border-radius: 16px 0 0 40px; background-color: var(--bs-primary-color); color: white; width: 80%;display: flex; flex-direction: row; align-items: end;" >
+<div style="position: absolute;top: 40px;right: -8px; border-radius: 16px 0 0 40px; background-color: var(--bs-primary-color); color: white; width: 80%;display: flex; flex-direction: row; align-items: end; flex-wrap: wrap;" >
 <div class="position-relative m-2" style="height: 110px; border-radius: 50%; overflow: hidden;">
 <img src="./assets/img (1).jpg" alt="user img" class="h-100"/>
 <div class="shown-on-hover" style="position: absolute; background: linear-gradient(to top, black, transparent); height: 30%; width: 100%; bottom: 0px; left: 0px; right: 0px;">
@@ -221,7 +221,7 @@
 <p class="fw-light fs-7 ">ID: 242775444</p>
 </div>
 </div>
-<i class="d-block"style="height: 110px; width: 1px;"></i><br/><br/><br/><div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
+<i class="d-block"style="height: 110px; width: 1px;"></i><br/><br/><br/><br class="d-block d-sm-none"/><br class="d-block d-sm-none"/><br class="d-block d-sm-none"/><div class="text-end"><i class="mx-2 text-primary fas fa-envelope"></i> anonymous@gmail.com</div>
 <div class="text-end" style="direction: ltr;">+996 125 4768 <i class="mx-2 text-primary fas fa-phone"></i> </div>
 <div class="text-end"><i class="mx-2 text-primary fas fa-location-arrow"></i> الرياض ,السعودية</div><br/><a style="border: none;" class="mb-4 text-decoration-none" href="./my-account.html">
 <button type="button" class="d-block btn btn-primary mx-auto">تعديل ملفي</button>
@@ -529,12 +529,12 @@
             nextEl: ".btn-next",
         },
     });</script><div class="container text-center w-100 my-4">
-    <h1 class="text-primary pb-4 m-4" style="border-bottom: 2px solid #e7e7e7; display: inline-block;">أحدث السيارات</h1><div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0">
-<label style="display: flex; gap: 8px;" class="ps-4 col-12 col-lg-6"><span>البحث بالاسم</span><input type="text" placeholder="ابحث هنا" style="flex-grow: 1; height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
+    <h1 class="text-primary pb-4 m-4" style="border-bottom: 2px solid #e7e7e7; display: inline-block;">أحدث السيارات</h1><div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0 px-4">
+<label style="display: flex; gap: 8px; max-width: 100%;" class="px-0 col-12 col-lg-6"><span style="width: max-content;">البحث بالاسم</span><input type="text" placeholder="ابحث هنا" style="flex-grow: 1; max-width: calc(100% - 120px); height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
 </label>
-<label style="display: flex; gap: 8px;"class="col-5 col-lg-3"><span>الموديل</span><input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
+<label style="display: flex; gap: 8px; max-width: calc(100% - 26px);"class="col-12 col-lg-3 p-0 m-0"><span>الموديل</span><input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
 </label>
-<label style="display: flex; gap: 8px;" for="order-select-cards" class="px-0 px-lg-2 col-6 col-lg-3"><span>السعر</span><div class="dropdown fs-7 text-secondary border-secondary">
+<label style="display: flex; gap: 8px; max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3"><span>السعر</span><div class="dropdown fs-7 text-secondary border-secondary">
 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
 <ul class="dropdown-menu">
 <li>من أقل إلى أعلى</li>
