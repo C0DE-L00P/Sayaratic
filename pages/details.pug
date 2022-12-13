@@ -1,6 +1,5 @@
 include _components/slider-h
 include _components/car-card
-include _components/slider-offers-3
 include _components/nav-bar
 
 - var dbtns = [{title: "الأمان",points: ["وسائد هوائية أمامية","فرامل ABS","سنتر لوك","مراقبة ضغط الإطارات","الثبات الإلكتروني ESP","مساعد الفرامل BA","أحزمة أمان","توزيع قوة الفرامل إلكترونياً EBD","نظام التحكم بالإنزلاق (TRC)","فرامل يد إلكتروني",]},{title: "الراحة",points: ["placeholder","placeholder"]},{title: "تقنيات",points: ["placeholder"]},{title: "تجهيزات خارجية",points: ["placeholder"]}]
@@ -17,7 +16,32 @@ html(lang="ar",dir="rtl")
         include _components/modal-comments
         <div class="text-secondary m-4 user-select-none"><a class="text-decoration-none text-secondary text-clickable" href="./index.html">الرئيسية</a> / <a class="text-decoration-none text-secondary text-clickable" href="./new.html">سيارات جديدة </a> /  نيسان صني</div>
 
-        <div> placeholder</div>
+        include _components/car-detail-slider2
+        
+        <div class="row fw-bolder m-0">
+            <div class="px-0 col-1"></div>
+            <div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+                <p class="text-center mb-1">4</p>
+                <p class="text-center">السلندرات</p>
+            </div>
+            <div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+                <p class="text-center mb-1">مانوال</p>
+                <p class="text-center">القير</p>
+            </div>
+            <div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+                <p class="text-center mb-1 d-ltr">280 HP</p>
+                <p class="text-center">قوة المحرك</p>
+            </div>
+            <div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+                <p class="text-center mb-1 d-ltr">1.8 L</p>
+                <p class="text-center">سعة المحرك</p>
+            </div>
+            <div class="px-0 col-2 fs-5 text-center">
+                <p class="text-center mb-1 d-ltr">200 km/h</p>
+                <p class="text-center">السرعة القسوى</p>
+            </div>
+        </div>
+
 
         //- Details section
         <div class="row mx-4">

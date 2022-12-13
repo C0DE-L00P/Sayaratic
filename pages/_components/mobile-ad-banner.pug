@@ -1,8 +1,15 @@
 <style>
 .   
-    .mobile-ad-banner .mobile-app {
+    .mobile-ad-banner >div>div> .mobile-app {
     display: flex;
     justify-content: center;
+    transform: scale(0.8);
+    min-width: max-content;
+    }
+    @media screen and (min-width: 456px){
+        .mobile-ad-banner >div>div> .mobile-app {
+            transform: scale(1);
+        }
     }
     .mobile-ad-banner .mobile-app button {
     display: flex;

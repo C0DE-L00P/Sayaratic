@@ -1,4 +1,4 @@
-mixin slider-offers(more,items)
+mixin slider-offers3(more,items)
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <style>
     .
@@ -167,6 +167,7 @@ mixin slider-offers(more,items)
                     27% 99%, 26.4% 98.0%,
                     26% 97%,
                     0% 5%);
+
             border-radius: 24px;
             /* clip-path: path("m56.056 16 458.64 0c0 0 40.768 0 40.768 40.768l0 366.912c0 0 0 40.768-40.768 40.768l-244.608 0c0 0-22.932 2.548-40.768-40.768l-163.072-366.912c0 0-22.932-43.316 40.768-40.768"); */
             /* box-shadow: rgba(100, 100, 111, 0.7) 0px 7px 29px 0px; */
@@ -201,8 +202,8 @@ mixin slider-offers(more,items)
             <span class="fade-right"></span>
             <div class="swiper-wrapper grabbable">
                 each item, index in items
-                    <div class="containe swiper-slide" style="width: fit-content;">
-                        <div class="clippo ">
+                    <div style="filter: drop-shadow(0 0 0.75rem crimson) !important; height: 100%; shape-outside: polygon(0 0, 100% 0%, 100% 100%, 29% 100%, 27.8% 99.5%, 27% 99%, 26.4% 98.0%, 26% 97%, 0% 5%);">
+                        <div class="containe swiper-slide clippo shadow-lg" style="width: fit-content;">
                             <div id="parent" style="position: relative; height: 90%; width:100%;">
                                 <div style="display: flex; justify-content: space-between; align-items: start; height: 90%; width: calc(100% - 14px);padding-inline-start: 32px;">
                                     <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; height: 50px; width: 150px;">

@@ -11,7 +11,10 @@ include _components/faq-section
 <html lang="ar" dir="rtl">
   <head>
     include _components/shared-head
-    //- <link href="./css/home.css" rel="stylesheet">
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+    <link href="./css/index.css" rel="stylesheet">
     <title>الصفحة الرئيسية</title>
 </head>
   <body style="overflow-x: hidden;">
@@ -24,7 +27,7 @@ include _components/faq-section
         "./assets/slider-3.webp",
         "./assets/slider-4.webp",
       ])
-      <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 5;flex-direction: column;">
+      <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100 flex-column" style="z-index: 5;">
         <h3 class="text-white d-block">جاهز لبدء رحلتك <span class="text-primary h1">!</span></h3>
         <form class="row" style="max-width: 90%;">
             <div class="col-auto">
@@ -36,7 +39,7 @@ include _components/faq-section
             </div>
         </form>
         
-        <div class="text-white" style="display: flex; flex-direction: column; gap: 16px;  position: absolute; left: 40px; bottom: 80px; align-items: center; justify-content: center; z-index: 6;">
+        <div class="text-white __header-social-icons">
             <i class="text-clickable fa-brands cursor-pointer fa-whatsapp"></i>
             <i class="text-clickable fa-brands cursor-pointer fa-twitter"></i>
             <i class="text-clickable fa-brands cursor-pointer fa-facebook-f"></i>
@@ -46,7 +49,7 @@ include _components/faq-section
       </div>
     </div>
 
-    <div style="height: max(300px, max-content); margin:0px;" class="row grid">
+    <div class="row grid __main-categories-card">
       +category-card("بيع سيارة", "بيع سيارتك القديمة","fas fa-hand-holding-dollar","./assets/slider-3.webp",'./used.html')
       +category-card("شراء سيارة", "اكتشف ما تريده","fas fa-key","./assets/slider-2.webp",'new.html')
       +category-card("قطع غيار سيارات", "اكتشف ما تريده","fas fa-gears","./assets/slider-4.webp",'parts.html')
@@ -59,57 +62,54 @@ include _components/faq-section
         |  وجميع موديلات السنه الحديثة والقديمة</p>
 
         +slider-offers("شاهد الكل",[
+                    "./assets/car-11.png",
+                    "./assets/car-14.png",
+                    "./assets/car-15.png",
                     "./assets/car-2.png",
-                    "./assets/car-3.png",
-                    "./assets/car-5.png",
-                    "./assets/car-1.png",
-                    "./assets/car-1.png",
-                    "./assets/car-1.png",
-                    "./assets/car-1.png",
-                    "./assets/car-1.png",
-                    "./assets/car-1.png",
-                    "./assets/car-1.png",
+                    "./assets/car-16.png",
+                    "./assets/car-17.png",
+                    "./assets/car-18.png",
+                    "./assets/car-20.png",
+                    "./assets/car-21.png",
                     ])
     </div>
 
     +slider-h("تصفح السيارات حسب الماركة","جميع الماركات",false,[
-            {img: "././assets/brands-1.png", title: 'sedan'},
-            {img: "././assets/brands-2.png", title: 'sedan'},
-            {img: "././assets/brands-3.png", title: 'sedan'},
-            {img: "././assets/brands-4.png", title: 'sedan'},
-            {img: "././assets/brands-5.png", title: 'sedan'},
-            {img: "././assets/brands-6.png", title: 'sedan'},
-            {img: "././assets/brands-7.png", title: 'sedan'},
-            {img: "././assets/brands-8.png", title: 'sedan'},
-            {img: "././assets/brands-9.png", title: 'sedan'},
-            {img: "././assets/brands-10.png", title: 'sedan'},
-            {img: "././assets/brands-11.png", title: 'sedan'},
+            {img: "././assets/brands-1.webp", title: 'sedan'},
+            {img: "././assets/brands-2.webp", title: 'sedan'},
+            {img: "././assets/brands-3.webp", title: 'sedan'},
+            {img: "././assets/brands-4.webp", title: 'sedan'},
+            {img: "././assets/brands-5.webp", title: 'sedan'},
+            {img: "././assets/brands-6.webp", title: 'sedan'},
+            {img: "././assets/brands-7.webp", title: 'sedan'},
+            {img: "././assets/brands-8.webp", title: 'sedan'},
+            {img: "././assets/brands-9.webp", title: 'sedan'},
+            {img: "././assets/brands-10.webp", title: 'sedan'},
+            {img: "././assets/brands-11.webp", title: 'sedan'},
+            {img: "././assets/brands-12.webp", title: 'sedan'},
             ])
 
     <div class="text-center w-100 my-4 container">
-      h1(style="border-bottom: 2px solid #e7e7e7; display: inline-block;", class="text-primary pb-4 m-4") اعثر على سيارتك المستعملة
-      <div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0">
-          <label style="display: flex; gap: 8px; max-width: 100%;" class="ps-4 col-12 col-lg-6">
-              span(style="width: max-content;") البحث بالاسم
+      h1(style="border-bottom: 2px solid #e7e7e7;", class="text-primary pb-4 m-4 d-inline-block") اعثر على سيارتك المستعملة
+      <div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0 px-4">
+          <label class="ps-4 col-12 col-lg-6 d-flex gap-2">
+              span(class="w-max-content") البحث بالاسم
               <input type="text" placeholder="ابحث هنا" style="flex-grow: 1; max-width: calc(100% - 120px); height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
           </label>
           <label style="display: flex; gap: 8px; max-width: calc(100% - 26px);"class="col-12 col-lg-3 p-0 m-0">
               span الموديل
               <input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
           </label>
-          <label style="display: flex; gap: 8px; max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3">
+          <label style="max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3 max-w-100 d-flex gap-2">
               span السعر
-              <div class="dropdown fs-7 text-secondary border-secondary">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
-                  <ul class="dropdown-menu">
-                  <li>من أقل إلى أعلى</li>
-                  <li>من أعلى إلى أقل</li>
-                  </ul>
-              </div>
+              <select class="form-select text-secondary" aria-label="Default select example">
+                <option selected value="ascending">من أقل إلى أعلى</option>
+                <option value="decending">من أعلى إلى أقل</option>
+              </select>
           </label>
       </div>
 
-      <div  style="display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center;">
+      <div class="__car-grid">
         +car-card
         +car-card
         +car-card
@@ -124,20 +124,22 @@ include _components/faq-section
       </div>
     </div>
 
+    //- Parts and Care section
+
     <div class="bg-secondary position-relative d-flex flex-wrap">
-      <div style="flex: 1; display: grid; place-content: center right;" class="p-4">
-        <h2 class="display-6 fw-bold"> كل اللي تحتاجه <span class="text-primary"> .... <span style="border-bottom: 1px solid #cccccc">تلاقيه</span></span></h2>
+      <div class="p-4 __parts-section-div-1">
+        <h2 class="display-6 fw-bold"> كل اللي تحتاجه <span class="text-primary"> .... <span class="underlined">تلاقيه</span></span></h2>
         <p class="display-8"> جميع خدمات العناية بالسيارات وجميع قطع الغيار <br>وكل ما تحتاجه سيارتك </p>
         <span class="text-center d-inline-block w-100">
-          <button class="btn btn-primary mx-2 rounded-xl shadow-custom"><i class="fas fa-arrow-right"></i> خدمات الصيانة </button>
-          <button class="btn btn-outline-primary mx-2 rounded-xl shadow-custom-inset"><i class="fas fa-arrow-right"></i> قطع الغيار </i></button>
+          <a class="btn btn-primary mx-2 rounded-xl shadow-custom text-decoration-none" href="./care.html"><i class="fas fa-arrow-right"></i> خدمات الصيانة </a>
+          <a class="btn btn-outline-primary mx-2 rounded-xl shadow-custom-inset text-decoration-none" href="./parts.html"><i class="fas fa-arrow-right"></i> قطع الغيار </i></a>
         </span>
       </div>
-      <div style="display: grid; place-items: center;flex: 1; position: relative; min-width: 272px;" class="m-4">
-        <img src="./assets/slider-2.webp" alt="plc_img" width="30%" style="border-radius: 32px 0 0 0; position: absolute; top: 14px; left: 40px; z-index:3;">
-        <img src="./assets/slider-1.webp" alt="plc_img" width="70%" style="margin: 15%;z-index: 2;">
-        <img src="./assets/slider-4.webp" alt="plc_img" width="30%" style="border-radius: 0 0 32px 0; position: absolute; bottom: 14px; right: 40px; z-index:3;">
-        <span style=" z-index: 1; position: absolute;  display: flex; flex-direction: column; height: 200px; gap: 8px; width: 100px;transform: skew(15deg, 15deg) rotate(15deg); bottom: 40px; left: 20%;">
+      <div class="m-4 __parts-section-div-2">
+        <img src="./assets/slider-2.webp" alt="plc_img" class="__parts-section-upper-img">
+        <img src="./assets/slider-1.webp" alt="plc_img" class="__parts-section-middle-img">
+        <img src="./assets/slider-4.webp" alt="plc_img" class="__parts-section-bottom-img">
+        <span class="__parts-section-bg-shape">
           <i class="bg-primary" style="flex: 8"></i>
           <i class="bg-primary" style="flex: 4"></i>
           <i class="bg-primary" style="flex: 4"></i>
@@ -151,12 +153,12 @@ include _components/faq-section
     <div class="text-center w-100 container">
       h1(class="text-primary border-underline d-inline-block pb-4 m-4") أسئلة متكررة
       <div class="row w-100">
-        <div class="col-12 col-md-5 text-center">
+        <div class="col-12 col-md-5 text-center me-2 me-md-0">
           +faq-section([{question: "ما هي خطوات شراء سيارة من موقع سيارتك؟",answer: "placeholder"},{question: "ما هي مدة ضمان السيارات المستعملة؟",answer: "Placeholder"},{question: "كيف احجز سيارة من موقع سيارتك؟",answer: "كل ما عليك هو اختيار السيارة المناسبة لك وإكمال التسجيل لإضافتها وسيتم التواصل معكم لمعرفة كيفية الإستلام سواء كان من المعرض أو التوصيل للمنزل."},{question: "ما الأوراق المضمونة للحصول على التأمين التابع لموقع سيارتك؟",answer: "Placeholder"}])
         </div>
         <div class="col-0 col-md-7 d-none d-md-inline-block position-relative">
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/BlankMap-World_gray.svg" alt="world-map" class="w-100 opacity-25"/>
-          <img src="https://freepngimg.com/thumb/aston_martin/2-2-aston-martin-free-download-png.png" alt="car" style="position: absolute; top: 60px; right: 20%; max-width: 360px;"/>
+          <img src="./assets/car-white.png" alt="car" class="__faq-car-img"/>
         </div>
       </div>
     </div>

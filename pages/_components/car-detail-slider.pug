@@ -1,0 +1,134 @@
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+<!-- Demo styles -->
+<style>
+.
+    .detail-parent-slider{
+    background: black;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    max-height: 400px;
+    direction: ltr;
+    }
+
+    .swiper {
+    width: 100%;
+    height: 100%;
+    }
+
+    .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    }
+
+    .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+
+    .swiper-slide {
+      width: 60%;
+      opacity: 0;
+      transition: all 0.1s linear;
+      transform-origin: top left;
+    }
+
+    .swiper-slide-active{
+        opacity: 1;
+        width: 60%;
+    }
+    .swiper-slide-next{
+        opacity: 0.6;
+        width: 24%;
+        height: 40%;
+        transition: all 0.1s linear;
+    }
+    .swiper-slide-prev{
+        opacity: 0;
+    }
+    .__car-detail-color{
+        //- color: rgba(21, 21, 21, 0.64);
+        //-  z-index: 2;
+        //-  inset: 0px 0px auto auto;
+    }
+    .swiper-slide-active .__car-detail-color{
+        opacity: 0;
+    }
+    .__car-detail-img{
+        z-index: 1;
+        height: 80%;
+        margin-right: 20px;
+        margin-top: 20px;
+        object-fit: contain;
+    }
+    
+    .swiper-slide-next .__car-detail-img{
+        z-index: 1;
+        height: 130px;
+        margin-right: 100px;
+        margin-top: 48px;
+        object-fit: contain;
+    }
+
+    //- .swiper-slide:nth-child(2n) {
+    //- width: 40%;
+    //- }
+
+    //- .swiper-slide:nth-child(3n) {
+    //- width: 20%;
+    //- }
+</style>
+
+<!-- Swiper -->
+<div class="detail-parent-slider">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img alt="img1" src="./assets/details-ford-blue-1.webp" class="__car-detail-img">
+                <p class="display-1 fw-bolder position-absolute __car-detail-color">BLUE</p>
+            </div>
+            <div class="swiper-slide">
+                <img alt="img2" src="./assets/details-ford-page-1.webp" class="__car-detail-img">
+                <p class="display-1 fw-bolder position-absolute __car-detail-color">WHITE</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+.
+    var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 30,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    });
+</script>

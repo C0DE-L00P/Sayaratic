@@ -2,14 +2,14 @@
 <html lang="ar" dir="rtl">
   <head>
     <link rel="stylesheet" href="./css/fa.css">
-    <link rel="stylesheet" href="./css/bs.css">
-    <link rel="stylesheet" href="./css/index.css"><script src="./js/bs.js" defer></script>
+    <link rel="stylesheet" href="./css/bs.css"><script src="./js/bs.js" defer></script>
 <script src="./js/fa.js" defer></script>
+<script src="./js/popper.min.js" defer></script>
 <!-- google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
-<link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/shared.css"><link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
 <style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,61 +19,6 @@
     }</style>
   </head>
   <body style="overflow-x: hidden;">
-    <style>.nav-bar {
-        box-shadow: 0 3px 5px #80808029;
-    }
-    .nav-bar .navbar {
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
-    }
-    .nav-bar .navbar-expand-lg .navbar-nav .nav-link {
-        margin-left: 30px;
-        font-weight: 500;
-        padding-right: 0;
-        padding-left: 0;
-        font-size: 18px;
-        line-height: 1.2;
-        color: #cccccc;
-    }
-    .nav-bar .navbar-expand-lg .navbar-nav .nav-link:hover {
-        color: #113250 !important;
-    }
-    .nav-bar .active {
-        color: #113250 !important;
-        border-bottom: 2px solid #ff5700;
-        border-right: none;
-    }
-    @media screen and (max-width: 990px){
-        .nav-bar .active {
-            border-bottom: none;
-            border-right: 3px solid #ff5700;
-        }
-    }
-    .nav-bar .btn-outline-success {
-        color: #ff5700;
-        border-color: #ff5700;
-    }
-    .nav-bar .btn-outline-success:hover {
-        color: #fff;
-        background: #ff5700;
-    }
-    #side-bar{
-        right: -150px;
-        transition-duration: 0.3s;
-    }
-    #show-side-bar:checked + #side-bar{
-        right: -2px;
-    }
-    .navbar-toggler-icon{
-        display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
-        vertical-align: middle;
-        background-image: var(--bs-navbar-toggler-icon-bg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-    }</style>
     <style>.modal-login input[type="checkbox"] + label > .fa-check{
         color: white;
         background-color: white;
@@ -154,14 +99,14 @@
 </div><div class="nav-bar">
 <nav class="navbar navbar-expand-lg ">
 <div class="container-fluid">
-<a class="navbar-brand" href="./home.html">
+<a class="navbar-brand" href="./index.html">
 <img src="./assets/logo-transparent.png" width="55px" style="margin-left: 30px;" alt="logo">
 </a>
 <button style="background-color: transparent !important;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<ul class="navbar-nav mb-2 mb-lg-0">
 <li class="nav-item">
 <a class="nav-link false" aria-current="page" href="./index.html">الرئيسية</a>
 </li>
@@ -231,8 +176,10 @@
 </div>
 </div>
 </div>
-</div><label for="show-side-bar" id="user_btn"><img style="border-radius: 50%; border: none; height: 50px; margin-inline: 24px;" src="./assets/img (1).jpg" alt="user img" class="text-clickable" /></label>
-<button class="btn btn-outline-success" id="login_btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">تسجيل الدخول</button>
+</div><span class="me-auto">
+<label for="show-side-bar" id="user_btn"><img style="border-radius: 50%; border: none; height: 50px; margin-inline: 24px;" src="./assets/img (1).jpg" alt="user img" class="text-clickable" /></label>
+<button class="btn btn-outline-success outline-none shadow-none" id="login_btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">تسجيل الدخول</button>
+</span>
 </div>
 </div>
 </nav>
@@ -414,6 +361,9 @@
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
+            //- renderBullet: function (index, className) {
+            //-     return '<span class="' + className + ' text-danger">' + (index + 1) + "</span>";
+            //- }
         },
     });</script><div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100" style="z-index: 6;flex-direction: column;">
 <h3 class="text-white d-block">كل اللي تحتاجه تلاقيه <span class="text-primary h1">!</span></h3>
@@ -593,9 +543,30 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">50.00</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">450.00</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
-</span><span class="text-dark fs-5 text-decoration-line-through">750.00</span class="fs-9">توفير 300 ريال</span><span class="d-flex flex-column col-4">
-<p></p>
+<span class="d-flex flex-column col-4 fs-9">
+<span class="fs-9 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span>
+<span class="text-primary fs-5">50.00</span>ريال / شهر
+</span>
+<span class="d-flex flex-column col-4 fs-7">
+<span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span>
+<span class="text-primary fs-5">450.00</span>ريال
+</span>
+<span class="d-flex flex-column col-4 fs-9 text-primary">
+<span class="fs-9 fw-bold text-dark">بدلاً من</span>
+<span class="text-dark fs-5 text-decoration-line-through">750.00</span>توفير 300 ريال
+</span>
+<div class="d-flex flex-row col-6 justify-content-end gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">250</span>عرض
+</span>
+<i class="fas fa-arrows-alt-h mt-1 fs-5"></i>
+</div>
+<div class="d-flex flex-row col-6 justify-content-start gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">14</span>ارتفاع
+</span>
+<i class="fas fa-arrows-alt-v mt-1 fs-5"></i>
+</div>
 </div>
 <div class="d-flex justify-content-between align-items-center fs-6 gap-2">
 <button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
@@ -611,9 +582,30 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">50.00</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">450.00</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
-</span><span class="text-dark fs-5 text-decoration-line-through">750.00</span class="fs-9">توفير 300 ريال</span><span class="d-flex flex-column col-4">
-<p></p>
+<span class="d-flex flex-column col-4 fs-9">
+<span class="fs-9 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span>
+<span class="text-primary fs-5">50.00</span>ريال / شهر
+</span>
+<span class="d-flex flex-column col-4 fs-7">
+<span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span>
+<span class="text-primary fs-5">450.00</span>ريال
+</span>
+<span class="d-flex flex-column col-4 fs-9 text-primary">
+<span class="fs-9 fw-bold text-dark">بدلاً من</span>
+<span class="text-dark fs-5 text-decoration-line-through">750.00</span>توفير 300 ريال
+</span>
+<div class="d-flex flex-row col-6 justify-content-end gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">250</span>عرض
+</span>
+<i class="fas fa-arrows-alt-h mt-1 fs-5"></i>
+</div>
+<div class="d-flex flex-row col-6 justify-content-start gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">14</span>ارتفاع
+</span>
+<i class="fas fa-arrows-alt-v mt-1 fs-5"></i>
+</div>
 </div>
 <div class="d-flex justify-content-between align-items-center fs-6 gap-2">
 <button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
@@ -629,9 +621,30 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">50.00</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">450.00</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
-</span><span class="text-dark fs-5 text-decoration-line-through">750.00</span class="fs-9">توفير 300 ريال</span><span class="d-flex flex-column col-4">
-<p></p>
+<span class="d-flex flex-column col-4 fs-9">
+<span class="fs-9 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span>
+<span class="text-primary fs-5">50.00</span>ريال / شهر
+</span>
+<span class="d-flex flex-column col-4 fs-7">
+<span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span>
+<span class="text-primary fs-5">450.00</span>ريال
+</span>
+<span class="d-flex flex-column col-4 fs-9 text-primary">
+<span class="fs-9 fw-bold text-dark">بدلاً من</span>
+<span class="text-dark fs-5 text-decoration-line-through">750.00</span>توفير 300 ريال
+</span>
+<div class="d-flex flex-row col-6 justify-content-end gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">250</span>عرض
+</span>
+<i class="fas fa-arrows-alt-h mt-1 fs-5"></i>
+</div>
+<div class="d-flex flex-row col-6 justify-content-start gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">14</span>ارتفاع
+</span>
+<i class="fas fa-arrows-alt-v mt-1 fs-5"></i>
+</div>
 </div>
 <div class="d-flex justify-content-between align-items-center fs-6 gap-2">
 <button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
@@ -647,9 +660,30 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">50.00</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">450.00</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
-</span><span class="text-dark fs-5 text-decoration-line-through">750.00</span class="fs-9">توفير 300 ريال</span><span class="d-flex flex-column col-4">
-<p></p>
+<span class="d-flex flex-column col-4 fs-9">
+<span class="fs-9 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span>
+<span class="text-primary fs-5">50.00</span>ريال / شهر
+</span>
+<span class="d-flex flex-column col-4 fs-7">
+<span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span>
+<span class="text-primary fs-5">450.00</span>ريال
+</span>
+<span class="d-flex flex-column col-4 fs-9 text-primary">
+<span class="fs-9 fw-bold text-dark">بدلاً من</span>
+<span class="text-dark fs-5 text-decoration-line-through">750.00</span>توفير 300 ريال
+</span>
+<div class="d-flex flex-row col-6 justify-content-end gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">250</span>عرض
+</span>
+<i class="fas fa-arrows-alt-h mt-1 fs-5"></i>
+</div>
+<div class="d-flex flex-row col-6 justify-content-start gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">14</span>ارتفاع
+</span>
+<i class="fas fa-arrows-alt-v mt-1 fs-5"></i>
+</div>
 </div>
 <div class="d-flex justify-content-between align-items-center fs-6 gap-2">
 <button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
@@ -665,9 +699,30 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">50.00</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">450.00</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
-</span><span class="text-dark fs-5 text-decoration-line-through">750.00</span class="fs-9">توفير 300 ريال</span><span class="d-flex flex-column col-4">
-<p></p>
+<span class="d-flex flex-column col-4 fs-9">
+<span class="fs-9 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span>
+<span class="text-primary fs-5">50.00</span>ريال / شهر
+</span>
+<span class="d-flex flex-column col-4 fs-7">
+<span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span>
+<span class="text-primary fs-5">450.00</span>ريال
+</span>
+<span class="d-flex flex-column col-4 fs-9 text-primary">
+<span class="fs-9 fw-bold text-dark">بدلاً من</span>
+<span class="text-dark fs-5 text-decoration-line-through">750.00</span>توفير 300 ريال
+</span>
+<div class="d-flex flex-row col-6 justify-content-end gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">250</span>عرض
+</span>
+<i class="fas fa-arrows-alt-h mt-1 fs-5"></i>
+</div>
+<div class="d-flex flex-row col-6 justify-content-start gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">14</span>ارتفاع
+</span>
+<i class="fas fa-arrows-alt-v mt-1 fs-5"></i>
+</div>
 </div>
 <div class="d-flex justify-content-between align-items-center fs-6 gap-2">
 <button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
@@ -683,9 +738,30 @@
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-7 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span><span class="text-primary fs-5">50.00</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">450.00</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
-</span><span class="text-dark fs-5 text-decoration-line-through">750.00</span class="fs-9">توفير 300 ريال</span><span class="d-flex flex-column col-4">
-<p></p>
+<span class="d-flex flex-column col-4 fs-9">
+<span class="fs-9 fw-bold"style="color: transparent; user-select: none">ريال مدريد</span>
+<span class="text-primary fs-5">50.00</span>ريال / شهر
+</span>
+<span class="d-flex flex-column col-4 fs-7">
+<span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span>
+<span class="text-primary fs-5">450.00</span>ريال
+</span>
+<span class="d-flex flex-column col-4 fs-9 text-primary">
+<span class="fs-9 fw-bold text-dark">بدلاً من</span>
+<span class="text-dark fs-5 text-decoration-line-through">750.00</span>توفير 300 ريال
+</span>
+<div class="d-flex flex-row col-6 justify-content-end gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">250</span>عرض
+</span>
+<i class="fas fa-arrows-alt-h mt-1 fs-5"></i>
+</div>
+<div class="d-flex flex-row col-6 justify-content-start gap-1 my-3">
+<span class="d-flex flex-column fs-8">
+<span class="text-dark fs-5 fw-bold">14</span>ارتفاع
+</span>
+<i class="fas fa-arrows-alt-v mt-1 fs-5"></i>
+</div>
 </div>
 <div class="d-flex justify-content-between align-items-center fs-6 gap-2">
 <button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
@@ -722,181 +798,51 @@
   <p class="text-primary mt-2">نظام التكييف والتبريد</p></div><div class="text-center rounded-3 pt-3 pb-2 cursor-pointer" style="border: 1px solid var(--bs-grey-400); height: 140px;">
 <img src="./assets/p-cat-11.jpg" alt="المكائن والقيرات وملحقاتها img" style="height: 60%;"/>
   <p class="text-primary mt-2">المكائن والقيرات وملحقاتها</p></div></div>
-<!-- slider on brand -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-<style>.swiper-h {
-      width: 100%;
-      height: fit-content;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      user-select: none;
-      position: relative;
-      overflow: hidden;
-  }
-  
-  .swiper-h .swiper-button-next,
-  .swiper-h .swiper-button-prev{
-      color: transparent;
-  }
-  
-  .swiper-h .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
-      border-radius: 8px;
-  
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-      height: 100px;
-  }
-  
-  .swiper-h .swiper-slide img {
-      display: block;
-      max-width: 90%;
-      max-height: 70%;
-      object-fit: contain;
-  }
-  
-  .swiper-h #arrow {
-      background: red;
-      display: inline-block;
-      height: 55px;
-      margin-left: 20px;
-      margin-top: 55px;
-      position: relative;
-      width: 100px;
-  }
-  .swiper-h #arrow:before {
-      border-bottom: 35px solid red;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      content: "";
-      height: 0;
-      left: 0;
-      position: absolute;
-      top: -35px;
-      width: 0;
-  }
-  .swiper-h #btn-right{
-      
-  }
-  
-  div:has(>#pointer){
-      z-index: 12;
-      display: flex;
-      flex-direction: row;
-  }
-  .reverse{
-      transform: rotate(0deg) scaleX(-1) translateX(-20px);
-  }
-  .forward{
-      transform: translateX(-20px);
-  }
-  #pointer {
-      width: 20px;
-      height: 32px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-  }
-  #pointer:before {
-      content: "";
-      position: absolute;
-      right: -12px;
-      bottom: 0;
-      width: 0;
-      height: 0;
-      border-left: 12px solid #ff5700;
-      border-top: 16px solid transparent;
-      border-bottom: 16px solid transparent;
-  }
-  .grabbable {
-      cursor: pointer;
-  }
-  
-  /* (Optional) Apply a "closed-hand" cursor during drag operation. */
-  .grabbable:active {
-      cursor: grabbing;
-      cursor: -moz-grabbing;
-      cursor: -webkit-grabbing;
-  }
-  .slider-h-wrapper::after,.slider-h-wrapper::before{
-      position: absolute;
-      top: 0px;
-      bottom: 0px;
-      content: '-';
-      color: white;
-      width: 100px;
-      height: 100%;
-      z-index: 2;
-      display: inline-block;
-      background: linear-gradient(to right ,transparent, white);
-  }
-  .slider-h-wrapper::after{
-      right: 0px;
-  }
-  .slider-h-wrapper::before{
-      left: 0px;
-      transform: rotate(180deg);
-  }</style>
-<!-- Swiper -->
+<!-- slider on brand --><!-- Swiper -->
 <div class="py-4 bg-secondary slider-h-wrapper position-relative">
-  <h1 class="py-4 text-primary text-center w-100">تصفح السيارات حسب الماركة</h1><div class="swiper-h mySwiperHorizontal" style="position: relative;">
-<span class="fade-left" style="background-color: red;height: 100px;"></span>
-<span class="fade-right"></span>
-<div class="swiper-wrapper grabbable"><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-1.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-2.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-3.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-4.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-5.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-6.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-7.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-8.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-9.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-10.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
-</div><div class="swiper-slide d-flex flex-column py-2" style="width:150px">
-<img src="././assets/brands-11.png" alt="" class="">
-<div class="d-none mb-3">sedan</div>
+  <h1 class="py-4 text-primary text-center w-100">تصفح السيارات حسب الماركة</h1><div class="swiper-h mySwiperHorizontal position-relative">
+<div class="swiper-wrapper grabbable"><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-1.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-2.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-3.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-4.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-5.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-6.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-7.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-8.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-9.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-10.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-11.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
+</div><div class="swiper-slide d-flex flex-column py-2">
+<img src="././assets/brands-12.webp" alt="" class="">
+<div class="d-none mb-3 fs-sm-6">sedan</div>
 </div></div>
 <div>
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
 </div>
-<div style="display: flex; justify-content: space-between; z-index: 12;" class="text-primary p-4">
+<div style="z-index: 12;" class="text-primary p-4 d-flex justify-content-between">
 <div>
 <i class="m-4 forward bg-primary btn-prev" id="pointer">
 <i class="fas fa-angle-right"></i>
@@ -910,8 +856,6 @@
 </div>
 </div>
 <div id="arrow"></div>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <!-- Initialize Swiper -->
 <script>var swiper = new Swiper(".mySwiperHorizontal", {
       slidesPerView: 'auto',
@@ -927,9 +871,16 @@
       },
   });</script></div>
 </div>
-  <style>.mobile-ad-banner .mobile-app {
+  <style>.mobile-ad-banner >div>div> .mobile-app {
   display: flex;
   justify-content: center;
+  transform: scale(0.8);
+  min-width: max-content;
+  }
+  @media screen and (min-width: 456px){
+      .mobile-ad-banner >div>div> .mobile-app {
+          transform: scale(1);
+      }
   }
   .mobile-ad-banner .mobile-app button {
   display: flex;
@@ -1151,14 +1102,14 @@
 <p class="footer-abstract">موقع وتطبيق سيارتك هى منصتك المضمونة لبيع وشراء السيارات المفحوصة من قبل فريق عمل محترف ويمكنك أيضاالدخول فى المزادات والحصول على الصفقات الرابحة</p>
 <p class="footer-mobile text-center">متوفر الآن على</p>
 <div class="mobile-app" >
-<button>
+<button id="footer-play-btn">
 <div class="google-play">
 <p>Available for free</p>
 <h6>Google play</h6>
 </div>
 <i class="fa-brands fa-google-play text-white"></i>
 </button>
-<button>
+<button id="footer-apple-btn">
 <div class="google-play">
 <p>Download for free</p>
 <h6>App store</h6>

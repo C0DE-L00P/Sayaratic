@@ -2,14 +2,14 @@
 <html lang="ar" dir="rtl">
   <head>
     <link rel="stylesheet" href="./css/fa.css">
-    <link rel="stylesheet" href="./css/bs.css">
-    <link rel="stylesheet" href="./css/index.css"><script src="./js/bs.js" defer></script>
+    <link rel="stylesheet" href="./css/bs.css"><script src="./js/bs.js" defer></script>
 <script src="./js/fa.js" defer></script>
+<script src="./js/popper.min.js" defer></script>
 <!-- google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
-<link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/shared.css"><link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
 <style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,61 +17,6 @@
     <title>تفاصيل عن السيارة</title>
   </head>
   <body> 
-    <style>.nav-bar {
-        box-shadow: 0 3px 5px #80808029;
-    }
-    .nav-bar .navbar {
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
-    }
-    .nav-bar .navbar-expand-lg .navbar-nav .nav-link {
-        margin-left: 30px;
-        font-weight: 500;
-        padding-right: 0;
-        padding-left: 0;
-        font-size: 18px;
-        line-height: 1.2;
-        color: #cccccc;
-    }
-    .nav-bar .navbar-expand-lg .navbar-nav .nav-link:hover {
-        color: #113250 !important;
-    }
-    .nav-bar .active {
-        color: #113250 !important;
-        border-bottom: 2px solid #ff5700;
-        border-right: none;
-    }
-    @media screen and (max-width: 990px){
-        .nav-bar .active {
-            border-bottom: none;
-            border-right: 3px solid #ff5700;
-        }
-    }
-    .nav-bar .btn-outline-success {
-        color: #ff5700;
-        border-color: #ff5700;
-    }
-    .nav-bar .btn-outline-success:hover {
-        color: #fff;
-        background: #ff5700;
-    }
-    #side-bar{
-        right: -150px;
-        transition-duration: 0.3s;
-    }
-    #show-side-bar:checked + #side-bar{
-        right: -2px;
-    }
-    .navbar-toggler-icon{
-        display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
-        vertical-align: middle;
-        background-image: var(--bs-navbar-toggler-icon-bg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-    }</style>
     <style>.modal-login input[type="checkbox"] + label > .fa-check{
         color: white;
         background-color: white;
@@ -152,14 +97,14 @@
 </div><div class="nav-bar">
 <nav class="navbar navbar-expand-lg ">
 <div class="container-fluid">
-<a class="navbar-brand" href="./home.html">
+<a class="navbar-brand" href="./index.html">
 <img src="./assets/logo-transparent.png" width="55px" style="margin-left: 30px;" alt="logo">
 </a>
 <button style="background-color: transparent !important;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<ul class="navbar-nav mb-2 mb-lg-0">
 <li class="nav-item">
 <a class="nav-link false" aria-current="page" href="./index.html">الرئيسية</a>
 </li>
@@ -229,8 +174,10 @@
 </div>
 </div>
 </div>
-</div><label for="show-side-bar" id="user_btn"><img style="border-radius: 50%; border: none; height: 50px; margin-inline: 24px;" src="./assets/img (1).jpg" alt="user img" class="text-clickable" /></label>
-<button class="btn btn-outline-success" id="login_btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">تسجيل الدخول</button>
+</div><span class="me-auto">
+<label for="show-side-bar" id="user_btn"><img style="border-radius: 50%; border: none; height: 50px; margin-inline: 24px;" src="./assets/img (1).jpg" alt="user img" class="text-clickable" /></label>
+<button class="btn btn-outline-success outline-none shadow-none" id="login_btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">تسجيل الدخول</button>
+</span>
 </div>
 </div>
 </nav>
@@ -246,6 +193,20 @@
     <!-- Vertically centered scrollable modal -->
 <style>.modal-dialog #in_comment:empty{
     
+    }
+    .modal-dialog .fs-5{
+        font-size: 14px !important;
+    }
+    .modal-dialog .fs-6{
+        font-size: 10px !important;
+    }
+    @media screen and (min-width: 768px){
+        .modal-dialog .fs-5{
+            font-size: 20px !important;
+        }
+        .modal-dialog .fs-6{
+            font-size: 16px !important;
+        }
     }</style><div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="commentsModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
 <div class="modal-content position-relative">
@@ -432,7 +393,204 @@
             rating--;
         }
     }</script><div class="text-secondary m-4 user-select-none"><a class="text-decoration-none text-secondary text-clickable" href="./index.html">الرئيسية</a> / <a class="text-decoration-none text-secondary text-clickable" href="./new.html">سيارات جديدة </a> /  نيسان صني</div>
-<div> placeholder</div>
+    <!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<!-- Demo styles -->
+<style>@font-face {
+        font-family: rounded-font;
+        src: url(./assets/fonts/junegull.ttf);
+    }
+    .detail-parent-slider{
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    direction: ltr;
+    perspective: 200px;
+    width: 100%;
+    overflow-x:hidden;
+    perspective-origin: right top;
+    height: 400px;
+    }
+    
+    .swiper {
+    width: 100%;
+    height: 100%;
+    perspective: 200px;
+    }
+    
+    .mySwiper > .swiper-wrapper >.swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    width: 700px;
+    opacity: 0;
+    perspective: 200px;
+    
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    }
+    
+    .mySwiper > .swiper-wrapper >.swiper-slide img {
+        display: block;
+        transform: translateZ(-120px) translateY(-50%) translateX(-120px);
+        height: 50%;
+        object-fit: contain;
+        transition-duration: 0.2s;
+    }
+    
+    .mySwiper > .swiper-wrapper >.swiper-slide-active img{
+        margin-bottom: 0px;
+        transform: translateZ(71px);
+    }
+    .mySwiper > .swiper-wrapper >.swiper-slide-active{
+        opacity: 1;
+    }
+    .mySwiper > .swiper-wrapper >.swiper-slide-next{
+        opacity: 0.6;
+    }
+    .mySwiper > .swiper-wrapper >.swiper-slide-prev{
+        opacity: 0;
+    }
+    .__car-detail-color{
+        color: rgba(208, 208, 208, 0.229);
+        font-size: 120px;
+        font-weight: 300;
+        z-index: 0;
+        inset: 0px 80px auto 0px;
+        font-family: rounded-font;
+    }
+    .mySwiper > .swiper-wrapper > .swiper-slide-active .__car-detail-color{
+        opacity: 0;
+    }
+    .__car-detail-img{
+        z-index: 1;
+        user-select: none;
+    }
+    .__car-detail-btn{
+        z-index: 6; left: 24px; top: 190px;
+        border: 1px solid transparent !important;
+        color: var(--bs-primary-color);
+    }
+    .__car-detail-btn:hover{
+        background-color: var(--bs-primary-color) !important;
+        border: 1px solid white !important;
+        color: white;
+    }
+    .__car-detail-btn:active{
+        filter: brightness(0.95) !important;
+    }
+    .__car-detail-brand{
+        opacity: 0.3; top: 20px; left: 10px; position: absolute;
+        z-index: 0;
+        height: 80px;
+    }</style><!-- Swiper -->
+<div class="detail-parent-slider position-relative">
+<div class="swiper mySwiper">
+<div class="swiper-wrapper mt-6">
+<div class="swiper-slide">
+<img alt="img1" src="./assets/details-ford-blue-1.webp" class="__car-detail-img">
+<p class="display-1 fw-bolder position-absolute __car-detail-color">BLUE</p>
+</div>
+<div class="swiper-slide">
+<img alt="img2" src="./assets/details-ford-page-1.webp" class="__car-detail-img">
+<p class="display-1 fw-bolder position-absolute __car-detail-color">WHITE</p>
+</div>
+</div>
+</div>
+<button class="btn position-absolute shadow-sm px-5 fw-bold bg-white borderless rounded-pill __car-detail-btn">احجزها الآن</button>
+<div class="position-absolute bg-primary d-rtl" style="padding-inline-start: 120px;padding-inline-end: 80px; left: -80px; top: 10px; width: 50%; border-radius: 40px;height: 200px; color: white;">
+<img src="./assets/brands-12.webp" alt="brand_img"  class="__car-detail-brand">
+<div style="z-index: 2;" class="my-4 d-rtl w-max-content">
+<h2 class="h4 fw-bolder">نيسان صني</h2>
+<p class="h5">الشكل الجديد 2022 ستاندر SV</p>
+<div class="row mt-4" style="min-width: 200px; width: 100%">
+<div class="col-6">
+<p class="fs-9 mb-1">السعر قبل الضريبة</p>
+<p class="h5">64,000 ريال</p>
+</div>
+<div class="col-6">
+<p class="fs-9 mb-1">السعر بعد الضريبة</p>
+<p class="h5">56,000 ريال</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 30,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    });
+    
+    var swiper = new Swiper(".myGallarySwiper", {
+    loop: false,
+    spaceBetween: 10,
+    slidesPerView: "auto",
+    freeMode: true,
+    watchSlidesProgress: true,
+    });
+    
+    var swiper2 = new Swiper(".myGallarySwiper2", {
+    pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+    },
+    keyboard: {
+        enabled: true,
+    },
+    allowSlidePrev: false,
+    grabCursor: true,
+    loop: false,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: ".swiper-button-prev",
+        prevEl: ".swiper-button-next",
+    },
+    thumbs: {
+        swiper: swiper,
+    },
+    });</script><div class="row fw-bolder m-0">
+<div class="px-0 col-1"></div>
+<div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+<p class="text-center mb-1">4</p>
+<p class="text-center">السلندرات</p>
+</div>
+<div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+<p class="text-center mb-1">مانوال</p>
+<p class="text-center">القير</p>
+</div>
+<div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+<p class="text-center mb-1 d-ltr">280 HP</p>
+<p class="text-center">قوة المحرك</p>
+</div>
+<div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+<p class="text-center mb-1 d-ltr">1.8 L</p>
+<p class="text-center">سعة المحرك</p>
+</div>
+<div class="px-0 col-2 fs-5 text-center">
+<p class="text-center mb-1 d-ltr">200 km/h</p>
+<p class="text-center">السرعة القسوى</p>
+</div>
+</div>
 <div class="row mx-4">
 <div class="col-12 col-md-9 accordion accordion-flush" id="accordionFlushExample"><div class="accordion-item">
 <h2 class="accordion-header" id="flush-heading-0">
@@ -488,16 +646,16 @@
 <span data-bs-toggle="modal" data-bs-target="#commentsModal" data-bs-whatever="@getbootstrap" class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -519,16 +677,16 @@
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -550,16 +708,16 @@
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -720,14 +878,14 @@
 <p class="footer-abstract">موقع وتطبيق سيارتك هى منصتك المضمونة لبيع وشراء السيارات المفحوصة من قبل فريق عمل محترف ويمكنك أيضاالدخول فى المزادات والحصول على الصفقات الرابحة</p>
 <p class="footer-mobile text-center">متوفر الآن على</p>
 <div class="mobile-app" >
-<button>
+<button id="footer-play-btn">
 <div class="google-play">
 <p>Available for free</p>
 <h6>Google play</h6>
 </div>
 <i class="fa-brands fa-google-play text-white"></i>
 </button>
-<button>
+<button id="footer-apple-btn">
 <div class="google-play">
 <p>Download for free</p>
 <h6>App store</h6>

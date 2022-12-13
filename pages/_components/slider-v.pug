@@ -57,7 +57,7 @@ mixin slider-v(asABackground = false,imgs)
         .swiper-pagination-bullet-active{
             background-color: var(--bs-primary-color) !important;
         }
-
+        
     </style>
 
     <div class="swiper mySwiper">
@@ -83,6 +83,9 @@ mixin slider-v(asABackground = false,imgs)
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
+                    //- renderBullet: function (index, className) {
+                    //-     return '<span class="' + className + ' text-danger">' + (index + 1) + "</span>";
+                    //- }
                 },
             });
         </script>

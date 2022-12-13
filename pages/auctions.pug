@@ -10,9 +10,10 @@ doctype html
 html(lang="ar" dir="rtl")
     head
         include _components/shared-head
+        link(rel="stylesheet" href="./css/auctions.css")
         title المزادات
     body 
-        +nav-bar("auctions")        
+        +nav-bar("auctions")
         <div class="position-relative" style="height: calc(100% - 78px)">
             +slider-v(false,["./assets/slider-3.webp","./assets/slider-4.webp","./assets/slider-1.webp"])
 

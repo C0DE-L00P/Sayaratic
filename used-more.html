@@ -2,14 +2,14 @@
 <html lang="ar" dir="rtl">
   <head>
     <link rel="stylesheet" href="./css/fa.css">
-    <link rel="stylesheet" href="./css/bs.css">
-    <link rel="stylesheet" href="./css/index.css"><script src="./js/bs.js" defer></script>
+    <link rel="stylesheet" href="./css/bs.css"><script src="./js/bs.js" defer></script>
 <script src="./js/fa.js" defer></script>
+<script src="./js/popper.min.js" defer></script>
 <!-- google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
-<link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/shared.css"><link href="./assets/logo.png" rel="icon" type="image/x-icon"/>
 <style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,61 +20,6 @@
     }</style>
   </head>
   <body style="overflow-x: hidden;">
-    <style>.nav-bar {
-        box-shadow: 0 3px 5px #80808029;
-    }
-    .nav-bar .navbar {
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
-    }
-    .nav-bar .navbar-expand-lg .navbar-nav .nav-link {
-        margin-left: 30px;
-        font-weight: 500;
-        padding-right: 0;
-        padding-left: 0;
-        font-size: 18px;
-        line-height: 1.2;
-        color: #cccccc;
-    }
-    .nav-bar .navbar-expand-lg .navbar-nav .nav-link:hover {
-        color: #113250 !important;
-    }
-    .nav-bar .active {
-        color: #113250 !important;
-        border-bottom: 2px solid #ff5700;
-        border-right: none;
-    }
-    @media screen and (max-width: 990px){
-        .nav-bar .active {
-            border-bottom: none;
-            border-right: 3px solid #ff5700;
-        }
-    }
-    .nav-bar .btn-outline-success {
-        color: #ff5700;
-        border-color: #ff5700;
-    }
-    .nav-bar .btn-outline-success:hover {
-        color: #fff;
-        background: #ff5700;
-    }
-    #side-bar{
-        right: -150px;
-        transition-duration: 0.3s;
-    }
-    #show-side-bar:checked + #side-bar{
-        right: -2px;
-    }
-    .navbar-toggler-icon{
-        display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
-        vertical-align: middle;
-        background-image: var(--bs-navbar-toggler-icon-bg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-    }</style>
     <style>.modal-login input[type="checkbox"] + label > .fa-check{
         color: white;
         background-color: white;
@@ -155,14 +100,14 @@
 </div><div class="nav-bar">
 <nav class="navbar navbar-expand-lg ">
 <div class="container-fluid">
-<a class="navbar-brand" href="./home.html">
+<a class="navbar-brand" href="./index.html">
 <img src="./assets/logo-transparent.png" width="55px" style="margin-left: 30px;" alt="logo">
 </a>
 <button style="background-color: transparent !important;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<ul class="navbar-nav mb-2 mb-lg-0">
 <li class="nav-item">
 <a class="nav-link false" aria-current="page" href="./index.html">الرئيسية</a>
 </li>
@@ -232,8 +177,10 @@
 </div>
 </div>
 </div>
-</div><label for="show-side-bar" id="user_btn"><img style="border-radius: 50%; border: none; height: 50px; margin-inline: 24px;" src="./assets/img (1).jpg" alt="user img" class="text-clickable" /></label>
-<button class="btn btn-outline-success" id="login_btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">تسجيل الدخول</button>
+</div><span class="me-auto">
+<label for="show-side-bar" id="user_btn"><img style="border-radius: 50%; border: none; height: 50px; margin-inline: 24px;" src="./assets/img (1).jpg" alt="user img" class="text-clickable" /></label>
+<button class="btn btn-outline-success outline-none shadow-none" id="login_btn" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@getbootstrap">تسجيل الدخول</button>
+</span>
 </div>
 </div>
 </nav>
@@ -260,8 +207,101 @@ input[type=radio]:checked + label{
     color: var(--bs-primary-color) !important;
     font-weight: 700;
     border-color:  var(--bs-primary-color);
-}</style>
-<aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;"><header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;"><div><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg><span>فلتر النتائج</span></div><div class="text-primary text-clickable"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="3" y1="3" x2="21" y2="21"></line><path d="M9 5h9.5a1 1 0 0 1 .5 1.5l-4.049 4.454m-.951 3.046v5l-4 -3v-4l-5 -5.5a1 1 0 0 1 .18 -1.316"></path></svg><span class="fs-7">إعادة تعيين</span></div></header><div class="d-flex flex-row shadow-sm" style="z-index: 2;"><input type="radio" class="d-none" id="rad1" name="category" checked><label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة مضمونة</label><input type="radio" class="d-none" id="rad2" name="category"><label for="rad2" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label><input type="radio" class="d-none" id="rad3" name="category"><label for="rad3" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">إعلانات مبوبة</label></div><div class="accordion"><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الماركة</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الماركة for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">المواصفات</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">المواصفات for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سنة الصنع</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سنة الصنع for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">السعر</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">السعر for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">اللون</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">اللون for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الوارد</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الوارد for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الشكل</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الشكل for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سعة المحرك</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سعة المحرك for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">نوع الوقود</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">نوع الوقود for now</div></div></div></div><div class="d-flex justify-content-between bg-primary text-white p-2 text-clickable" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside></div>
+}
+.accordion-button:focus,.accordion-button:active{
+    outline:none;
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed){
+    color: var(--bs-primary-color);
+    background-color: #ff550036;
+}
+.accordion-button:not(.collapsed)::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff5700'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+</style><aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;">
+<header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;">
+<div>
+<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>
+<span>فلتر النتائج</span>
+</div>
+<div class="text-primary text-clickable">
+<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="3" y1="3" x2="21" y2="21"></line><path d="M9 5h9.5a1 1 0 0 1 .5 1.5l-4.049 4.454m-.951 3.046v5l-4 -3v-4l-5 -5.5a1 1 0 0 1 .18 -1.316"></path></svg>
+<span class="fs-7">إعادة تعيين</span>
+</div>
+</header>
+<div class="d-flex flex-row shadow-sm" style="z-index: 2;">
+<input type="radio" class="d-none" id="rad1" name="category" checked>
+<label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة مضمونة</label>
+<input type="radio" class="d-none" id="rad2" name="category">
+<label for="rad2" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label>
+<input type="radio" class="d-none" id="rad3" name="category">
+<label for="rad3" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">إعلانات مبوبة</label>
+</div>
+<div class="accordion"><div class="accordion-item">
+<h2 class="accordion-header" id="heading0">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0" aria-expanded="true" aria-controls="collapse0">الماركة</button>
+</h2>
+<div id="collapse0" class="accordion-collapse collapse" aria-labelledby="heading0" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 0</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">المواصفات</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 1</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">سنة الصنع</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 2</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">السعر</button>
+</h2>
+<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 3</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">اللون</button>
+</h2>
+<div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 4</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">الوارد</button>
+</h2>
+<div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 5</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">الشكل</button>
+</h2>
+<div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 6</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading7">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">سعة المحرك</button>
+</h2>
+<div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 7</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">نوع الوقود</button>
+</h2>
+<div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 8</div>
+</div>
+</div><div class="d-flex justify-content-between bg-primary text-white p-2 text-clickable" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside></div>
 <main class="col-12 col-lg-9 p-0 my-3">
 <div class="d-flex justify-content-between my-3 w-100 flex-wrap"><h2 class="d-inline-block h5 text-primary px-2">سيارات مستعملة للبيع في السعودية <span class="text-secondary fs-6" style="min-width: max-content;">- 1002 سيارة</span></h2><span class="fs-6" style="min-width: max-content;"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary mx-2 text-clickable" height="24" width="24" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"></path></svg><label for="selectShowBy" style="border: 1px solid rgb(204, 204, 204); user-select: none; border-radius: 8px; padding: 8px; transform: scale(0.8) translateX(20px);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="28" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>الظهور حسب<select id="selectShowBy" style="background-color: transparent; font-weight: 500; color: black; border: none;"><option>الأحدث</option></select></label></span></div>
 <style>.sideFilter input[type="checkbox"] + label > .fa-check{
@@ -284,23 +324,116 @@ input[type=radio]:checked + label{
     color: var(--bs-primary-color) !important;
     font-weight: 700;
     border-color:  var(--bs-primary-color);
-}</style>
-<aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;"><header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;"><div><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg><span>فلتر النتائج</span></div><div class="text-primary text-clickable"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="3" y1="3" x2="21" y2="21"></line><path d="M9 5h9.5a1 1 0 0 1 .5 1.5l-4.049 4.454m-.951 3.046v5l-4 -3v-4l-5 -5.5a1 1 0 0 1 .18 -1.316"></path></svg><span class="fs-7">إعادة تعيين</span></div></header><div class="d-flex flex-row shadow-sm" style="z-index: 2;"><input type="radio" class="d-none" id="rad1" name="category" checked><label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة مضمونة</label><input type="radio" class="d-none" id="rad2" name="category"><label for="rad2" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label><input type="radio" class="d-none" id="rad3" name="category"><label for="rad3" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">إعلانات مبوبة</label></div><div class="accordion"><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الماركة</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الماركة for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">المواصفات</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">المواصفات for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سنة الصنع</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سنة الصنع for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">السعر</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">السعر for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">اللون</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">اللون for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الوارد</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الوارد for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الشكل</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الشكل for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سعة المحرك</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سعة المحرك for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">نوع الوقود</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">نوع الوقود for now</div></div></div></div><div class="d-flex justify-content-between bg-primary text-white p-2 text-clickable" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside></div>
+}
+.accordion-button:focus,.accordion-button:active{
+    outline:none;
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed){
+    color: var(--bs-primary-color);
+    background-color: #ff550036;
+}
+.accordion-button:not(.collapsed)::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff5700'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+</style><aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;">
+<header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;">
+<div>
+<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>
+<span>فلتر النتائج</span>
+</div>
+<div class="text-primary text-clickable">
+<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="3" y1="3" x2="21" y2="21"></line><path d="M9 5h9.5a1 1 0 0 1 .5 1.5l-4.049 4.454m-.951 3.046v5l-4 -3v-4l-5 -5.5a1 1 0 0 1 .18 -1.316"></path></svg>
+<span class="fs-7">إعادة تعيين</span>
+</div>
+</header>
+<div class="d-flex flex-row shadow-sm" style="z-index: 2;">
+<input type="radio" class="d-none" id="rad1" name="category" checked>
+<label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة مضمونة</label>
+<input type="radio" class="d-none" id="rad2" name="category">
+<label for="rad2" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label>
+<input type="radio" class="d-none" id="rad3" name="category">
+<label for="rad3" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">إعلانات مبوبة</label>
+</div>
+<div class="accordion"><div class="accordion-item">
+<h2 class="accordion-header" id="heading0">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0" aria-expanded="true" aria-controls="collapse0">الماركة</button>
+</h2>
+<div id="collapse0" class="accordion-collapse collapse" aria-labelledby="heading0" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 0</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">المواصفات</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 1</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">سنة الصنع</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 2</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">السعر</button>
+</h2>
+<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 3</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">اللون</button>
+</h2>
+<div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 4</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">الوارد</button>
+</h2>
+<div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 5</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">الشكل</button>
+</h2>
+<div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 6</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading7">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">سعة المحرك</button>
+</h2>
+<div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 7</div>
+</div>
+</div><div class="accordion-item">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">نوع الوقود</button>
+</h2>
+<div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div class="accordion-body">Whisle whistle 8</div>
+</div>
+</div><div class="d-flex justify-content-between bg-primary text-white p-2 text-clickable" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside></div>
 </div>
 </div>
 </div><button class="btn btn-primary rounded-circle position-fixed d-inline-block d-lg-none" style="bottom: 24px; right: 24px; width: 44px; height: 44px; z-index: 21; padding-top: 12px;" data-bs-toggle="modal" data-bs-target="#sideFilterModal" data-bs-whatever="@getbootstrap"><i class="fas fa-filter"></i></button>
 <div style="display: grid; grid-template-columns: repeat( auto-fit, 236px); gap: 12px; place-content: center center;"><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details-used.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -322,16 +455,16 @@ input[type=radio]:checked + label{
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details-used.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -353,16 +486,16 @@ input[type=radio]:checked + label{
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details-used.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -384,16 +517,16 @@ input[type=radio]:checked + label{
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details-used.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -415,16 +548,16 @@ input[type=radio]:checked + label{
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details-used.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -446,16 +579,16 @@ input[type=radio]:checked + label{
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details-used.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -477,16 +610,16 @@ input[type=radio]:checked + label{
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details-used.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -508,16 +641,16 @@ input[type=radio]:checked + label{
 </div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
-<h6 class="mb-3" style="color: rgb(108, 108, 108)">بيجو 508 فئة متوسطة</h6>
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
 <div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
 <a href="./details-used.html">
-<img src="./assets/card-1.jpg" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
 </a>
 </div>
 <span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
 <div class="text-dark row text-end justify-items-center align-items-start">
-<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold" style="min-width: max-content;">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
 </span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
 <p></p>
 <span class="h6 text-black" style="font-weight: 700;">2021</span>
@@ -677,14 +810,14 @@ margin-left: 10px;
 <p class="footer-abstract">موقع وتطبيق سيارتك هى منصتك المضمونة لبيع وشراء السيارات المفحوصة من قبل فريق عمل محترف ويمكنك أيضاالدخول فى المزادات والحصول على الصفقات الرابحة</p>
 <p class="footer-mobile text-center">متوفر الآن على</p>
 <div class="mobile-app" >
-<button>
+<button id="footer-play-btn">
 <div class="google-play">
 <p>Available for free</p>
 <h6>Google play</h6>
 </div>
 <i class="fa-brands fa-google-play text-white"></i>
 </button>
-<button>
+<button id="footer-apple-btn">
 <div class="google-play">
 <p>Download for free</p>
 <h6>App store</h6>

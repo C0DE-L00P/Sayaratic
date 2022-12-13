@@ -1,180 +1,80 @@
 mixin slider-offers(more,items)
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <style>
-    .
-        .swiper-offers {
-            width: 100%;
-            height: 440px;
-            padding-top: 32px;
-            padding-bottom: 32px;
-            user-select: none;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: start;
-        }
-        
-        .swiper-offers .swiper-button-next,
-        .swiper-offers .swiper-button-prev{
-            color: transparent;
-        }
-
-        .swiper-offers .swiper-slide {
-            text-align: center;
-            height: 50% !important;
-            background-color: #fafafa !important;
-            font-size: 18px;
-            background: #fff;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
-            border-radius: 8px;
-            transform: skew(15deg, 15deg) rotate(-15deg) translateY(80px);
-            opacity: 0.7;
-            overflow: hidden;
-            transition: height 0.4s width 0.4s background-color 3s !important;
-            height: 35% !important;
-            width: 22% !important;
-
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-        }
-        .swiper-offers .swiper-slide div ,.swiper-offers .swiper-slide img{
-            transition-duration: 1s;
-            display: block;
-            max-height: 60%;
-            object-fit: contain;
-            transform: skew(-15deg, -15deg) rotate(13deg) translateX(-120px);
-        }
-
-        .swiper-offers .swiper-slide-next,.swiper-offers .swiper-wrapper:active .swiper-slide, .swiper-offers .swiper-wrapper:active .swiper-slide-active{
-            height: 50% !important;
-            width: max(28%, 235px) !important;
-            opacity: 1;
-            transform: skew(15deg, 15deg) rotate(-15deg) translateY(40px);
-            transition: height 0.4s !important;
-        }
-        
-        .swiper-offers .swiper-slide-prev{
-            height: 50% !important;
-            animation: fadeOut 0.3s;
-            transition: height 0.4s !important;
-            opacity: 0;
-            transform: skew(15deg, 15deg) rotate(-15deg) translateY(80px);
-        }
-        .swiper-offers .swiper-slide-active{
-            width: max(50%, 400px) !important;
-            background-color: white !important;
-            transform: skew(15deg, 15deg) rotate(-15deg) translateY(0px) translateX(40px);
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            height: 100% !important;
-            transition: height 0.4s !important;
-            opacity: 1;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        @keyframes fadeOut {
-            0% { opacity: 1;}
-            99% { opacity: 0; }
-            100% { opacity: 0;}
-        }
-        .swiper-offers .swiper-slide-duplicate-next,.swiper-slide-duplicate-next{
-            opacity: 0 !important;
-        }
-
-        .swiper-offers #arrow {
-            background: red;
-            display: inline-block;
-            height: 55px;
-            margin-left: 20px;
-            margin-top: 55px;
-            position: relative;
-            width: 100px;
-        }
-        .swiper-offers #arrow:before {
-            border-bottom: 35px solid red;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
-            content: "";
-            height: 0;
-            left: 0;
-            position: absolute;
-            top: -35px;
-            width: 0;
-        }
-        .swiper-offers #btn-right{
-            
-        }
-
-        div:has(>#pointer){
-            display: flex;
-            flex-direction: row;
-        }
-        .reverse{
-            transform: rotate(0deg) scaleX(-1) translateX(-20px);
-        }
-        .forward{
-            transform: translateX(-20px);
-        }
-        #pointer {
-            width: 20px;
-            height: 32px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-        #pointer:before {
-            content: "";
-            position: absolute;
-            right: -12px;
-            bottom: 0;
-            width: 0;
-            height: 0;
-            border-left: 12px solid #ff5700;
-            border-top: 16px solid transparent;
-            border-bottom: 16px solid transparent;
-        }
-        .grabbable {
-            cursor: pointer;
-        }
-
-        /* (Optional) Apply a "closed-hand" cursor during drag operation. */
-        .grabbable:active {
-            cursor: grabbing;
-            cursor: -moz-grabbing;
-            cursor: -webkit-grabbing;
-        }
-    </style>
-
-
     <!-- Swiper -->
     <div class="py-4">
-        <div class="swiper-offers mySwiperOffers" style="position: relative;">
-            <span class="fade-left" style="background-color: red;height: 100px;"></span>
-            <span class="fade-right"></span>
+        <div class="swiper-offers mySwiperOffers position-relative">
             <div class="swiper-wrapper grabbable">
                 each item, index in items
                     <div class="swiper-slide position-relative">
-                        <img src="#{item}" alt="">
-                        <div class="position-absolute" style="bottom: 10px; left: 0; right: 0;">
+                        //- active slide content
+                        <div id="active-content">
+                            <div id="title">
+                                <div class="remaining">
+                                    <p class="count-down text-black fw-bolder fs-2 mb-0">06</p>
+                                    <p class="count-down text-secondary fs-2 mb-0" >:</p>
+                                    <p class="count-down text-black fw-bolder fs-2 mb-0">30</p>
+                                    <p class="count-down text-secondary fs-2 mb-0" >:</p>
+                                    <p class="count-down text-black fw-bolder fs-2 mb-0">53</p>
+
+                                    <p class="count-down fs-7">يوم</p>
+                                    <p class="count-down fs-7"> </p>
+                                    <p class="count-down fs-7">ساعة</p>
+                                    <p class="count-down fs-7"> </p>
+                                    <p class="count-down fs-7">دقيقة</p>
+                                </div>
+
+                                <div class="text-end">
+                                    <h3 class="mb-0 me-3">MAZDA 3 SEDAN</h3>
+                                    <h4 class="text-primary mt-0">$11,300</h4>
+                                    <div class="__offer-btns d-flex flex-column">
+                                        <a href="./details.html" class="text-decoration-none btn btn-primary text-start pe-4 ps-2 position-relative borderless outline-none __offer-btn1 min-w-max-content"> شراء السيارة <i class="fas fa-angle-double-right bg-white text-primary px-2 __offer-btn-icon"></i></a>
+                                        <a href="./auctions.html" class="text-decoration-none btn btn-dark text-start pe-4 ps-2 position-relative overflow-hidden borderless outline-none __offer-btn2 min-w-max-content"> شارك بالمزاد <i class="fas fa-angle-double-right text-white px-2 __offer-btn-icon position-absolute" style="background-color: #686868;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="details">
+                                <div class="text-dark row text-start align-items-center d-flex w-max-content d-rtl">
+                                    <span class="d-flex flex-column col-4 fs-7">
+                                        <span class="h4 text-black fw-bolder">2021</span>
+                                        <p class="text-dark fs-10 fw-bold text-center min-w-max-content">موديل</p>
+                                    </span><span class="d-flex flex-column col-4">
+                                        <span class="h4 text-black fw-bolder">240<span class="fs-6">km/m</span></span>
+                                        <p class="text-dark fs-10 fw-bold text-center min-w-max-content">أقصى سرعة للسيارة</p>
+                                    </span><span class="d-flex flex-column col-4">
+                                        <span class="h4 text-black fw-bolder">72<span class="fs-6 me-2">k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+                                        <p class="text-dark fs-10 fw-bold text-center min-w-max-content">المسافة المقطوعة</p>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
+
+                        //- other slides content
+                        <div id="none-active-content">
+                            <div class="text-start">
+                                <h3 class="mb-0 me-3 fs-6">MAZDA 3 SEDAN</h3>
+                                <h4 class="text-primary mt-0 fs-8">$11,300</h4>
+                            </div>
+                            
+                            <div class="remaining tranformer">
+                                <p class="count-down text-black fw-bolder fs-5 mb-0">06</p>
+                                <p class="count-down text-secondary fs-5 mb-0" >:</p>
+                                <p class="count-down text-black fw-bolder fs-5 mb-0">30</p>
+                                <p class="count-down text-secondary fs-5 mb-0" >:</p>
+                                <p class="count-down text-black fw-bolder fs-5 mb-0">53</p>
+
+                                <p class="count-down fs-7">يوم</p>
+                                <p class="count-down fs-7"> </p>
+                                <p class="count-down fs-7">ساعة</p>
+                                <p class="count-down fs-7"> </p>
+                                <p class="count-down fs-7">دقيقة</p>
+                            </div>
+                        </div>
+
+                        <img src="#{item}" alt="">
                     </div>
             </div>
 
-            <div style="display: flex; position: absolute; left: 0; bottom: 10px; width: 60% !important;" class="text-primary p-4">
+            <div class="d-flex flex-wrap position-absolute text-primary p-4 size-flexible" style="inset: auto auto -30px 0px">
                 <div style="z-index: 3;">
                     <i class="m-4 forward bg-primary btn-next" id="pointer">
                         <i class="fas fa-angle-right"></i>
@@ -184,17 +84,15 @@ mixin slider-offers(more,items)
                         <i class="fas fa-angle-right"></i>
                     </i>
                 </div>
-                <div style="flex-grow: 1; text-align: end;">
-                    <a class="fw-bolder cursor-pointer text-primary" style="text-decoration: none;" href="./auctions.html">#{more} <i class="fas fa-angle-left"></i></p></a>
-                    <hr style="width: 80%; margin-right: 20%; z-index: 0;">
+
+                <div class="flex-grow-1 text-end min-w-max-content d-flex gap-2 mt-4 flex-row-reverse" style="z-index: 12;">
+                    <a class="fw-bolder cursor-pointer min-w-max-content text-primary text-decoration-none" href="./auctions.html">#{more} <i class="fas fa-angle-left"></i></p></a>
+                    <hr class="__offer-hr-style">
                 </div>
             </div>
         </div>
     </div>
     <div id="arrow"></div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -208,13 +106,17 @@ mixin slider-offers(more,items)
             loopPreventsSlide: true,
             grapCursor: true,
             loop: true,
+            keyboard: {
+                enabled: true,
+            },
+            allowTouchMove: false,
             centeredSlides:false,
             loopFillGroupWithBlank: true,
-            speed: 1000,
+            speed: 500,
             navigation: {
-                nextEl: ".btn-next",
-                prevEl: ".btn-prev",
+                nextEl: ".btn-prev",
+                prevEl: ".btn-next",
             },
         });
-        
+
     </script>

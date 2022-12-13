@@ -11,6 +11,52 @@
         font-weight: 700;
         border-color:  var(--bs-primary-color);
     }
+    .accordion-button:focus,.accordion-button:active{
+        outline:none;
+        box-shadow: none;
+    }
+    .accordion-button:not(.collapsed){
+        color: var(--bs-primary-color);
+        background-color: #ff550036;
+    }
+    .accordion-button:not(.collapsed)::after{
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff5700'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+    }
+
 </style>
 
-<aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;"><header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;"><div><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg><span>فلتر النتائج</span></div><div class="text-primary text-clickable"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="3" y1="3" x2="21" y2="21"></line><path d="M9 5h9.5a1 1 0 0 1 .5 1.5l-4.049 4.454m-.951 3.046v5l-4 -3v-4l-5 -5.5a1 1 0 0 1 .18 -1.316"></path></svg><span class="fs-7">إعادة تعيين</span></div></header><div class="d-flex flex-row shadow-sm" style="z-index: 2;"><input type="radio" class="d-none" id="rad1" name="category" checked><label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة مضمونة</label><input type="radio" class="d-none" id="rad2" name="category"><label for="rad2" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label><input type="radio" class="d-none" id="rad3" name="category"><label for="rad3" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">إعلانات مبوبة</label></div><div class="accordion"><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الماركة</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الماركة for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">المواصفات</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">المواصفات for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سنة الصنع</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سنة الصنع for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">السعر</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">السعر for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">اللون</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">اللون for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الوارد</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الوارد for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">الشكل</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">الشكل for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">سعة المحرك</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">سعة المحرك for now</div></div></div><div class="accordion-item"><h2 class="d-flex justify-content-between accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">نوع الوقود</button></h2><div class="accordion-collapse collapse"><div class="accordion-body">نوع الوقود for now</div></div></div></div><div class="d-flex justify-content-between bg-primary text-white p-2 text-clickable" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside>
+- var filter_titles = ["الماركة","المواصفات","سنة الصنع","السعر","اللون","الوارد","الشكل","سعة المحرك","نوع الوقود"]
+
+<aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;">
+    <header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;">
+        <div>
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>
+            <span>فلتر النتائج</span>
+        </div>
+        <div class="text-primary text-clickable">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="3" y1="3" x2="21" y2="21"></line><path d="M9 5h9.5a1 1 0 0 1 .5 1.5l-4.049 4.454m-.951 3.046v5l-4 -3v-4l-5 -5.5a1 1 0 0 1 .18 -1.316"></path></svg>
+            <span class="fs-7">إعادة تعيين</span>
+        </div>
+    </header>
+    
+    <div class="d-flex flex-row shadow-sm" style="z-index: 2;">
+        <input type="radio" class="d-none" id="rad1" name="category" checked>
+        <label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة مضمونة</label>
+        <input type="radio" class="d-none" id="rad2" name="category">
+        <label for="rad2" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label>
+        <input type="radio" class="d-none" id="rad3" name="category">
+        <label for="rad3" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">إعلانات مبوبة</label>
+    </div>
+    
+    <div class="accordion">
+        each title,index in filter_titles
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading#{index}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse#{index}" aria-expanded="true" aria-controls="collapse#{index}">#{title}</button>
+                </h2>
+                <div id="collapse#{index}" class="accordion-collapse collapse" aria-labelledby="heading#{index}" data-bs-parent="#accordionExample">
+                <div class="accordion-body">Whisle whistle #{index}</div>
+                </div>
+            </div>
+
+        <div class="d-flex justify-content-between bg-primary text-white p-2 text-clickable" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside>

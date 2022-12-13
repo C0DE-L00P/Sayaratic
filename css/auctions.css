@@ -1,0 +1,35 @@
+/* start auction card */
+.__auction-card-style {
+    border-bottom: 1px solid var(--bs-grey-200);
+  }
+  .__auction-card-img {
+    object-fit: contain;
+    border-radius: 16px;
+    max-height: 160px;
+  }
+  .__auction-card-h4 {
+    height: calc(100% - 68px);
+    max-height: 60px !important;
+    text-align: start;
+    margin-top: 12px;
+  }
+  .__auction-card-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px;
+    place-items: center;
+  }
+  @media (min-width: 1000px) {
+    .auction-card-style {
+      height: 160px;
+    }
+    .info-grid {
+      place-content: center;
+    }
+  }
+  /* end auction card */
+  
