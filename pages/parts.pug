@@ -19,6 +19,9 @@ html(lang="ar",dir="rtl")
             input[type="checkbox"]:checked + label{
                 color: var(--bs-danger) !important;
             }
+            .__cat-grid{
+                display: grid; grid-template-columns: repeat(auto-fit, 240px); gap: 24px; place-content: center center;
+            }
         </style>
     body(style="overflow-x: hidden;")
         +nav-bar("parts")
@@ -118,8 +121,7 @@ html(lang="ar",dir="rtl")
 
         <div class="p-0 text-center">
             h1(style="border-bottom: 2px solid var(--bs-grey-200);", class="text-primary h3 fw-bold pb-2 mt-4 mb-2 d-inline-block") استكشف خدمات العناية
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, 240px); gap: 24px; place-content: center center;" class="my-4">
-                <!-- زود hover effect هنا -->
+            <div class="my-4 __cat-grid">
                 each cat, index in categories
                     <div class="text-center rounded-3 pt-3 pb-2 cursor-pointer" style="border: 1px solid var(--bs-grey-400); height: 140px;">
                         <img src="#{cat.icon}" alt="#{cat.title} img" style="height: 60%;"/>

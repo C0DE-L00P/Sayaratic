@@ -17,6 +17,18 @@
     <title>سيارات مستعملة</title><style>.accordion-button::after{
         margin-left: 0px;
         margin-right: auto;
+    }
+    .__car-grid{
+        display: grid; grid-template-columns: repeat( auto-fit, 236px); gap: 12px; place-content: center center;
+    }
+    .__floating-btn{
+        bottom: 24px; right: 24px; width: 44px; height: 44px; z-index: 21; padding-top: 12px;
+    }
+    #selectShowBy{
+        background-color: transparent; font-weight: 500; color: black; border: none;
+    }
+    label[for="selectShowBy"]{
+        border: 1px solid rgb(204, 204, 204); user-select: none; border-radius: 8px; padding: 8px; transform: scale(0.8) translateX(20px);
     }</style>
   </head>
   <body style="overflow-x: hidden;">
@@ -192,34 +204,31 @@
         document.querySelector("#login_btn").style.display = !isLoggedIn? 'inline-block':'none';
         document.querySelector("#user_btn").style.display = isLoggedIn? 'inline-block':'none';
     }
-    onInit();</script>
-  </body>
-</html><!-- متنساش تعمل زرار ومودال للفلتر -->
-<div class="row mb-4 pb-4" style="max-width: 100%; margin-inline: 0px;">
+    onInit();</script><div class="row mb-4 pb-4 mx-0" style="max-width: 100%;">
 <div class="col-3 d-none d-lg-inline-block my-4 pe-4">
-<style>input[type=radio] + label{
-    color: var(--bs-grey-200);
-    font-weight: 300;
-    border-bottom: 3px solid transparent;
-    transition-duration: 0.17s;
-}
-input[type=radio]:checked + label{
-    color: var(--bs-primary-color) !important;
-    font-weight: 700;
-    border-color:  var(--bs-primary-color);
-}
-.accordion-button:focus,.accordion-button:active{
-    outline:none;
-    box-shadow: none;
-}
-.accordion-button:not(.collapsed){
-    color: var(--bs-primary-color);
-    background-color: #ff550036;
-}
-.accordion-button:not(.collapsed)::after{
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff5700'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-}
-</style><aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;">
+        <style>input[type=radio] + label{
+            color: var(--bs-grey-200);
+            font-weight: 300;
+            border-bottom: 3px solid transparent;
+            transition-duration: 0.17s;
+        }
+        input[type=radio]:checked + label{
+            color: var(--bs-primary-color) !important;
+            font-weight: 700;
+            border-color:  var(--bs-primary-color);
+        }
+        .accordion-button:focus,.accordion-button:active{
+            outline:none;
+            box-shadow: none;
+        }
+        .accordion-button:not(.collapsed){
+            color: var(--bs-primary-color);
+            background-color: #ff550036;
+        }
+        .accordion-button:not(.collapsed)::after{
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff5700'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+        </style><aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: max-content;">
 <header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;">
 <div>
 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>
@@ -232,7 +241,7 @@ input[type=radio]:checked + label{
 </header>
 <div class="d-flex flex-row shadow-sm" style="z-index: 2;">
 <input type="radio" class="d-none" id="rad1" name="category" checked>
-<label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة مضمونة</label>
+<label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة<span class="d-none d-sm-inline d-lg-none d-xl-inline"> مضمونة</span></label>
 <input type="radio" class="d-none" id="rad2" name="category">
 <label for="rad2" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label>
 <input type="radio" class="d-none" id="rad3" name="category">
@@ -303,40 +312,43 @@ input[type=radio]:checked + label{
 </div>
 </div><div class="d-flex justify-content-between bg-primary text-white p-2 text-clickable" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside></div>
 <main class="col-12 col-lg-9 p-0 my-3">
-<div class="d-flex justify-content-between my-3 w-100 flex-wrap"><h2 class="d-inline-block h5 text-primary px-2">سيارات مستعملة للبيع في السعودية <span class="text-secondary fs-6" style="min-width: max-content;">- 1002 سيارة</span></h2><span class="fs-6" style="min-width: max-content;"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary mx-2 text-clickable" height="24" width="24" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"></path></svg><label for="selectShowBy" style="border: 1px solid rgb(204, 204, 204); user-select: none; border-radius: 8px; padding: 8px; transform: scale(0.8) translateX(20px);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="28" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>الظهور حسب<select id="selectShowBy" style="background-color: transparent; font-weight: 500; color: black; border: none;"><option>الأحدث</option></select></label></span></div>
-<style>.sideFilter input[type="checkbox"] + label > .fa-check{
-    color: white;
-    background-color: white;
-    cursor: pointer;
-}</style>
-<div  class="modal fade" id="sideFilterModal" tabindex="-1" aria-labelledby="sideFilterLabel" aria-hidden="true" style=" backdrop-filter: blur(4px);">
-<div class="modal-dialog p-4 overflow-hidden" style="border:none;">
+<div class="d-flex justify-content-between my-3 w-100 flex-wrap"><h2 class="d-inline-block h5 text-primary px-2">سيارات مستعملة للبيع في السعودية <span class="text-secondary fs-6 min-w-max-content">- 1002 سيارة</span></h2><span class="fs-6 min-w-max-content" ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary mx-2 text-clickable" height="24" width="24" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"></path></svg><label for="selectShowBy"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="28" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>الظهور حسب
+<select id="selectShowBy">
+<option>الأحدث</option>
+</select>
+</label></span></div>
+    <style>.sideFilter input[type="checkbox"] + label > .fa-check{
+        color: white;
+        background-color: white;
+        cursor: pointer;
+    }</style>
+<div  class="modal fade" id="sideFilterModal" tabindex="-1" aria-labelledby="sideFilterLabel" aria-hidden="true" style="backdrop-filter: blur(4px);">
+<div class="modal-dialog p-4 overflow-hidden borderless">
 <div class="modal-content position-relative p-0">
 <div class="modal-body p-0">
-<!-- اعتقد ممكن تتحسن عن كده -->
-<style>input[type=radio] + label{
-    color: var(--bs-grey-200);
-    font-weight: 300;
-    border-bottom: 3px solid transparent;
-    transition-duration: 0.17s;
-}
-input[type=radio]:checked + label{
-    color: var(--bs-primary-color) !important;
-    font-weight: 700;
-    border-color:  var(--bs-primary-color);
-}
-.accordion-button:focus,.accordion-button:active{
-    outline:none;
-    box-shadow: none;
-}
-.accordion-button:not(.collapsed){
-    color: var(--bs-primary-color);
-    background-color: #ff550036;
-}
-.accordion-button:not(.collapsed)::after{
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff5700'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-}
-</style><aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: fit-content;">
+        <style>input[type=radio] + label{
+            color: var(--bs-grey-200);
+            font-weight: 300;
+            border-bottom: 3px solid transparent;
+            transition-duration: 0.17s;
+        }
+        input[type=radio]:checked + label{
+            color: var(--bs-primary-color) !important;
+            font-weight: 700;
+            border-color:  var(--bs-primary-color);
+        }
+        .accordion-button:focus,.accordion-button:active{
+            outline:none;
+            box-shadow: none;
+        }
+        .accordion-button:not(.collapsed){
+            color: var(--bs-primary-color);
+            background-color: #ff550036;
+        }
+        .accordion-button:not(.collapsed)::after{
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff5700'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+        </style><aside class="d-flex flex-column rounded-2" style="border: 1px solid rgba(204, 204, 204, 0.27); height: max-content;">
 <header class="d-flex flex-row justify-content-between w-100 p-2 shadow-sm" style="z-index: 3;">
 <div>
 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="text-primary" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path></svg>
@@ -348,12 +360,12 @@ input[type=radio]:checked + label{
 </div>
 </header>
 <div class="d-flex flex-row shadow-sm" style="z-index: 2;">
-<input type="radio" class="d-none" id="rad1" name="category" checked>
-<label for="rad1" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة مضمونة</label>
-<input type="radio" class="d-none" id="rad2" name="category">
-<label for="rad2" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label>
-<input type="radio" class="d-none" id="rad3" name="category">
-<label for="rad3" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">إعلانات مبوبة</label>
+<input type="radio" class="d-none" id="rad11" name="category" checked>
+<label for="rad11" class="col-4 text-center py-2 fs-7 border-3 text-clickable">مستعملة<span class="d-none d-sm-inline d-lg-none d-xl-inline"> مضمونة</span></label>
+<input type="radio" class="d-none" id="rad21" name="category">
+<label for="rad21" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">جديدة</label>
+<input type="radio" class="d-none" id="rad31" name="category">
+<label for="rad31" class="col-4 text-center py-2 text-secondary fs-7 text-clickable">إعلانات مبوبة</label>
 </div>
 <div class="accordion"><div class="accordion-item">
 <h2 class="accordion-header" id="heading0">
@@ -421,8 +433,8 @@ input[type=radio]:checked + label{
 </div><div class="d-flex justify-content-between bg-primary text-white p-2 text-clickable" style="cursor: pointer;"><span>اظهر النتائج</span><span>1002 سيارة<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></span></div></aside></div>
 </div>
 </div>
-</div><button class="btn btn-primary rounded-circle position-fixed d-inline-block d-lg-none" style="bottom: 24px; right: 24px; width: 44px; height: 44px; z-index: 21; padding-top: 12px;" data-bs-toggle="modal" data-bs-target="#sideFilterModal" data-bs-whatever="@getbootstrap"><i class="fas fa-filter"></i></button>
-<div style="display: grid; grid-template-columns: repeat( auto-fit, 236px); gap: 12px; place-content: center center;"><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+</div><button class="btn btn-primary rounded-circle position-fixed d-inline-block d-lg-none __floating-btn" data-bs-toggle="modal" data-bs-target="#sideFilterModal" data-bs-whatever="@getbootstrap"><i class="fas fa-filter"></i></button>
+<div class="__car-grid"><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details-used.html" style="text-decoration: none;">
 <h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
 </a>
@@ -673,134 +685,134 @@ input[type=radio]:checked + label{
 </div></div>
 </main>
 </div>
-<style>/* start footer */
-.footer {
-background: #1e1e1e;
-padding: 60px 0;
-}
-.footer .footer-abstract {
-color: #9e9e9e;
-font-size: 12px;
-line-height: 1.7;
-margin-top: 15px;
-margin-bottom: 45px;
-}
-.footer .footer-mobile {
-font-weight: bold;
-color: #ffff;
-font-size: 13px;
-margin-bottom: 12px;
-}
-.footer .mobile-app {
-display: flex;
-justify-content: center;
-}
-.footer .mobile-app button {
-display: flex;
-background: #060606;
-border-radius: 4px;
-padding: 4px;
-border: none;
-margin: 5px;
-align-items: center;
-}
-.footer .mobile-app button:active{
-    background: #161616;
-}
-.footer .mobile-app i {
-color: #fff;
-font-size: 25px;
-margin-right: 4px;
-}
-.footer .mobile-app .google-play p {
-color: #9e9e9e;
-font-size: 6px;
-margin-bottom: 0;
-}
-.footer .mobile-app .google-play h6 {
-margin-bottom: 0;
-font-size: 9px;
-font-weight: bold;
-color: white;
-}
-.footer .contact-us {
-margin-top: 55px;
-}
-.footer .contact-us .contact-title {
-display: flex;
-margin-right: 6px;
-}
-.footer .contact-us .contact-title .vl {
-border-left: 3px solid #ff5700;
-height: 22px;
-margin-left: 12px;
-}
-.footer .contact-us .contact-title p {
-font-size: 14px;
-color: #ff5700;
-margin-bottom: 29px;
-}
-.footer .contact-us .contact-info {
-display: flex;
-}
-.footer .contact-us .contact-info i {
-color: white;
-font-size: 14px;
-}
-.footer .contact-us .contact-info p {
-color: #9e9e9e;
-font-size: 11px;
-margin-right: 20px;
-margin-bottom: 12px;
-}
-.footer .contact-social{
-    display: flex;
-    gap: 16px;
-    justify-content: start;
-}
-.footer .contact-social i {
-margin-left: 10px;
-font-size: 11px;
-color: white;
-}
-.footer .categories {
-margin-top: 55px;
-padding-right: 36px;
-}
-.footer .categories p {
-font-size: 14px;
-color: #ff5700;
-margin-bottom: 18px;
-}
-.footer .categories h6 {
-color: #fff;
-line-height: 1.9;
-font-size: 14px;
-}
-.footer .news {
-font-size: 14px;
-color: #ff5700;
-margin-bottom: 15px;
-}
-.footer input {
-direction: rtl;
-background: none;
-font-size: 13px;
-padding: 9px;
-margin-top: 16px;
-margin-bottom: 43px;
-}
-.footer input:focus {
-background: none;
-background-color: non;
-box-shadow: none;
-color: #9a9496;
-border-color: #9a9496;
-}
-.footer .payment-method img {
-margin-left: 10px;
-}
-/* end footer */</style>
+        <style>/* start footer */
+        .footer {
+        background: #1e1e1e;
+        padding: 60px 0;
+        }
+        .footer .footer-abstract {
+        color: #9e9e9e;
+        font-size: 12px;
+        line-height: 1.7;
+        margin-top: 15px;
+        margin-bottom: 45px;
+        }
+        .footer .footer-mobile {
+        font-weight: bold;
+        color: #ffff;
+        font-size: 13px;
+        margin-bottom: 12px;
+        }
+        .footer .mobile-app {
+        display: flex;
+        justify-content: center;
+        }
+        .footer .mobile-app button {
+        display: flex;
+        background: #060606;
+        border-radius: 4px;
+        padding: 4px;
+        border: none;
+        margin: 5px;
+        align-items: center;
+        }
+        .footer .mobile-app button:active{
+            background: #161616;
+        }
+        .footer .mobile-app i {
+        color: #fff;
+        font-size: 25px;
+        margin-right: 4px;
+        }
+        .footer .mobile-app .google-play p {
+        color: #9e9e9e;
+        font-size: 6px;
+        margin-bottom: 0;
+        }
+        .footer .mobile-app .google-play h6 {
+        margin-bottom: 0;
+        font-size: 9px;
+        font-weight: bold;
+        color: white;
+        }
+        .footer .contact-us {
+        margin-top: 55px;
+        }
+        .footer .contact-us .contact-title {
+        display: flex;
+        margin-right: 6px;
+        }
+        .footer .contact-us .contact-title .vl {
+        border-left: 3px solid #ff5700;
+        height: 22px;
+        margin-left: 12px;
+        }
+        .footer .contact-us .contact-title p {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 29px;
+        }
+        .footer .contact-us .contact-info {
+        display: flex;
+        }
+        .footer .contact-us .contact-info i {
+        color: white;
+        font-size: 14px;
+        }
+        .footer .contact-us .contact-info p {
+        color: #9e9e9e;
+        font-size: 11px;
+        margin-right: 20px;
+        margin-bottom: 12px;
+        }
+        .footer .contact-social{
+            display: flex;
+            gap: 16px;
+            justify-content: start;
+        }
+        .footer .contact-social i {
+        margin-left: 10px;
+        font-size: 11px;
+        color: white;
+        }
+        .footer .categories {
+        margin-top: 55px;
+        padding-right: 36px;
+        }
+        .footer .categories p {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 18px;
+        }
+        .footer .categories h6 {
+        color: #fff;
+        line-height: 1.9;
+        font-size: 14px;
+        }
+        .footer .news {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 15px;
+        }
+        .footer input {
+        direction: rtl;
+        background: none;
+        font-size: 13px;
+        padding: 9px;
+        margin-top: 16px;
+        margin-bottom: 43px;
+        }
+        .footer input:focus {
+        background: none;
+        background-color: non;
+        box-shadow: none;
+        color: #9a9496;
+        border-color: #9a9496;
+        }
+        .footer .payment-method img {
+        margin-left: 10px;
+        }
+        /* end footer */</style>
 <!-- start footer -->
 <div class="footer">
 <div class="container">
@@ -884,3 +896,5 @@ margin-left: 10px;
 </div>
 </div>
 <!-- end footer -->
+  </body>
+</html>

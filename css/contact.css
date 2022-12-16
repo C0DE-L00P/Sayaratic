@@ -1,0 +1,84 @@
+.form-contact .form-control-c {
+  background-color: white !important;
+  border: none;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--bs-primary-color);
+}
+.form-contact .form-control-c::placeholder {
+  color: grey;
+}
+.form-contact .form-control-c:active,
+.form-contact .form-control:focus {
+  box-shadow: none;
+  border-color: black;
+}
+.form-contact textarea {
+  border: 2px solid var(--bs-primary-color);
+  border-radius: 18px;
+  padding: 24px;
+  resize: none;
+}
+.form-contact textarea::placeholder {
+  color: var(--bs-grey-400);
+}
+#map {
+  height: 380px;
+  width: 98%;
+  margin-inline: auto;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+.type-card {
+  display: flex;
+  width: 100%;
+  background: #fafafa;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 15px -8px rgb(0 0 0 / 31%);
+  justify-content: space-between;
+  align-items: center;
+}
+.type-card p {
+  margin-bottom: 0;
+  color: grey;
+  user-select: none;
+}
+.type-card i {
+  color: #ff5700;
+}
+.__contact-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../assets/bg-contact.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: 92vh;
+  max-width: 100%;
+  margin-inline: 0px;
+}
+.__title {
+  border-bottom: 2px solid #e7e7e7;
+  display: inline-block;
+}
+.__paper-clip {
+  position: absolute;
+  top: -38px;
+  left: 60px;
+  width: 40px;
+  height: 90px;
+  background-image: url(../assets/paper-clip.png);
+  background-repeat: no-repeat;
+}
+.form-select {
+  flex-grow: 1;
+  padding: 15px !important;
+  border-radius: 15px;
+  border: none;
+  padding: 0.375rem 0.75rem 0.375rem 2.25rem;
+  filter: brightness(0.98);
+  box-shadow: 0px 2px 15px -8px rgb(0 0 0 / 31%);
+  margin-inline: 1.5%;
+}
+.form-select:focus {
+  border-color: var(--bs-grey-700);
+}

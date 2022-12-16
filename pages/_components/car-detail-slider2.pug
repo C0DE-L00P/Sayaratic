@@ -1,110 +1,6 @@
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
-<!-- Demo styles -->
-<style>
-.
-    @font-face {
-        font-family: rounded-font;
-        src: url(./assets/fonts/junegull.ttf);
-    }
-    .detail-parent-slider{
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-    direction: ltr;
-    perspective: 200px;
-    width: 100%;
-    overflow-x:hidden;
-    perspective-origin: right top;
-    height: 400px;
-    }
-
-    .swiper {
-    width: 100%;
-    height: 100%;
-    perspective: 200px;
-    }
-
-    .mySwiper > .swiper-wrapper >.swiper-slide{
-    text-align: center;
-    font-size: 18px;
-    width: 700px;
-    opacity: 0;
-    perspective: 200px;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    }
-
-    .mySwiper > .swiper-wrapper >.swiper-slide img {
-        display: block;
-        transform: translateZ(-120px) translateY(-50%) translateX(-120px);
-        height: 50%;
-        object-fit: contain;
-        transition-duration: 0.2s;
-    }
-
-    .mySwiper > .swiper-wrapper >.swiper-slide-active img{
-        margin-bottom: 0px;
-        transform: translateZ(71px);
-    }
-    .mySwiper > .swiper-wrapper >.swiper-slide-active{
-        opacity: 1;
-    }
-    .mySwiper > .swiper-wrapper >.swiper-slide-next{
-        opacity: 0.6;
-    }
-    .mySwiper > .swiper-wrapper >.swiper-slide-prev{
-        opacity: 0;
-    }
-    .__car-detail-color{
-        color: rgba(208, 208, 208, 0.229);
-        font-size: 120px;
-        font-weight: 300;
-        z-index: 0;
-        inset: 0px 80px auto 0px;
-        font-family: rounded-font;
-    }
-    .mySwiper > .swiper-wrapper > .swiper-slide-active .__car-detail-color{
-        opacity: 0;
-    }
-    .__car-detail-img{
-        z-index: 1;
-        user-select: none;
-    }
-    .__car-detail-btn{
-        z-index: 6; left: 24px; top: 190px;
-        border: 1px solid transparent !important;
-        color: var(--bs-primary-color);
-    }
-    .__car-detail-btn:hover{
-        background-color: var(--bs-primary-color) !important;
-        border: 1px solid white !important;
-        color: white;
-    }
-    .__car-detail-btn:active{
-        filter: brightness(0.95) !important;
-    }
-    .__car-detail-brand{
-        opacity: 0.3; top: 20px; left: 10px; position: absolute;
-        z-index: 0;
-        height: 80px;
-    }
-</style>
-
 - var imgs = ["./assets/details-ford-blue-1.webp","./assets/details-2.webp","./assets/details-3.webp","./assets/details-4.webp","./assets/details-5.webp","./assets/details-6.webp","./assets/details-7.webp","./assets/details-8.webp","./assets/details-9.webp","./assets/details-10.webp","./assets/details-11.webp","./assets/details-12.webp"]
 
 
@@ -135,14 +31,14 @@
     </div>
     
     //- side info div
-    <button class="btn position-absolute shadow-sm px-5 fw-bold bg-white borderless rounded-pill __car-detail-btn">احجزها الآن</button>
+    <button class="btn position-absolute shadow-sm px-5 fw-bold bg-white borderless rounded-pill __car-detail-btn d-none d-md-inline-block">احجزها الآن</button>
     
-    <div class="position-absolute bg-primary d-rtl" style="padding-inline-start: 120px;padding-inline-end: 80px; left: -80px; top: 10px; width: 50%; border-radius: 40px;height: 200px; color: white;">
+    <div class="position-absolute bg-primary d-rtl w-50 d-none d-md-inline-block __car-detail-div">
         <img src="./assets/brands-12.webp" alt="brand_img"  class="__car-detail-brand">
         <div style="z-index: 2;" class="my-4 d-rtl w-max-content">
             <h2 class="h4 fw-bolder">نيسان صني</h2>
             <p class="h5">الشكل الجديد 2022 ستاندر SV</p>
-            <div class="row mt-4" style="min-width: 200px; width: 100%">
+            <div class="row mt-4 w-100" style="min-width: 200px;">
                 <div class="col-6">
                     <p class="fs-9 mb-1">السعر قبل الضريبة</p>
                     <p class="h5">64,000 ريال</p>

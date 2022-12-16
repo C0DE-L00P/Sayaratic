@@ -13,7 +13,7 @@
 <style>*{font-family: "Noto Kufi Arabic", sans-serif}</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./css/details.css">
     <title>تفاصيل عن السيارة</title>
   </head>
   <body> 
@@ -207,7 +207,50 @@
         .modal-dialog .fs-6{
             font-size: 16px !important;
         }
-    }</style><div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="commentsModalLabel" aria-hidden="true">
+    }
+    .comment-section-p{
+        font-size: 13px;
+    }
+    @media screen and (min-width: 360px){
+        .comment-section-p{
+            font-size: 16px;
+        }
+    }
+    .input,
+        .textarea {
+        border: 1px solid #ccc;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 1px 6px;
+        }
+    
+        .input-wrap {
+        position: relative;
+        width: 100%;
+        }
+        .input-wrap .input {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        }
+        .width-machine {
+        /*   Sort of a magic number to add extra space for number spinner */
+        padding: 0 1rem;
+        }
+    
+        .textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: none;
+        min-height: 40px;
+        line-height: 20px;
+        }
+    
+        .textarea[contenteditable]:empty::before {
+        content: "شاركنا تجربتك !";
+        color: gray;
+        }</style><div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="commentsModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
 <div class="modal-content position-relative">
 <button type="button" class="btn-close m-3" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -364,17 +407,19 @@
 <p class="text-semi-secondary fs-9 mb-2 text-start" style="align-self: end;">16 يونيو 2022 , مصر</p>
 <hr/></div>
 <!-- input and rate -->
-<div class="modal-footer">
-<div class="d-flex flex-wrap align-items-center gap-2 w-100">
-<input type="text" id="in_comment" placeholder="شاركنا تجربتك !" class="placeholder-secondary bg-secondary rounded-3 flex-grow-1 px-3 py-2 fs-7" style="min-width: 320px; border: none; outline: none;"/>
-    <p class="text-primary p-0 m-0">مدى رضائك عن الخدمة</p><span>
+<div class="modal-footer d-flex flex-wrap">
+<p class="flex-grow-1"><span class="textarea placeholder-secondary bg-secondary rounded-3 flex-grow-1 px-3 py-2 fs-7 outline-none borderless" style="min-width: 286px;" id="in_comment" role="textbox" contenteditable></span></p>
+<div class="d-flex align-items-center justify-content-between gap-2">
+<div>
+    <p class="text-primary p-0 m-0 d-none d-sm-inline-block">مدى رضائك عن الخدمة</p><span>
 <i id="star1" class="text-clickable fas fa-star text-warning" onclick="Rate(1)"></i>
 <i id="star2" class="text-clickable fas fa-star text-secondary" onclick="Rate(2)"></i>
 <i id="star3" class="text-clickable fas fa-star text-secondary" onclick="Rate(3)"></i>
 <i id="star4" class="text-clickable fas fa-star text-secondary" onclick="Rate(4)"></i>
 <i id="star5" class="text-clickable fas fa-star text-secondary" onclick="Rate(5)"></i>
 </span>
-<i class="mx-2 fas fa-paper-plane cursor-pointer text-secondary"></i> 
+</div>
+<i class="mx-2 fas fa-paper-plane cursor-pointer text-secondary" style="tranform: rotateX(180deg);"></i> 
 </div>
 </div>
 </div>
@@ -393,108 +438,25 @@
             rating--;
         }
     }</script><div class="text-secondary m-4 user-select-none"><a class="text-decoration-none text-secondary text-clickable" href="./index.html">الرئيسية</a> / <a class="text-decoration-none text-secondary text-clickable" href="./new.html">سيارات جديدة </a> /  نيسان صني</div>
-    <!-- Link Swiper's CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-<!-- Demo styles -->
-<style>@font-face {
-        font-family: rounded-font;
-        src: url(./assets/fonts/junegull.ttf);
-    }
-    .detail-parent-slider{
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-    direction: ltr;
-    perspective: 200px;
-    width: 100%;
-    overflow-x:hidden;
-    perspective-origin: right top;
-    height: 400px;
-    }
-    
-    .swiper {
-    width: 100%;
-    height: 100%;
-    perspective: 200px;
-    }
-    
-    .mySwiper > .swiper-wrapper >.swiper-slide{
-    text-align: center;
-    font-size: 18px;
-    width: 700px;
-    opacity: 0;
-    perspective: 200px;
-    
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    }
-    
-    .mySwiper > .swiper-wrapper >.swiper-slide img {
-        display: block;
-        transform: translateZ(-120px) translateY(-50%) translateX(-120px);
-        height: 50%;
-        object-fit: contain;
-        transition-duration: 0.2s;
-    }
-    
-    .mySwiper > .swiper-wrapper >.swiper-slide-active img{
-        margin-bottom: 0px;
-        transform: translateZ(71px);
-    }
-    .mySwiper > .swiper-wrapper >.swiper-slide-active{
-        opacity: 1;
-    }
-    .mySwiper > .swiper-wrapper >.swiper-slide-next{
-        opacity: 0.6;
-    }
-    .mySwiper > .swiper-wrapper >.swiper-slide-prev{
-        opacity: 0;
-    }
-    .__car-detail-color{
-        color: rgba(208, 208, 208, 0.229);
-        font-size: 120px;
-        font-weight: 300;
-        z-index: 0;
-        inset: 0px 80px auto 0px;
-        font-family: rounded-font;
-    }
-    .mySwiper > .swiper-wrapper > .swiper-slide-active .__car-detail-color{
-        opacity: 0;
-    }
-    .__car-detail-img{
-        z-index: 1;
-        user-select: none;
-    }
-    .__car-detail-btn{
-        z-index: 6; left: 24px; top: 190px;
-        border: 1px solid transparent !important;
-        color: var(--bs-primary-color);
-    }
-    .__car-detail-btn:hover{
-        background-color: var(--bs-primary-color) !important;
-        border: 1px solid white !important;
-        color: white;
-    }
-    .__car-detail-btn:active{
-        filter: brightness(0.95) !important;
-    }
-    .__car-detail-brand{
-        opacity: 0.3; top: 20px; left: 10px; position: absolute;
-        z-index: 0;
-        height: 80px;
-    }</style><!-- Swiper -->
+<div class="bg-primary d-rtl mx-auto my-4 py-2 px-4 d-block d-md-none __car-detail-div rounded-2 position-relative" style="width: 90%; left: auto; top: auto; height: max-content;">
+<img src="./assets/brands-12.webp" alt="brand_img"  class="__car-detail-brand">
+<div style="z-index: 2; max-width: 100%;" class="my-4 d-rtl">
+<h2 class="h4 fw-bolder" style="max-width: 100%;">نيسان صني</h2>
+<p class="h5" style="max-width: 100%;">الشكل الجديد 2022 ستاندر SV</p>
+<div class="row mt-4 w-100" style="max-width: 100%;">
+<div class="col-6">
+<p class="fs-9 mb-1">السعر قبل الضريبة</p>
+<p class="h5">64,000 ريال</p>
+</div>
+<div class="col-6">
+<p class="fs-9 mb-1">السعر بعد الضريبة</p>
+<p class="h5">56,000 ريال</p>
+</div>
+</div>
+</div>
+<button class="btn mx-auto shadow-sm px-5 fw-bold bg-white borderless min-w-max-content rounded-pill __car-detail-btn position-absolute" style="inset: auto 25% -20px;">احجزها الآن</button>
+</div><!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/><!-- Swiper -->
 <div class="detail-parent-slider position-relative">
 <div class="swiper mySwiper">
 <div class="swiper-wrapper mt-6">
@@ -508,13 +470,13 @@
 </div>
 </div>
 </div>
-<button class="btn position-absolute shadow-sm px-5 fw-bold bg-white borderless rounded-pill __car-detail-btn">احجزها الآن</button>
-<div class="position-absolute bg-primary d-rtl" style="padding-inline-start: 120px;padding-inline-end: 80px; left: -80px; top: 10px; width: 50%; border-radius: 40px;height: 200px; color: white;">
+<button class="btn position-absolute shadow-sm px-5 fw-bold bg-white borderless rounded-pill __car-detail-btn d-none d-md-inline-block">احجزها الآن</button>
+<div class="position-absolute bg-primary d-rtl w-50 d-none d-md-inline-block __car-detail-div">
 <img src="./assets/brands-12.webp" alt="brand_img"  class="__car-detail-brand">
 <div style="z-index: 2;" class="my-4 d-rtl w-max-content">
 <h2 class="h4 fw-bolder">نيسان صني</h2>
 <p class="h5">الشكل الجديد 2022 ستاندر SV</p>
-<div class="row mt-4" style="min-width: 200px; width: 100%">
+<div class="row mt-4 w-100" style="min-width: 200px;">
 <div class="col-6">
 <p class="fs-9 mb-1">السعر قبل الضريبة</p>
 <p class="h5">64,000 ريال</p>
@@ -568,25 +530,24 @@
     thumbs: {
         swiper: swiper,
     },
-    });</script><div class="row fw-bolder m-0">
-<div class="px-0 col-1"></div>
-<div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+    });</script><div class="d-flex fw-bolder m-0 text-center flex-wrap">
+<div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120 __left-grey-border">
 <p class="text-center mb-1">4</p>
 <p class="text-center">السلندرات</p>
 </div>
-<div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+<div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120 __left-grey-border">
 <p class="text-center mb-1">مانوال</p>
 <p class="text-center">القير</p>
 </div>
-<div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+<div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120 __left-grey-border">
 <p class="text-center mb-1 d-ltr">280 HP</p>
 <p class="text-center">قوة المحرك</p>
 </div>
-<div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+<div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120 __left-grey-border">
 <p class="text-center mb-1 d-ltr">1.8 L</p>
 <p class="text-center">سعة المحرك</p>
 </div>
-<div class="px-0 col-2 fs-5 text-center">
+<div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120">
 <p class="text-center mb-1 d-ltr">200 km/h</p>
 <p class="text-center">السرعة القسوى</p>
 </div>
@@ -597,45 +558,36 @@
 <button class="accordion-button accordion-button-enhanced collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-0" aria-expanded="false" aria-controls="flush-collapse-0">الأمان</button>
 </h2>
 <div id="flush-collapse-0" class="accordion-collapse collapse" aria-labelledby="flush-heading-0" data-bs-parent="#accordionFlushExample">
-<div class="accordion-body row"><div class="col-6" style="color: var(--bs-grey-400);"> - وسائد هوائية أمامية</div><div class="col-6" style="color: var(--bs-grey-400);"> - فرامل ABS</div><div class="col-6" style="color: var(--bs-grey-400);"> - سنتر لوك</div><div class="col-6" style="color: var(--bs-grey-400);"> - مراقبة ضغط الإطارات</div><div class="col-6" style="color: var(--bs-grey-400);"> - الثبات الإلكتروني ESP</div><div class="col-6" style="color: var(--bs-grey-400);"> - مساعد الفرامل BA</div><div class="col-6" style="color: var(--bs-grey-400);"> - أحزمة أمان</div><div class="col-6" style="color: var(--bs-grey-400);"> - توزيع قوة الفرامل إلكترونياً EBD</div><div class="col-6" style="color: var(--bs-grey-400);"> - نظام التحكم بالإنزلاق (TRC)</div><div class="col-6" style="color: var(--bs-grey-400);"> - فرامل يد إلكتروني</div></div>
+<div class="accordion-body row"><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - وسائد هوائية أمامية</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - فرامل ABS</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - سنتر لوك</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - مراقبة ضغط الإطارات</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - الثبات الإلكتروني ESP</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - مساعد الفرامل BA</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - أحزمة أمان</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - توزيع قوة الفرامل إلكترونياً EBD</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - نظام التحكم بالإنزلاق (TRC)</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - فرامل يد إلكتروني</div></div>
 </div>
 </div><div class="accordion-item">
 <h2 class="accordion-header" id="flush-heading-1">
 <button class="accordion-button accordion-button-enhanced collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">الراحة</button>
 </h2>
 <div id="flush-collapse-1" class="accordion-collapse collapse" aria-labelledby="flush-heading-1" data-bs-parent="#accordionFlushExample">
-<div class="accordion-body row"><div class="col-6" style="color: var(--bs-grey-400);"> - placeholder</div><div class="col-6" style="color: var(--bs-grey-400);"> - placeholder</div></div>
+<div class="accordion-body row"><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - placeholder</div><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - placeholder</div></div>
 </div>
 </div><div class="accordion-item">
 <h2 class="accordion-header" id="flush-heading-2">
 <button class="accordion-button accordion-button-enhanced collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">تقنيات</button>
 </h2>
 <div id="flush-collapse-2" class="accordion-collapse collapse" aria-labelledby="flush-heading-2" data-bs-parent="#accordionFlushExample">
-<div class="accordion-body row"><div class="col-6" style="color: var(--bs-grey-400);"> - placeholder</div></div>
+<div class="accordion-body row"><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - placeholder</div></div>
 </div>
 </div><div class="accordion-item">
 <h2 class="accordion-header" id="flush-heading-3">
 <button class="accordion-button accordion-button-enhanced collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-3" aria-expanded="false" aria-controls="flush-collapse-3">تجهيزات خارجية</button>
 </h2>
 <div id="flush-collapse-3" class="accordion-collapse collapse" aria-labelledby="flush-heading-3" data-bs-parent="#accordionFlushExample">
-<div class="accordion-body row"><div class="col-6" style="color: var(--bs-grey-400);"> - placeholder</div></div>
+<div class="accordion-body row"><div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - placeholder</div></div>
 </div>
 </div></div>
 <div class="col-12 col-md-3">
 <p class="pt-3 fs-6">رقم الإعلان : 2541236985 <div class="text-secondary fs-7">( اذكر رقم الإعلان عند الاتصال بخدمة العملاء )</div></p>
-<hr class="my-4"/>
-<div>
-    <h4 class="text-primary text-center">قارن بسيارة آخرى</h4><!-- يمكن اضافة توقعات لاسم السيارة لتحسين تجربة المستخدم -->
-    <input class="bg-secondary rounded-3 w-100 placeholder-grey p-2 mt-2 mb-4" placeholder="إسم السيارة" id="compareTo" style="border: none; outline:none; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"></div>
-</div>     
-<div class="d-flex justify-content-between my-4 align-items-end">
-    <h2 class="text-primary">قد يعجبك أيضاً</h2><p class="text-clickable text-primary">شاهد الكل <i class="fas fa-angle-left"></i></p>
-</div>
-<div style="direction: ltr;display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center; " class="mb-4">
-<div class="my-4 shadow-sm bg-white rounded py-3 pe-1" style="height: max-content;">
-<span class="d-inline-block pe-2" style="width: 70%">
-<h4>تقييم العملاء</h4>
-<span class="text-dark">    
+<div class="my-4 shadow-sm bg-white rounded py-3 pe-1 d-rtl" style="height: max-content;">
+<span class="d-inline-block pe-2 min-w-max-content" style="width: 70%">
+<h4 class="rating-title">تقييم العملاء</h4>
+<span class="text-dark rating-stars">    
 <i class="fas fa-star text-warning"></i>
 <i class="fas fa-star text-warning"></i>
 <i class="fas fa-star text-warning"></i>
@@ -643,7 +595,48 @@
 <i class="fas fa-star text-warning"></i> 5.0
 </span>
 </span>
-<span data-bs-toggle="modal" data-bs-target="#commentsModal" data-bs-whatever="@getbootstrap" class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
+<span data-bs-toggle="modal" data-bs-target="#commentsModal" data-bs-whatever="@getbootstrap" class="d-inline-block text-primary rating-read text-clickable fw-bolder w-25 min-w-max-content mx-1">اقرأ التعليقات</span>
+</div>
+<hr class="my-4"/>
+<div>
+    <h4 class="text-primary text-center">قارن بسيارة آخرى</h4>
+    <input class="bg-secondary rounded-3 w-100 placeholder-grey p-2 mt-2 mb-4 borderless outline-none" placeholder="إسم السيارة" id="compareTo" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"></div>
+</div>     
+<div class="d-flex justify-content-between my-4 align-items-end">
+    <h2 class="text-primary d-none d-md-inline">قد يعجبك أيضاً</h2>
+    <h4 class="text-primary d-inline d-md-none">قد يعجبك أيضاً</h4><a class="text-decoration-none text-clickable text-primary" href="./new.html">شاهد الكل <i class="fas fa-angle-left"></i></a>
+</div>
+<div class="mb-4 __car-grid"><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
+<a href="./details.html" style="text-decoration: none;">
+<h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>
+</a>
+<div class="position-relative overflow-hidden rounded-2" style="height: 148px"> 
+<a href="./details.html">
+<img src="./assets/details-audi-1.webp" alt="car_img" width="100%" style="border-radius: 8px" class="hoverZoomLink" />
+</a>
+</div>
+<span class="w-100 d-flex flex-row gap-4 fs-7 my-2"><span>التفاصيل</span><i class="flex-grow-1"style="background-color: rgba(204, 204, 204, 0.55);height: 1px;border-radius: 8px;"></i></span>
+<div class="text-dark row text-end justify-items-center align-items-start">
+<span class="d-flex flex-column col-4 fs-9"><span class="fs-9 fw-bold"style="color: transparent; user-select: none">_</span><span class="text-primary fs-5">1433</span>ريال / شهر</span><span class="d-flex flex-column col-4 fs-7"><span class="fs-9 fw-bold min-w-max-content">شامل الضريبة</span><span class="text-primary fs-5">83835</span>ريال</span><span class="d-flex flex-column col-4 fs-7 text-primary"><span class="fs-9 fw-bold text-dark">بدلاً من
+</span><span class="text-dark fs-5 text-decoration-line-through">83835</span class="fs-10">توفير 300 ريال</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">2021</span>
+<p class="text-dark fs-9 fw-bold">موديل</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">240<span class="fs-6">km/m</span></span>
+<p class="text-dark fs-9 fw-bold">أفصى سرعة للسيارة</p>
+</span><span class="d-flex flex-column col-4">
+<p></p>
+<span class="h6 text-black" style="font-weight: 700;">72<span class="fs-7" >k</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;"><path d="M511.984 36.128C230.016 36.128.639 265.536.639 547.504c0 177.152 89.68 339.185 239.903 433.408 14.944 9.472 34.688 4.88 44.097-10.096s4.88-34.72-10.096-44.095c-54.096-33.952-99.04-78.048-133.424-128.88l33.552-19.376c15.311-8.848 20.56-28.4 11.712-43.711-8.88-15.344-28.464-20.56-43.712-11.712l-33.6 19.391c-24.4-50.511-39.297-105.792-43.281-163.424h35.616c17.68 0 32-14.32 32-32s-14.32-32-32-32H65.95c4.24-58.687 19.776-114.304 44.56-164.592l32.16 18.56a31.745 31.745 0 0 0 15.97 4.288c11.055 0 21.807-5.744 27.743-16 8.847-15.312 3.6-34.88-11.712-43.713l-31.84-18.368c32.112-46.832 72.864-87.296 119.984-119.023l18.016 31.2c5.935 10.288 16.687 16 27.743 16 5.44 0 10.944-1.376 15.969-4.288 15.311-8.848 20.56-28.4 11.712-43.712l-17.953-31.072c49.329-23.792 103.68-38.656 160.976-42.816v39.872c0 17.68 14.32 32 32 32s32-14.32 32-32v-40c58.592 4.08 114.128 19.391 164.384 43.95l-17.36 30.049c-8.848 15.311-3.6 34.88 11.712 43.712a31.745 31.745 0 0 0 15.969 4.288c11.055 0 21.807-5.712 27.743-16l17.28-29.936a451.19 451.19 0 0 1 118.88 118.816l-29.968 17.312c-15.311 8.847-20.56 28.4-11.711 43.71 5.935 10.289 16.687 16 27.743 16 5.44 0 10.944-1.375 15.969-4.287l30.127-17.392C938.638 401.839 954 457.39 958.094 516H922.96c-17.68 0-32 14.32-32 32s14.32 32 32 32h35.12c-4.048 56.88-18.592 111.439-42.496 161.312l-31.68-18.288c-15.28-8.848-34.912-3.568-43.712 11.713-8.848 15.311-3.6 34.88 11.712 43.712l31.776 18.351c-35.103 52.24-81.44 97.393-137.359 131.824-15.055 9.28-19.712 29.008-10.464 44.032 6.065 9.808 16.529 15.216 27.28 15.216a31.896 31.896 0 0 0 16.753-4.752c152.464-93.904 243.472-256.784 243.472-435.632 0-281.952-229.408-511.36-511.376-511.36zm236.127 411.6c15.296-8.848 20.544-28.398 11.712-43.71-8.832-15.296-28.416-20.544-43.712-11.696L542.287 492.674c-9.28-5.248-19.856-8.496-31.28-8.496-35.28 0-63.84 28.591-63.84 63.807 0 35.248 28.576 63.84 63.84 63.84 35.28 0 63.84-28.592 63.84-63.84 0-.064-.016-.144-.016-.209z"></path></svg></span>
+<p class="text-dark fs-9 fw-bold">المسافة المقطوعة</p>
+</span>
+</div>
+<div class="d-flex justify-content-between align-items-center fs-6 gap-2">
+<button type="button" class="btn btn-sm btn-primary flex-grow-1">شراء الآن</button>
+<button class="d-inline-block btn btn-sm btn-outline-secondary flex-grow-1">مقارنة بآخرى</button>
+<span class="d-none text-secondary">منذ 3 ساعات</span>
+</div>
 </div><div class="rounded-2 d-flex flex-column text-center p-3 col-auto" style=" border: 1px solid rgba(204, 204, 204, 0.55);direction:rtl !important;">
 <a href="./details.html" style="text-decoration: none;">
 <h6 class="mb-3" style="color: rgb(108, 108, 108)">اودي كيو 5 بريميوم</h6>

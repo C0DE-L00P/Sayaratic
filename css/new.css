@@ -1,0 +1,9 @@
+.__car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, max(23%, 240px));
+    gap: 24px;
+    place-content: center center;
+  }
+  .__search-bar{
+      flex-grow: 1;height: 36px; padding-inline: 8px;
+  }

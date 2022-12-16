@@ -10,33 +10,53 @@ doctype html
 html(lang="ar",dir="rtl")
     head
         include _components/shared-head
+        <link rel="stylesheet" href="./css/details.css">
         title تفاصيل عن السيارة
     body 
         +nav-bar("details")
         include _components/modal-comments
         <div class="text-secondary m-4 user-select-none"><a class="text-decoration-none text-secondary text-clickable" href="./index.html">الرئيسية</a> / <a class="text-decoration-none text-secondary text-clickable" href="./new.html">سيارات جديدة </a> /  نيسان صني</div>
 
+        //- Main Details Card for small screens
+        <div class="bg-primary d-rtl mx-auto my-4 py-2 px-4 d-block d-md-none __car-detail-div rounded-2 position-relative" style="width: 90%; left: auto; top: auto; height: max-content;">
+            <img src="./assets/brands-12.webp" alt="brand_img"  class="__car-detail-brand">
+            <div style="z-index: 2; max-width: 100%;" class="my-4 d-rtl">
+                <h2 class="h4 fw-bolder" style="max-width: 100%;">نيسان صني</h2>
+                <p class="h5" style="max-width: 100%;">الشكل الجديد 2022 ستاندر SV</p>
+                <div class="row mt-4 w-100" style="max-width: 100%;">
+                    <div class="col-6">
+                        <p class="fs-9 mb-1">السعر قبل الضريبة</p>
+                        <p class="h5">64,000 ريال</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="fs-9 mb-1">السعر بعد الضريبة</p>
+                        <p class="h5">56,000 ريال</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn mx-auto shadow-sm px-5 fw-bold bg-white borderless min-w-max-content rounded-pill __car-detail-btn position-absolute" style="inset: auto 25% -20px;">احجزها الآن</button>
+        </div>
+
         include _components/car-detail-slider2
         
-        <div class="row fw-bolder m-0">
-            <div class="px-0 col-1"></div>
-            <div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+        <div class="d-flex fw-bolder m-0 text-center flex-wrap">
+            <div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120 __left-grey-border">
                 <p class="text-center mb-1">4</p>
                 <p class="text-center">السلندرات</p>
             </div>
-            <div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+            <div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120 __left-grey-border">
                 <p class="text-center mb-1">مانوال</p>
                 <p class="text-center">القير</p>
             </div>
-            <div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+            <div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120 __left-grey-border">
                 <p class="text-center mb-1 d-ltr">280 HP</p>
                 <p class="text-center">قوة المحرك</p>
             </div>
-            <div class="px-0 col-2 fs-5 text-center" style="border-left: 1px solid var(--bs-grey-200);">
+            <div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120 __left-grey-border">
                 <p class="text-center mb-1 d-ltr">1.8 L</p>
                 <p class="text-center">سعة المحرك</p>
             </div>
-            <div class="px-0 col-2 fs-5 text-center">
+            <div class="px-0 col-2 fs-5 text-center mt-2 flex-grow-1 __min-width-limit-120">
                 <p class="text-center mb-1 d-ltr">200 km/h</p>
                 <p class="text-center">السرعة القسوى</p>
             </div>
@@ -54,7 +74,7 @@ html(lang="ar",dir="rtl")
                         <div id="flush-collapse-#{index}" class="accordion-collapse collapse" aria-labelledby="flush-heading-#{index}" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body row">
                                 each point, i in dbtn.points
-                                    <div class="col-6" style="color: var(--bs-grey-400);"> - #{point}</div>
+                                    <div class="col-12 col-md-6" style="color: var(--bs-grey-400);"> - #{point}</div>
                             </div>
                         </div>
                     </div>
@@ -62,24 +82,11 @@ html(lang="ar",dir="rtl")
 
             <div class="col-12 col-md-3">
                 <p class="pt-3 fs-6">رقم الإعلان : 2541236985 <div class="text-secondary fs-7">( اذكر رقم الإعلان عند الاتصال بخدمة العملاء )</div></p>
-                <hr class="my-4"/>
-                <div>
-                    h4(class="text-primary text-center") قارن بسيارة آخرى
-                    <!-- يمكن اضافة توقعات لاسم السيارة لتحسين تجربة المستخدم -->
-                    input(class="bg-secondary rounded-3 w-100 placeholder-grey p-2 mt-2 mb-4" placeholder="إسم السيارة" id="compareTo", style="border: none; outline:none; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;")
-                </div>
-            </div>     
-            
-            //- You May also like 
-            <div class="d-flex justify-content-between my-4 align-items-end">
-                h2(class="text-primary") قد يعجبك أيضاً
-                <p class="text-clickable text-primary">شاهد الكل <i class="fas fa-angle-left"></i></p>
-            </div>
-            <div style="direction: ltr;display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center; " class="mb-4">
-                <div class="my-4 shadow-sm bg-white rounded py-3 pe-1" style="height: max-content;">
-                    <span class="d-inline-block pe-2" style="width: 70%">
-                        <h4>تقييم العملاء</h4>
-                        <span class="text-dark">    
+                
+                 <div class="my-4 shadow-sm bg-white rounded py-3 pe-1 d-rtl" style="height: max-content;">
+                    <span class="d-inline-block pe-2 min-w-max-content" style="width: 70%">
+                        <h4 class="rating-title">تقييم العملاء</h4>
+                        <span class="text-dark rating-stars">    
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
@@ -88,10 +95,26 @@ html(lang="ar",dir="rtl")
                         </span>
                     </span>
 
-                    <span data-bs-toggle="modal" data-bs-target="#commentsModal" data-bs-whatever="@getbootstrap" class="d-inline-block text-primary fs-8 text-clickable fw-bolder" style="width: 25%">اقرأ التعليقات</span>
+                    <span data-bs-toggle="modal" data-bs-target="#commentsModal" data-bs-whatever="@getbootstrap" class="d-inline-block text-primary rating-read text-clickable fw-bolder w-25 min-w-max-content mx-1">اقرأ التعليقات</span>
                 </div>
+                <hr class="my-4"/>
+                
+                <div>
+                    h4(class="text-primary text-center") قارن بسيارة آخرى
+                    input(class="bg-secondary rounded-3 w-100 placeholder-grey p-2 mt-2 mb-4 borderless outline-none" placeholder="إسم السيارة" id="compareTo", style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;")
+                </div>
+            </div>     
+            
+            //- You May also like 
+            <div class="d-flex justify-content-between my-4 align-items-end">
+                h2(class="text-primary d-none d-md-inline") قد يعجبك أيضاً
+                h4(class="text-primary d-inline d-md-none") قد يعجبك أيضاً
+                <a class="text-decoration-none text-clickable text-primary" href="./new.html">شاهد الكل <i class="fas fa-angle-left"></i></a>
+            </div>
+            <div class="mb-4 __car-grid">
                 +car-card
                 +car-card
+                +car-card 
                 +car-card 
             </div>
         </div>

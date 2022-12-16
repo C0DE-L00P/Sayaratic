@@ -8,6 +8,7 @@ doctype html
 html(lang="en", dir="rtl")
     head
         include _components/shared-head
+        <link rel="stylesheet" href="./css/new.css">
         title سيارات جديدة
     body 
         +nav-bar('new')
@@ -16,12 +17,12 @@ html(lang="en", dir="rtl")
             +slider-v(false,["./assets/slider-3.webp","./assets/slider-4.webp","./assets/slider-1.webp"])
             
             <div class="position-absolute top-0 bottom-0 right-0 left-0 d-flex align-items-center justify-content-center w-100 flex-column" style="z-index: 10;">
-                <div class="text-white d-flex flex-column gap-4 align-items-center justify-content-center position-absolute" style="display: flex; flex-direction: column; gap: 16px;  position: absolute; left: 40px; bottom: 80px; align-items: center; justify-content: center; z-index: 11;">
-                    <i class="fa-brands cursor-pointer fa-whatsapp"></i>
-                    <i class="fa-brands cursor-pointer fa-twitter"></i>
-                    <i class="fa-brands cursor-pointer fa-facebook-f"></i>
-                    <i class="fa-brands cursor-pointer fa-youtube"></i>
-                    <i class="fa-brands cursor-pointer fa-instagram"></i>
+                <div class="text-white d-flex flex-column gap-3 align-items-center justify-content-center position-absolute" style="display: flex; flex-direction: column; gap: 16px;  position: absolute; left: 40px; bottom: 80px; align-items: center; justify-content: center; z-index: 11;">
+                    <i class="text-clickable fa-brands cursor-pointer fa-whatsapp"></i>
+                    <i class="text-clickable fa-brands cursor-pointer fa-twitter"></i>
+                    <i class="text-clickable fa-brands cursor-pointer fa-facebook-f"></i>
+                    <i class="text-clickable fa-brands cursor-pointer fa-youtube"></i>
+                    <i class="text-clickable fa-brands cursor-pointer fa-instagram"></i>
                 </div>
             </div>
         </div>
@@ -40,29 +41,27 @@ html(lang="en", dir="rtl")
             {img: "././assets/brands-11.webp", title: 'sedan'},
             {img: "././assets/brands-12.webp", title: 'sedan'},
             ])
+        
         <div class="container text-center w-100 my-4">
-            h1(style="border-bottom: 2px solid #e7e7e7; display: inline-block;", class="text-primary pb-4 m-4") أحدث السيارات
-            <div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0">
-                <label style="display: flex; gap: 8px; max-width: 100%;" class="ps-4 col-12 col-lg-6">
-                    span(style="width: max-content;") البحث بالاسم
-                    <input type="text" placeholder="ابحث هنا" style="flex-grow: 1; max-width: calc(100% - 120px); height: 36px; padding-inline: 8px;" class="fs-6 placeholder-secondary"/>
+            h1(style="border-bottom: 2px solid #e7e7e7;", class="text-primary pb-4 m-4 d-inline-block") أحدث السيارات
+            <div class="fs-5 fw-bold my-4 grid row gap-3 gap-lg-0 px-4">
+                <label class="ps-4 col-12 col-lg-6 d-flex gap-2">
+                    span(class="w-max-content") البحث بالاسم
+                    <input type="text" placeholder="ابحث هنا" class="fs-6 placeholder-secondary __search-bar" style="max-width: calc(100% - 120px);"/>
                 </label>
-                <label style="display: flex; gap: 8px; max-width: calc(100% - 26px);"class="col-12 col-lg-3 p-0 m-0">
+                <label style="max-width: calc(100% - 26px);"class="col-12 col-lg-3 p-0 m-0 d-flex gap-2">
                     span الموديل
-                    <input type="number" placeholder="2022" style="flex-grow: 1;height: 36px; padding-inline: 8px;" class="fs-7 p-1 border-none placeholder-secondary w-100"/>
+                    <input type="number" placeholder="2022" class="fs-7 p-1 border-none placeholder-secondary w-100 __search-bar"/>
                 </label>
-                <label style="display: flex; gap: 8px; max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3">
+                <label style="max-width: 100%;" for="order-select-cards" class="px-0 px-lg-2 col-12 col-lg-3 max-w-100 d-flex gap-2">
                     span السعر
-                    <div class="dropdown fs-7 text-secondary border-secondary">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="flex-grow: 1">من أقل إلى أعلى</span> <i class="fas fa-angle-down text-primary"></i></button>
-                        <ul class="dropdown-menu">
-                        <li>من أقل إلى أعلى</li>
-                        <li>من أعلى إلى أقل</li>
-                        </ul>
-                    </div>
+                    <select class="form-select text-secondary" aria-label="Default select example">
+                        <option selected value="ascending">من أقل إلى أعلى</option>
+                        <option value="decending">من أعلى إلى أقل</option>
+                    </select>
                 </label>
             </div>
-            <div  style="display: grid; grid-template-columns: repeat( auto-fit, max(23%, 240px)); gap: 24px; place-content: center center;">
+            <div class="__car-grid">
                 +car-card
                 +car-card
                 +car-card
@@ -71,6 +70,9 @@ html(lang="en", dir="rtl")
                 +car-card
                 +car-card
                 +car-card
+            </div>
+            <div class="w-100 text-start my-4">
+                <a href="./used-more.html" class="text-decoration-none fw-bolder p-4 cursor-pointer text-clickable text-start text-primary" style="z-index:3;">اظهر الكل  <i class="fas fa-angle-left"></i></a>
             </div>
         </div>
 
@@ -89,4 +91,4 @@ html(lang="en", dir="rtl")
             
         include _components/search-panel
         include _components/footer
-+footer("new")
+        +footer("new")

@@ -18,6 +18,49 @@
             font-size: 16px !important;
         }
     }
+    .comment-section-p{
+        font-size: 13px;
+    }
+    @media screen and (min-width: 360px){
+        .comment-section-p{
+            font-size: 16px;
+        }
+    }
+    .input,
+        .textarea {
+        border: 1px solid #ccc;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 1px 6px;
+        }
+
+        .input-wrap {
+        position: relative;
+        width: 100%;
+        }
+        .input-wrap .input {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        }
+        .width-machine {
+        /*   Sort of a magic number to add extra space for number spinner */
+        padding: 0 1rem;
+        }
+
+        .textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: none;
+        min-height: 40px;
+        line-height: 20px;
+        }
+
+        .textarea[contenteditable]:empty::before {
+        content: "شاركنا تجربتك !";
+        color: gray;
+        }
 </style>
 
 - var comments = [{author: "إسلام ياسر",img: "./assets/img (1).jpg", content: "خدمة ممتازة جداً ... أتمنى لكم التوفيق", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "خدمة ممتازة جداً ... أتمنى لكم التوفيق خدمة ممتازة جداً ... أتمنى لكم التوفيق خدمة ممتازة جداً ... أتمنى لكم التوفيق خدمة ممتازة جداً ... أتمنى لكم التوفيق خدمة ممتازة جداً ... أتمنى لكم التوفيق", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"},{author: "Islam Yasser",img: "./assets/img (1).jpg", content: "رائعة", date: "16 يونيو 2022 , مصر"}]
@@ -50,18 +93,21 @@
             </div>
             
             <!-- input and rate -->
-            <div class="modal-footer">
-                <div class="d-flex flex-wrap align-items-center gap-2 w-100">
-                    <input type="text" id="in_comment" placeholder="شاركنا تجربتك !" class="placeholder-secondary bg-secondary rounded-3 flex-grow-1 px-3 py-2 fs-7" style="min-width: 320px; border: none; outline: none;"/>
-                    p(class="text-primary p-0 m-0") مدى رضائك عن الخدمة
-                    <span>
-                        <i id="star1" class="text-clickable fas fa-star text-warning" onclick="Rate(1)"></i>
-                        <i id="star2" class="text-clickable fas fa-star text-secondary" onclick="Rate(2)"></i>
-                        <i id="star3" class="text-clickable fas fa-star text-secondary" onclick="Rate(3)"></i>
-                        <i id="star4" class="text-clickable fas fa-star text-secondary" onclick="Rate(4)"></i>
-                        <i id="star5" class="text-clickable fas fa-star text-secondary" onclick="Rate(5)"></i>
-                    </span>
-                    <i class="mx-2 fas fa-paper-plane cursor-pointer text-secondary"></i> 
+            <div class="modal-footer d-flex flex-wrap">
+                //- <input type="text" id="in_comment" placeholder="شاركنا تجربتك !" class="placeholder-secondary bg-secondary rounded-3 flex-grow-1 px-3 py-2 fs-7 outline-none borderless" style="min-width: 300px;"/>
+                <p class="flex-grow-1"><span class="textarea placeholder-secondary bg-secondary rounded-3 flex-grow-1 px-3 py-2 fs-7 outline-none borderless" style="min-width: 286px;" id="in_comment" role="textbox" contenteditable></span></p>
+                <div class="d-flex align-items-center justify-content-between gap-2">
+                    <div>
+                        p(class="text-primary p-0 m-0 d-none d-sm-inline-block") مدى رضائك عن الخدمة
+                        <span>
+                            <i id="star1" class="text-clickable fas fa-star text-warning" onclick="Rate(1)"></i>
+                            <i id="star2" class="text-clickable fas fa-star text-secondary" onclick="Rate(2)"></i>
+                            <i id="star3" class="text-clickable fas fa-star text-secondary" onclick="Rate(3)"></i>
+                            <i id="star4" class="text-clickable fas fa-star text-secondary" onclick="Rate(4)"></i>
+                            <i id="star5" class="text-clickable fas fa-star text-secondary" onclick="Rate(5)"></i>
+                        </span>
+                    </div>
+                    <i class="mx-2 fas fa-paper-plane cursor-pointer text-secondary" style="tranform: rotateX(180deg);"></i> 
                 </div>
             </div>
         </div>

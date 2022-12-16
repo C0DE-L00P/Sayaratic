@@ -14,56 +14,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معنا</title><style>.form-contact .form-control-c{
-        background-color: white !important;
-        border: none;
-        padding-bottom: 16px;
-        border-bottom: 3px solid var(--bs-primary-color);
-    }
-    .form-contact .form-control-c::placeholder{
-        color: grey;
-    }
-    .form-contact .form-control-c:active,.form-contact .form-control:focus{
-        box-shadow: none;
-        border-color: black;
-    }
-    .form-contact textarea{
-        border: 2px solid var(--bs-primary-color);
-        border-radius: 18px;
-        padding: 24px;
-        resize: none;
-    }
-    .form-contact textarea::placeholder{
-        color: var(--bs-grey-400);
-    }
-    #map {
-        height: 380px;
-        width: 98%;
-        margin-inline: auto;
-        border-radius: 16px;
-        margin-bottom: 24px;
-    }
-    .type-card {
-        display: flex;
-        width: 100%;
-        background: #fafafa;
-        padding: 15px;
-        margin-bottom: 20px;
-        border-radius: 15px;
-        box-shadow: 0px 2px 15px -8px rgb(0 0 0 / 31%);
-        justify-content: space-between;
-        align-items: center;
-    }
-    .type-card p {
-        margin-bottom: 0;
-        color: grey;
-        user-select: none;
-    }
-    .type-card i {
-        color: #ff5700;
-    }</style>
+    <title>تواصل معنا</title><link rel="stylesheet" href="./css/contact.css">
+<script src="./js/contact.js" defer></script>
   </head>
-  <body style="overflow-x: hidden;"> 
+  <body style="overflow-x: hidden;">
     <style>.modal-login input[type="checkbox"] + label > .fa-check{
         color: white;
         background-color: white;
@@ -237,7 +191,7 @@
         document.querySelector("#user_btn").style.display = isLoggedIn? 'inline-block':'none';
     }
     onInit();</script><!-- banner with info -->
-<div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./assets/bg-contact.jpg); background-size: cover; background-position: center center; height: 92vh; max-width: 100%; margin-inline: 0px;">
+<div class="row __contact-bg">
 <div class="col-12 col-md-6 p-4">
 <div class="mx-4 text-white"><br><br class="d-none d-md-block"><br class="d-none d-md-block">
     <h1>تواصل معنا </h1>
@@ -247,10 +201,10 @@
     <p class="text-white pb-1 mb-0">شارع العربية - الدمام 12</p>
     <p class="text-white">المملكة العربية السعودية</p><br class="d-none d-sm-block"/>
 <br class="d-none d-sm-block"/>
-    <h5 class="text-primary">البريد الإلكتروني</h5><a class="text-white fs-6" style="text-decoration: none;" href="mailto:Support@SYARATK.com.sa">Support@SYARATK.com.sa</a></div>
+    <h5 class="text-primary">البريد الإلكتروني</h5><a class="text-white fs-6 text-decoration-none" href="mailto:Support@SYARATK.com.sa">Support@SYARATK.com.sa</a></div>
 <div>
     <h6 class="text-primary">رقم الجوال</h6>
-    <p class="text-white pb-1" style="direction: ltr; text-align: end;">+966 123 4567</p><br class="d-none d-sm-block"/>
+    <p class="text-white pb-1 d-ltr text-end">+966 123 4567</p><br class="d-none d-sm-block"/>
 <br class="d-none d-sm-block"/>
 <div class="text-white user-select-none">
 <i class="text-clickable fab fa-facebook-square"></i>
@@ -262,14 +216,14 @@
 </div>
 </div>
 </div>
-<div class="col-0 col-md-6 d-none d-md-inline-block overflow-hidden" style="height: 100%;">
+<div class="col-0 col-md-6 d-none d-md-inline-block overflow-hidden h-100">
 <img alt="contact illustration" src="./assets/contact-img.png" style="height: 80%;margin-top: 10%; opacity: 0.9;"/>
 </div>
 </div>
 </div>
 <!-- form contact us -->
 <div class="text-center form-contact container">
-    <h1 class="text-primary pb-4 m-4" style="border-bottom: 2px solid #e7e7e7; display: inline-block;">ابقى على تواصل</h1><form class="row g-3" id="contact_form">
+    <h1 class="text-primary pb-4 m-4 __title">ابقى على تواصل</h1><form class="row g-3" id="contact_form">
 <div class="col-md-5 offset-md-2 my-4">
 <input type="text" class="form-control form-control-c" id="in_name" placeholder="الاسم" required>
 </div>
@@ -280,15 +234,13 @@
 <input type="text" class="form-control form-control-c" id="in_title"  required placeholder="عنوان الرسالة">
 </div>
 <div class="col-md-5 my-4 search-type">
-<div class="type-card">
-<!-- حول الزرار دا لقائمة select يختار بين شكاوى ومقترحات -->
-<p>مقترحات</p>
-<i class="fa-solid fa-chevron-down text-primary cursor-pointer"></i>
-</div>
+<select class="col-4 form-select text-secondary position-relative mb-4" aria-label="Default select example">
+<option selected value="suggestion">مقترحات</option>
+<option value="issues">شكاوى</option>
+</select>
 </div>
 <div class="col-md-12 position-relative">
-<!-- ضيف رمز الدبوس -->
-<i style="position: absolute; top: -38px; left: 60px; width: 40px; height: 90px; background-image: url(./assets/paper-clip.png); background-repeat: no-repeat;"></i>
+<i class="__paper-clip"></i>
 <textarea type="text" rows="6" class="form-control" id="in_message"  required placeholder="رسالتك"></textarea>
 </div>
 <div class="col-12 text-start mb-4 mt-4">
@@ -302,152 +254,136 @@
     <p class="fs-6">أقرب إليك مما تتخيل !</p><br/>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"defer></script>
-<script>// Initialize and add the map
-    function initMap() {
-        const uluru = { lat: 24.8614079, lng: 46.7175068 };
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 16,
-            center: uluru,
-        });
-        const marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-        });
-    }
-    
-    window.initMap = initMap;</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
 </div>
-  </body>
-</html>
-    <style>/* start footer */
-    .footer {
-    background: #1e1e1e;
-    padding: 60px 0;
-    }
-    .footer .footer-abstract {
-    color: #9e9e9e;
-    font-size: 12px;
-    line-height: 1.7;
-    margin-top: 15px;
-    margin-bottom: 45px;
-    }
-    .footer .footer-mobile {
-    font-weight: bold;
-    color: #ffff;
-    font-size: 13px;
-    margin-bottom: 12px;
-    }
-    .footer .mobile-app {
-    display: flex;
-    justify-content: center;
-    }
-    .footer .mobile-app button {
-    display: flex;
-    background: #060606;
-    border-radius: 4px;
-    padding: 4px;
-    border: none;
-    margin: 5px;
-    align-items: center;
-    }
-    .footer .mobile-app button:active{
-        background: #161616;
-    }
-    .footer .mobile-app i {
-    color: #fff;
-    font-size: 25px;
-    margin-right: 4px;
-    }
-    .footer .mobile-app .google-play p {
-    color: #9e9e9e;
-    font-size: 6px;
-    margin-bottom: 0;
-    }
-    .footer .mobile-app .google-play h6 {
-    margin-bottom: 0;
-    font-size: 9px;
-    font-weight: bold;
-    color: white;
-    }
-    .footer .contact-us {
-    margin-top: 55px;
-    }
-    .footer .contact-us .contact-title {
-    display: flex;
-    margin-right: 6px;
-    }
-    .footer .contact-us .contact-title .vl {
-    border-left: 3px solid #ff5700;
-    height: 22px;
-    margin-left: 12px;
-    }
-    .footer .contact-us .contact-title p {
-    font-size: 14px;
-    color: #ff5700;
-    margin-bottom: 29px;
-    }
-    .footer .contact-us .contact-info {
-    display: flex;
-    }
-    .footer .contact-us .contact-info i {
-    color: white;
-    font-size: 14px;
-    }
-    .footer .contact-us .contact-info p {
-    color: #9e9e9e;
-    font-size: 11px;
-    margin-right: 20px;
-    margin-bottom: 12px;
-    }
-    .footer .contact-social{
+        <style>/* start footer */
+        .footer {
+        background: #1e1e1e;
+        padding: 60px 0;
+        }
+        .footer .footer-abstract {
+        color: #9e9e9e;
+        font-size: 12px;
+        line-height: 1.7;
+        margin-top: 15px;
+        margin-bottom: 45px;
+        }
+        .footer .footer-mobile {
+        font-weight: bold;
+        color: #ffff;
+        font-size: 13px;
+        margin-bottom: 12px;
+        }
+        .footer .mobile-app {
         display: flex;
-        gap: 16px;
-        justify-content: start;
-    }
-    .footer .contact-social i {
-    margin-left: 10px;
-    font-size: 11px;
-    color: white;
-    }
-    .footer .categories {
-    margin-top: 55px;
-    padding-right: 36px;
-    }
-    .footer .categories p {
-    font-size: 14px;
-    color: #ff5700;
-    margin-bottom: 18px;
-    }
-    .footer .categories h6 {
-    color: #fff;
-    line-height: 1.9;
-    font-size: 14px;
-    }
-    .footer .news {
-    font-size: 14px;
-    color: #ff5700;
-    margin-bottom: 15px;
-    }
-    .footer input {
-    direction: rtl;
-    background: none;
-    font-size: 13px;
-    padding: 9px;
-    margin-top: 16px;
-    margin-bottom: 43px;
-    }
-    .footer input:focus {
-    background: none;
-    background-color: non;
-    box-shadow: none;
-    color: #9a9496;
-    border-color: #9a9496;
-    }
-    .footer .payment-method img {
-    margin-left: 10px;
-    }
-    /* end footer */</style>
+        justify-content: center;
+        }
+        .footer .mobile-app button {
+        display: flex;
+        background: #060606;
+        border-radius: 4px;
+        padding: 4px;
+        border: none;
+        margin: 5px;
+        align-items: center;
+        }
+        .footer .mobile-app button:active{
+            background: #161616;
+        }
+        .footer .mobile-app i {
+        color: #fff;
+        font-size: 25px;
+        margin-right: 4px;
+        }
+        .footer .mobile-app .google-play p {
+        color: #9e9e9e;
+        font-size: 6px;
+        margin-bottom: 0;
+        }
+        .footer .mobile-app .google-play h6 {
+        margin-bottom: 0;
+        font-size: 9px;
+        font-weight: bold;
+        color: white;
+        }
+        .footer .contact-us {
+        margin-top: 55px;
+        }
+        .footer .contact-us .contact-title {
+        display: flex;
+        margin-right: 6px;
+        }
+        .footer .contact-us .contact-title .vl {
+        border-left: 3px solid #ff5700;
+        height: 22px;
+        margin-left: 12px;
+        }
+        .footer .contact-us .contact-title p {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 29px;
+        }
+        .footer .contact-us .contact-info {
+        display: flex;
+        }
+        .footer .contact-us .contact-info i {
+        color: white;
+        font-size: 14px;
+        }
+        .footer .contact-us .contact-info p {
+        color: #9e9e9e;
+        font-size: 11px;
+        margin-right: 20px;
+        margin-bottom: 12px;
+        }
+        .footer .contact-social{
+            display: flex;
+            gap: 16px;
+            justify-content: start;
+        }
+        .footer .contact-social i {
+        margin-left: 10px;
+        font-size: 11px;
+        color: white;
+        }
+        .footer .categories {
+        margin-top: 55px;
+        padding-right: 36px;
+        }
+        .footer .categories p {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 18px;
+        }
+        .footer .categories h6 {
+        color: #fff;
+        line-height: 1.9;
+        font-size: 14px;
+        }
+        .footer .news {
+        font-size: 14px;
+        color: #ff5700;
+        margin-bottom: 15px;
+        }
+        .footer input {
+        direction: rtl;
+        background: none;
+        font-size: 13px;
+        padding: 9px;
+        margin-top: 16px;
+        margin-bottom: 43px;
+        }
+        .footer input:focus {
+        background: none;
+        background-color: non;
+        box-shadow: none;
+        color: #9a9496;
+        border-color: #9a9496;
+        }
+        .footer .payment-method img {
+        margin-left: 10px;
+        }
+        /* end footer */</style>
 <!-- start footer -->
 <div class="footer">
 <div class="container">
@@ -531,3 +467,5 @@
 </div>
 </div>
 <!-- end footer -->
+  </body>
+</html>

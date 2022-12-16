@@ -31,6 +31,10 @@
     }
     .sloped-left{
         clip-path: polygon(0% 0%, 90% 0, 100% 100%, 0 100%);
+    }
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ff5700' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        transform: rotate(-180deg);
     }</style>
   </head>
   <body> 
@@ -224,7 +228,50 @@
         .modal-dialog .fs-6{
             font-size: 16px !important;
         }
-    }</style><div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="commentsModalLabel" aria-hidden="true">
+    }
+    .comment-section-p{
+        font-size: 13px;
+    }
+    @media screen and (min-width: 360px){
+        .comment-section-p{
+            font-size: 16px;
+        }
+    }
+    .input,
+        .textarea {
+        border: 1px solid #ccc;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 1px 6px;
+        }
+    
+        .input-wrap {
+        position: relative;
+        width: 100%;
+        }
+        .input-wrap .input {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        }
+        .width-machine {
+        /*   Sort of a magic number to add extra space for number spinner */
+        padding: 0 1rem;
+        }
+    
+        .textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: none;
+        min-height: 40px;
+        line-height: 20px;
+        }
+    
+        .textarea[contenteditable]:empty::before {
+        content: "شاركنا تجربتك !";
+        color: gray;
+        }</style><div class="modal fade" id="commentsModal" tabindex="-1" aria-labelledby="commentsModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
 <div class="modal-content position-relative">
 <button type="button" class="btn-close m-3" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -381,17 +428,19 @@
 <p class="text-semi-secondary fs-9 mb-2 text-start" style="align-self: end;">16 يونيو 2022 , مصر</p>
 <hr/></div>
 <!-- input and rate -->
-<div class="modal-footer">
-<div class="d-flex flex-wrap align-items-center gap-2 w-100">
-<input type="text" id="in_comment" placeholder="شاركنا تجربتك !" class="placeholder-secondary bg-secondary rounded-3 flex-grow-1 px-3 py-2 fs-7" style="min-width: 320px; border: none; outline: none;"/>
-    <p class="text-primary p-0 m-0">مدى رضائك عن الخدمة</p><span>
+<div class="modal-footer d-flex flex-wrap">
+<p class="flex-grow-1"><span class="textarea placeholder-secondary bg-secondary rounded-3 flex-grow-1 px-3 py-2 fs-7 outline-none borderless" style="min-width: 286px;" id="in_comment" role="textbox" contenteditable></span></p>
+<div class="d-flex align-items-center justify-content-between gap-2">
+<div>
+    <p class="text-primary p-0 m-0 d-none d-sm-inline-block">مدى رضائك عن الخدمة</p><span>
 <i id="star1" class="text-clickable fas fa-star text-warning" onclick="Rate(1)"></i>
 <i id="star2" class="text-clickable fas fa-star text-secondary" onclick="Rate(2)"></i>
 <i id="star3" class="text-clickable fas fa-star text-secondary" onclick="Rate(3)"></i>
 <i id="star4" class="text-clickable fas fa-star text-secondary" onclick="Rate(4)"></i>
 <i id="star5" class="text-clickable fas fa-star text-secondary" onclick="Rate(5)"></i>
 </span>
-<i class="mx-2 fas fa-paper-plane cursor-pointer text-secondary"></i> 
+</div>
+<i class="mx-2 fas fa-paper-plane cursor-pointer text-secondary" style="tranform: rotateX(180deg);"></i> 
 </div>
 </div>
 </div>
